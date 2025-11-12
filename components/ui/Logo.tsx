@@ -1,7 +1,8 @@
-import Stack from "../layout/Stack";
+import Stack from "@layout/Stack";
 import Image from "next/image";
 import ProfilnaSlika from "@images/profilna-slika.jpg";
 import Link from "next/link";
+
 function Logo() {
   return (
     <Stack spacing="xs">

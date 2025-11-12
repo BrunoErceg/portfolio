@@ -1,10 +1,3 @@
-import Image from "next/image";
-import GitLogo from "@images/github-logo.png";
-import NextLogo from "@images/nextjs-logo.png";
-import ReactLogo from "@images/react-logo.png";
-import TailwindLogo from "@images/tailwind-logo.png";
-import Stack from "../layout/Stack";
-
 function Hero() {
   return (
     <section className="mt-4 lg:mt-20">

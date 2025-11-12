@@ -1,64 +1,97 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
 
 type HoverRevealProps = {
   trigger: ReactNode;
-  description: ReactNode | string;
+  title: string;
+  description: string;
+  className?: string;
 };
 
-function HoverReveal({ trigger, description }: HoverRevealProps) {
+// Component that reveals additional content on hover with background blur effect
+// The reveal only happened when the screen is over 900px
+function HoverReveal({
+  trigger,
+  title,
+  description,
+  className,
+}: HoverRevealProps) {
   const [isHoverd, setIsHoverd] = useState(false);
+  const [showZIndex, setShowZIndex] = useState(false);
+
+  // Toggel z index, when removing the calss delay for 100 miliseconds
+  useEffect(() => {
+    if (isHoverd) {
+      setShowZIndex(true);
+    } else {
+      setTimeout(() => {
+        setShowZIndex(false);
+      }, 100);
+    }
+  }, [isHoverd]);
+
   return (
     <>
       <div
-        className={cn("relative", isHoverd && "z-20")}
-        onMouseEnter={() => setIsHoverd(true)}
+        className={(cn("relative"), className)}
+        onMouseEnter={() => window.innerWidth > 900 && setIsHoverd(true)} // Trigger only when the screen width is over 900px
         onMouseLeave={() => setIsHoverd(false)}
       >
         <div
           className={cn(
-            "duration-200 ease-in-out",
-            isHoverd == true ? "scale-110" : "scale-100"
+            "relative duration-100 ease-in-out",
+            isHoverd ? "scale-110" : "scale-100",
+            showZIndex && "z-20"
           )}
         >
           {trigger}
+          <InfoCard
+            isVisible={isHoverd}
+            description={description}
+            title={title}
+          />
         </div>
-        <InfoCard isVisible={isHoverd} description={description} />
+        <BlurOverlay isVisible={isHoverd} />
       </div>
-      <BlurOverlay isVisible={isHoverd} />
     </>
   );
 }
 
+// Background overlay that blurs content behind the hover card
 function BlurOverlay({ isVisible }: { isVisible: boolean }) {
   return (
     <div
       className={cn(
-        `fixed transition-all ease-in-out  duration-300 z-10 bg-white/10 inset-0 backdrop-blur-sm w-screen h-screen `,
-        " pointer-events-none",
+        `fixed transition-all ease-in-out duration-150 z-10 bg-white/10 inset-0 backdrop-blur-sm w-screen h-screen pointer-events-none`,
         isVisible ? "opacity-100" : "opacity-0"
       )}
     />
   );
 }
 
+//  Card that displays the description content
+// on hover with blured background
 function InfoCard({
+  title,
   isVisible,
   description,
 }: {
   isVisible: boolean;
-  description: ReactNode | string;
+  description: string;
+  title: string;
 }) {
   return (
     <div
       className={cn(
-        "absolute top-0 left-1/2 -translate-x-1/2 transform rounded-lg text-center ease-in-out duration-200 w-80 py-3 ",
+        "absolute top-0 left-1/2 -translate-x-1/2 transform rounded-lg text-center ease-in-out duration-150 w-80 py-3 ",
         isVisible
-          ? "translate-y-[-110%] opacity-100"
-          : "translate-y-[-90%] opacity-0 pointer-events-none"
+          ? "translate-y-[-110%] opacity-100" // Slides up and fades in
+          : "translate-y-[-90%] opacity-0 pointer-events-none" // Hidden state
       )}
     >
-      {description}
+      <p>
+        <span className="text-primary">{title}</span> {description}"
+      </p>
     </div>
   );
 }

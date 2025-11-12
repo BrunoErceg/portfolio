@@ -3,52 +3,58 @@ import GitLogo from "@images/github-logo.png";
 import NextLogo from "@images/nextjs-logo.png";
 import ReactLogo from "@images/react-logo.png";
 import TailwindLogo from "@images/tailwind-logo.png";
-import HoverReveal from "../ui/HoverReveal";
+import HoverReveal from "@ui/HoverReveal";
 
+// Tech stack data for display
+const techStackData = [
+  {
+    logo: ReactLogo,
+    name: "React",
+    description:
+      " je JavaScript biblioteka za izgradnju korisničkih interfejsa komponentama. 👾",
+  },
+  {
+    logo: NextLogo,
+    name: "Next.js",
+    description:
+      " je react framework sa server-side renderingom, poboljšanim performansama i SEO-om. 💾",
+  },
+  {
+    logo: GitLogo,
+    name: "GitHub",
+    description:
+      " je sistem za kontrolu verzija koda koji omogućuje praćenje promjena i timski rad. 🤜🤛",
+  },
+  {
+    logo: TailwindLogo,
+    name: "Tailwind",
+    description:
+      " je utility-first CSS framework za brzu izgradnju modernih korisničkih interfejsa. 🎨",
+  },
+];
+
+// Displays tech logos with hover descriptions and blur effects
 function TechStack() {
   return (
-    <div className="flex flex-row items-center w-full justify-between mt-10 lg:mt-20">
-      <HoverReveal
-        trigger={<Image src={ReactLogo.src} alt="" width={170} height={80} />}
-        description={
-          <p>
-            <span className="text-primary">React</span> je JavaScript biblioteka
-            za izgradnju korisničkih interfejsa komponentama. 👾"
-          </p>
-        }
-      />
-
-      <HoverReveal
-        trigger={
-          <Image src={TailwindLogo.src} alt="" width={250} height={80} />
-        }
-        description={
-          <p>
-            <span className="text-primary">Tailwind CSS</span> utility-first CSS
-            framework za brzu izgradnju modernih korisničkih interfejsa. 🎨"
-          </p>
-        }
-      />
-
-      <HoverReveal
-        trigger={<Image src={NextLogo.src} alt="" width={170} height={100} />}
-        description={
-          <p>
-            <span className="text-primary"> Next.js</span> react framework sa
-            server-side renderingom, poboljšanim performansama i SEO-om. 💾"
-          </p>
-        }
-      />
-      <HoverReveal
-        trigger={<Image src={GitLogo.src} alt="" width={110} height={100} />}
-        description={
-          <p>
-            <span className="text-primary">Git</span> Sistem za kontrolu verzija
-            koda koji omogućuje praćenje promjena i timski rad. 🤜🤛"
-          </p>
-        }
-      />
-    </div>
+    <section>
+      <div className="flex flex-wrap gap-8 md:justify-between items-center mt-10 md:mt-20">
+        {techStackData.map((tech) => (
+          <HoverReveal
+            key={tech.name}
+            trigger={
+              <Image
+                src={tech.logo.src}
+                alt={tech.name}
+                width={150}
+                height={45}
+              />
+            }
+            title={tech.name}
+            description={tech.description}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 

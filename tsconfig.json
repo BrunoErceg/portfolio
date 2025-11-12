@@ -20,7 +20,10 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@images/*": ["./public/images/*"]
+      "@images/*": ["./public/images/*"],
+      "@section/*": ["./components/section/*"],
+      "@ui/*": ["./components/ui/*"],
+      "@layout/*": ["./components/layout/*"]
     }
   },
   "include": [

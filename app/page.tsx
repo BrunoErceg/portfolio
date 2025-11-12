@@ -8,14 +8,14 @@ import { CustomCursor } from "cursor-style";
 export default function Home() {
   return (
     <>
-      <CustomCursor
+      {/*<CustomCursor
         type="one"
         size={2}
         delay={35}
         scaleOnHover={2}
         clickEffect="fade"
         bgColor="white"
-      />
+      /> */}
       <hr className="text-primary border-1.5" />
       <main>
         <Container>
