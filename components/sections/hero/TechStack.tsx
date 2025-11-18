@@ -4,6 +4,8 @@ import NextLogo from "@images/nextjs-logo.png";
 import ReactLogo from "@images/react-logo.png";
 import TailwindLogo from "@images/tailwind-logo.png";
 import HoverReveal from "@ui/HoverReveal";
+import { motion } from "framer-motion";
+import getAnimateInProps from "@/utils/animations";
 
 // Tech stack data for display
 const techStackData = [
@@ -17,7 +19,7 @@ const techStackData = [
     logo: NextLogo,
     name: "Next.js",
     description:
-      " je react framework sa server-side renderingom, poboljšanim performansama i SEO-om. 💾",
+      " je react framework sa SSR, poboljšanim performansama i SEO-om. 💾",
   },
   {
     logo: GitLogo,
@@ -36,25 +38,28 @@ const techStackData = [
 // Displays tech logos with hover descriptions and blur effects
 function TechStack() {
   return (
-    <section>
-      <div className="flex flex-wrap gap-8 md:justify-between items-center mt-10 md:mt-20">
-        {techStackData.map((tech) => (
-          <HoverReveal
-            key={tech.name}
-            trigger={
+    <div className="flex flex-wrap gap-8 w-[350px] md:w-[750px] md:justify-between items-center mt-10 md:mt-20">
+      {techStackData.map((tech, i) => (
+        <HoverReveal
+          key={tech.name}
+          trigger={
+            <motion.div
+              {...getAnimateInProps("left", 0.65 + i * 0.2)} // Stagger animate in logos from left
+              className="w-[125px] md:w-[150px]"
+            >
               <Image
                 src={tech.logo.src}
                 alt={tech.name}
-                width={150}
+                width={140}
                 height={45}
               />
-            }
-            title={tech.name}
-            description={tech.description}
-          />
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          }
+          title={tech.name}
+          description={tech.description}
+        />
+      ))}
+    </div>
   );
 }
 

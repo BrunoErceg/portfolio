@@ -1,13 +1,21 @@
 @import "tailwindcss";
-/*
+
 * {
   cursor: none;
 }
-*/
+
+@font-face {
+  font-family: "Athletics";
+  src: url("/fonts/Athletics Regular.otf") format("opentype");
+  font-weight: 400; /* Ili 800 ako je zaista bold */
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-primary: #ff540a;
   --color-background: #f7f9fc;
-  --color-dark: #0e1217;
+  --color-dark: #1d1d1d;
   --color-gray: #161d2499;
 }
 
@@ -28,9 +36,4 @@ body {
   background: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  font-weight: 400;
-  color: var(--color-dark);
 }

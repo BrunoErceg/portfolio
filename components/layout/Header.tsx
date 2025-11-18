@@ -25,7 +25,7 @@ const SocialData = [
 ];
 
 // Main navigation header with logo and social links
-function Navigation() {
+function Header() {
   return (
     <header>
       <nav className="py-12 flex items-center justify-between">
@@ -48,4 +48,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Header;

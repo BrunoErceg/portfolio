@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
+import { Text } from "@ui/Text";
 
 type HoverRevealProps = {
   trigger: ReactNode;
@@ -83,15 +84,15 @@ function InfoCard({
   return (
     <div
       className={cn(
-        "absolute top-0 left-1/2 -translate-x-1/2 transform rounded-lg text-center ease-in-out duration-150 w-80 py-3 ",
+        "absolute top-0 left-1/2 bg-white shadow-[0px_5px_12px_2px_rgba(0,_0,_0,_0.1)] -translate-x-1/2 transform rounded-lg text-center ease-in-out duration-150 w-80 py-6 px-4",
         isVisible
-          ? "translate-y-[-110%] opacity-100" // Slides up and fades in
-          : "translate-y-[-90%] opacity-0 pointer-events-none" // Hidden state
+          ? "translate-y-[-120%] scale-100 opacity-100" // Slides up and fades in
+          : "translate-y-[-95%] opacity-0 scale-70 pointer-events-none" // Hidden state
       )}
     >
-      <p>
+      <Text>
         <span className="text-primary">{title}</span> {description}"
-      </p>
+      </Text>
     </div>
   );
 }
