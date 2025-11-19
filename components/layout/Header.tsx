@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
 import { faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { SOCIAL_LINKS } from "@/utils/constans";
+import { SOCIAL_LINKS } from "@/constants/social";
 import Stack from "@layout/Stack";
 import Logo from "@ui/Logo";
 
@@ -28,7 +28,7 @@ const SocialData = [
 function Header() {
   return (
     <header>
-      <nav className="py-12 flex items-center justify-between">
+      <nav className="flex items-center justify-between py-12">
         <Logo />
         <Stack spacing="sm">
           {SocialData.map((social) => (
@@ -37,7 +37,7 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
               href={social.link}
-              className="text-2xl text-dark hover:text-primary duration-75 link"
+              className="text-dark hover:text-primary link text-2xl duration-75"
             >
               <FontAwesomeIcon icon={social.icon} />
             </a>

@@ -1,9 +1,10 @@
 import { cn } from "@/utils/cn";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 type StackProps = {
   direction?: "row" | "col";
-  spacing?: "xs" | "sm" | "md" | "lg" | "xl";
+  spacing?: "none" | "xs" | "sm" | "md" | "lg" | "xl";
   children: ReactNode;
   className?: string;
 };
@@ -16,6 +17,7 @@ function Stack({
 }: StackProps) {
   const directionClass = direction === "col" ? "flex-col" : "flex-row";
   const spacingClass = {
+    none: "gap-0",
     xs: "gap-1 lg:gap-2",
     sm: "gap-2 lg:gap-4",
     md: "gap-4 lg:gap-8",
@@ -30,4 +32,5 @@ function Stack({
   );
 }
 
+const MotionStack = motion(Stack);
 export default Stack;

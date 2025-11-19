@@ -8,9 +8,9 @@ type TextProps = VariantProps<typeof textVariants> & {
   children: ReactNode;
 };
 
-function Text({ size, className, children, ...props }: TextProps) {
+function Text({ variant, color, className, children, ...props }: TextProps) {
   return (
-    <p className={cn(textVariants({ size }), className)} {...props}>
+    <p className={cn(textVariants({ variant, color }), className)} {...props}>
       {children}
     </p>
   );
@@ -18,13 +18,18 @@ function Text({ size, className, children, ...props }: TextProps) {
 
 const textVariants = cva("", {
   variants: {
-    size: {
-      xs: "text-xs",
-      sm: "text-sm",
-      md: "text-md",
-      lg: "text-lg",
-      xl: "text-xl",
+    variant: {
+      paragraph: "leading-7 text-xl ",
+      caption: "text-base leading-5",
     },
+    color: {
+      white: "text-white",
+      dark: "text-dark",
+    },
+  },
+  defaultVariants: {
+    variant: "paragraph",
+    color: "dark",
   },
 });
 

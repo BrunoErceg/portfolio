@@ -27,7 +27,7 @@ function Card({ title, description, link = "/", icon }: CardProps) {
         height={200}
         alt=""
         className={cn(
-          "text-[200px] text-gray-300 absolute grayscale-100 duration-150 ease-out -right-10 -bottom-10",
+          "text-[200px] text-gray-300 absolute grayscale-100  duration-150 ease-out -right-10 -bottom-10",
           isHoverd && "grayscale-0 scale-120 rotate-5"
         )}
       />
@@ -37,7 +37,10 @@ function Card({ title, description, link = "/", icon }: CardProps) {
       </Stack>
 
       <Link href={link}>
-        <Arrow direction="upperRight" className="absolute top-11 right-7" />
+        <Arrow
+          direction="upperRight"
+          className="absolute fill-primary top-11 right-7"
+        />
       </Link>
     </div>
   );

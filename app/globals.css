@@ -1,9 +1,9 @@
 @import "tailwindcss";
-
+/*
 * {
   cursor: none;
 }
-
+*/
 @font-face {
   font-family: "Athletics";
   src: url("/fonts/Athletics Regular.otf") format("opentype");
@@ -13,9 +13,9 @@
 }
 
 @theme {
-  --color-primary: #ff540a;
+  --color-primary: #126cfb;
   --color-background: #f7f9fc;
-  --color-dark: #1d1d1d;
+  --color-dark: #1a1b25;
   --color-gray: #161d2499;
 }
 
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
   background: var(--color-background);

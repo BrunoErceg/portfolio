@@ -15,7 +15,6 @@ import Card from "@ui/Card";
 
 function Work() {
   const screenshots = [
-    { name: "logo", src: LuxGymLogo.src },
     { name: "personal", src: ScreenPersonal.src },
     { name: "hero", src: ScreenHero.src },
     { name: "gym", src: ScreenGym.src },
@@ -24,16 +23,16 @@ function Work() {
   ];
   const TagsData = ["React", "Next.js", "i18n", "Framer"];
   return (
-    <section className="my-25   rounded-2xl">
+    <section className="my-25 rounded-2xl">
       <motion.div {...getAnimateInProps("bottom", 1.4)} className="mb-35">
         <div className="flex justify-between py-5">
           <div>
-            <Link href="/" className="text-2xl mb-4  font-semibold  text-dark ">
+            <Link href="/" className="text-dark mb-4 text-2xl font-semibold">
               📁 LuxGym
             </Link>
             <Text className="">Web Stranica napravljena u Next.js-u</Text>
           </div>
-          <Stack spacing="sm" className="items-center ">
+          <Stack spacing="sm" className="items-center">
             {TagsData.map((tag, i) => (
               <Tag key={i}>{tag}</Tag>
             ))}
@@ -48,12 +47,12 @@ function Work() {
       <motion.div {...getAnimateInProps("bottom", 1.4)}>
         <div className="flex justify-between py-5">
           <div>
-            <Link href="/" className="text-2xl mb-4  font-semibold  text-dark ">
+            <Link href="/" className="text-dark mb-4 text-2xl font-semibold">
               📁 Bruno Erceg Protfolio
             </Link>
             <Text className="">Web Stranica napravljena u Next.js-u</Text>
           </div>
-          <Stack spacing="sm" className="items-center ">
+          <Stack spacing="sm" className="items-center">
             {TagsData.map((tag, i) => (
               <Tag key={i}>{tag}</Tag>
             ))}
