@@ -1,6 +1,8 @@
 import Fork from "../examples/github/Fork";
-import Branches from "../examples/github/Branches";
+import Merge from "../examples/github/Merge";
 import Clone from "../examples/github/Clone";
+import Pull from "../examples/github/Pull";
+
 type SkillItem = {
   title: string;
   description: string;
@@ -27,19 +29,21 @@ const GitHubSkills: SkillItem[] = [
     title: "Branches",
     description:
       "Izoliraj razvoj novih značajki od glavne stabilne grane koda (main)",
-    example: <Branches />,
+
     type: "example",
   },
   {
     title: "Pull Requests",
     description:
       "Pošalji svoje promjene autoru projekta s zahtjevom za uključivanjem koda",
+    example: <Pull />,
     type: "example",
   },
   {
     title: "Merge",
     description:
       "Spoji promjene iz jedne grane u drugu, često kroz odobreni zahtjev",
+    example: <Merge />,
     type: "example",
   },
   {

@@ -19,7 +19,7 @@ function Component() {
             height={150}
             src="/images/default-image.svg"
             alt="Default image icon"
-            className="pointer-events-none mx-auto"
+            className="mx-autofir pointer-events-none"
           />
         </motion.div>
       </div>
