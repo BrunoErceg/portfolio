@@ -49,8 +49,8 @@ function Api() {
   }
 
   return (
-    <div className="mb-5 h-[120px] rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 pr-6">
-      <div className="flex items-center">
+    <div className="mb-5 flex h-[120px] justify-center rounded-2xl bg-linear-to-br from-blue-300 to-blue-400 pr-6">
+      <div className="-ml-5 flex w-fit items-center">
         {isClient && (
           <>
             <img

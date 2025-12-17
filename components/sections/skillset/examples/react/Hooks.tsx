@@ -12,33 +12,35 @@ function Hooks() {
   const decrement = () => setCount(count - 1);
 
   return (
-    <div className="mb-5 flex items-center justify-between rounded-full bg-linear-to-br from-blue-300 to-blue-400 px-3 py-4 md:p-3">
-      <Button variant="decrement" onClick={decrement} />
+    <div className="mb-5 rounded-2xl bg-linear-to-br from-blue-300 to-blue-400 px-3 py-4 md:p-5">
+      <div className="mx-auto flex w-55 items-center justify-between rounded-full bg-white/20 p-2">
+        <Button variant="decrement" onClick={decrement} />
 
-      <div className="translate-y-1.5">
-        {/* Display minus if the count is negative*/}
-        <AnimatePresence mode="popLayout">
-          {count < 0 && (
-            <motion.p
-              layout
-              initial={{ opacity: 0, x: 0, y: 10 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              exit={{ opacity: 0, x: -10, y: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="inline-block -translate-y-2 text-center text-3xl font-bold text-white"
-            >
-              -
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <div className="translate-y-1.5">
+          {/* Display minus if the count is negative*/}
+          <AnimatePresence mode="popLayout">
+            {count < 0 && (
+              <motion.p
+                layout
+                initial={{ opacity: 0, x: 0, y: 10 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                exit={{ opacity: 0, x: -10, y: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="inline-block -translate-y-2 text-center text-3xl font-bold text-white"
+              >
+                -
+              </motion.p>
+            )}
+          </AnimatePresence>
 
-        {/* Display all digits */}
-        {digits.map((digit, index) => {
-          return <RollingDigit key={index} digit={digit} />;
-        })}
+          {/* Display all digits */}
+          {digits.map((digit, index) => {
+            return <RollingDigit key={index} digit={digit} />;
+          })}
+        </div>
+
+        <Button variant="increment" onClick={increment} />
       </div>
-
-      <Button variant="increment" onClick={increment} />
     </div>
   );
 }
@@ -51,7 +53,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 function Button({ variant, ...props }: ButtonProps) {
   return (
     <button
-      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-500 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90"
+      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-400 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90"
       {...props}
     >
       {variant == "increment" ? (
