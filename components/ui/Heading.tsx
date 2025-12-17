@@ -1,31 +1,33 @@
 import { cn } from "@/utils/cn";
+import { cva, VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-type HeadingProps = {
-  level: 1 | 2 | 3 | 4 | 5 | 6;
+type HeadingProps = VariantProps<typeof HeadingVariants> & {
+  level: 1 | 2 | 3;
   className?: string;
   children: ReactNode;
 };
 
-function Heading({ level, className, children, ...props }: HeadingProps) {
+function Heading({ level = 1, className, children, ...props }: HeadingProps) {
   const Tag = `h${level}` as const;
 
-  const styles = {
-    1: "text-dark mb-6 text-4xl leading-10 font-semibold md:text-4xl md:leading-16 lg:text-7xl lg:leading-20",
-    2: " ",
-    3: " ",
-    4: " ",
-    5: " ",
-    6: " ",
-  }[level];
   return (
-    <Tag className={cn(styles, className, "")} {...props}>
+    <Tag className={cn(HeadingVariants({ level }), className)} {...props}>
       {children}
     </Tag>
   );
 }
 
-const MotionHeading = motion(Heading);
+const HeadingVariants = cva("text-dark, font-semibold tracking-tight", {
+  variants: {
+    level: {
+      1: " mb-6 mt-2 text-3xl leading-8  md:text-5xl text-center md:leading-13 lg:text-6xl lg:leading-16   ",
+      2: " mt-3 mb-5 leading-10 text-4xl md:leading-8 lg:text-4xl ",
+      3: " mt-2 mb-0 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ",
+    },
+  },
+});
 
+const MotionHeading = motion(Heading);
 export { Heading, MotionHeading };

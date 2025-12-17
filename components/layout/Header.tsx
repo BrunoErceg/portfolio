@@ -1,49 +1,33 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
-import { faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { SOCIAL_LINKS } from "@/constants/social";
+import Link from "next/link";
 import Stack from "@layout/Stack";
 import Logo from "@ui/Logo";
-
-// Social media data for display
-const SocialData = [
-  {
-    name: "whatsapp",
-    icon: faWhatsapp,
-    link: SOCIAL_LINKS.whatsapp,
-  },
-  {
-    name: "instagram",
-    icon: faInstagram,
-    link: SOCIAL_LINKS.instagram,
-  },
-  {
-    name: "github",
-    icon: faGithub,
-    link: SOCIAL_LINKS.github,
-  },
-];
 
 // Main navigation header with logo and social links
 function Header() {
   return (
-    <header>
-      <nav className="flex items-center justify-between py-12">
+    <header className="mt-3 flex items-center justify-between rounded-full bg-white px-5 py-4 shadow-[0px_3px_8px_4px_rgba(0,_0,_0,_0.03)]">
+      <Link href="/">
         <Logo />
-        <Stack spacing="sm">
-          {SocialData.map((social) => (
-            <a
-              key={social.name}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={social.link}
-              className="text-dark hover:text-primary link text-2xl duration-75"
-            >
-              <FontAwesomeIcon icon={social.icon} />
-            </a>
-          ))}
+      </Link>
+      <nav className="mt-1 hidden md:block">
+        <Stack className="text-dark items-center text-lg font-semibold">
+          <a className="duration-150 ease-out hover:text-blue-500" href="/">
+            Work
+          </a>
+          <a className="duration-150 ease-out hover:text-blue-500" href="/">
+            Skill Set{" "}
+          </a>
+          <a className="duration-150 ease-out hover:text-blue-500" href="/">
+            About
+          </a>
+          <a className="duration-150 ease-out hover:text-blue-500" href="/">
+            Contact
+          </a>
         </Stack>
       </nav>
+      <button className="rounded-full bg-linear-to-tr from-slate-600 to-slate-800 px-5 py-2 font-semibold text-white shadow-2xl duration-300 ease-in-out hover:from-blue-500 hover:to-blue-600">
+        Kontakt
+      </button>
     </header>
   );
 }

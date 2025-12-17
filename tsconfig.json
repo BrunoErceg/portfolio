@@ -21,8 +21,10 @@
     "paths": {
       "@/*": ["./*"],
       "@images/*": ["./public/images/*"],
+      "@lottie/*": ["./public/lottie/*"],
       "@gifs/*": ["./public/gifs/*"],
       "@sections/*": ["./components/sections/*"],
+      "@Skills/*": ["./components/sections/Skills/*"],
       "@layout/*": ["./components/layout/*"],
       "@ui/*": ["./components/ui/*"],
       "@utils/*": ["./utils/*"]

@@ -1,32 +1,56 @@
 import { cn } from "@/utils/cn";
-import { ReactNode, useState } from "react";
+import { cva, VariantProps } from "class-variance-authority";
+import { motion } from "framer-motion";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-type TagProps = {
-  className?: string;
-  children: ReactNode;
-};
+type TagProps = VariantProps<typeof tagVariants> &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    className?: string;
+    children?: ReactNode;
+  };
 
-function Tag({ className, children, ...props }: TagProps) {
-  const [isHoverd, setIshoverd] = useState(false);
+function Tag({ variant, state, children, className, ...props }: TagProps) {
   return (
-    <p
-      onMouseEnter={() => setIshoverd(true)}
-      onMouseLeave={() => setIshoverd(false)}
-      className={cn(
-        "py-1 px-4 rounded-full  duration-300 ease-in-out bg-gray-200 relative overflow-hidden",
-        isHoverd && "text-white",
-        className
-      )}
+    <button
+      className={cn(tagVariants({ variant, state }), className)}
+      {...props}
     >
-      <span className="inline-block  relative position z-20">{children}</span>
-      <span
-        className={cn(
-          "bg-primary z-10 rounded-t-full ease-out duration-500 w-full absolute bottom-0 translate-y-full left-0 h-20",
-          isHoverd && "translate-y-0 "
-        )}
-      />{" "}
-    </p>
+      {variant === "availability" && <Badge />}
+      {children}
+    </button>
   );
 }
 
-export default Tag;
+function Badge() {
+  return (
+    <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-green-400 shadow-[0px_0px_9px_1px_#05df72] transition-shadow" />
+  );
+}
+
+const tagVariants = cva("", {
+  variants: {
+    variant: {
+      base: "cursor-pointer text-sm  md:text-base rounded-full border-2 font-semibold border-blue-500 px-3 py-1 md:px-4 md:py-1.5 text-blue-500 duration-400 ease-out hover:border-transparent hover:bg-linear-to-br hover:from-blue-400 hover:to-blue-500 hover:text-white",
+      availability:
+        "mb-4 rounded-full border border-gray-600 px-3 py-1 text-sm",
+    },
+    state: {
+      default: "",
+      selected: "",
+    },
+  },
+  compoundVariants: [
+    {
+      variant: "base",
+      state: "selected",
+      className: "bg-linear-to-br from-blue-400 to-blue-500 text-white",
+    },
+  ],
+  defaultVariants: {
+    variant: "base",
+    state: "default",
+  },
+});
+
+const MotionTag = motion(Tag);
+export { Tag, MotionTag };
