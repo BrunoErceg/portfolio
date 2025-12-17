@@ -1,6 +1,6 @@
 import { Text } from "@ui/Text";
 
-function TypeScriptEx() {
+function TypeScript() {
   return (
     <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
       <Text color="white">
@@ -11,4 +11,4 @@ function TypeScriptEx() {
   );
 }
 
-export default TypeScriptEx;
+export default TypeScript;

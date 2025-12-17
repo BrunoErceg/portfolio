@@ -24,7 +24,7 @@
       "@lottie/*": ["./public/lottie/*"],
       "@gifs/*": ["./public/gifs/*"],
       "@sections/*": ["./components/sections/*"],
-      "@Skills/*": ["./components/sections/Skills/*"],
+      "@Skills/*": ["components/sections/skillset/*"],
       "@layout/*": ["./components/layout/*"],
       "@ui/*": ["./components/ui/*"],
       "@utils/*": ["./utils/*"]

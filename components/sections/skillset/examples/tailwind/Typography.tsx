@@ -2,7 +2,7 @@ import { Text } from "@/components/ui/Text";
 import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
 
-function TypographyEx() {
+function Typography() {
   const [rerender, setRerender] = useState(0);
   const fonts = [
     "poppins",
@@ -42,4 +42,4 @@ function TypographyEx() {
   );
 }
 
-export default TypographyEx;
+export default Typography;

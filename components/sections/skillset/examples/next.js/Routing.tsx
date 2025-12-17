@@ -8,7 +8,7 @@ import {
 import { cn } from "@/utils/cn";
 import { HTMLAttributes, ReactNode, useState, forwardRef } from "react";
 
-function ImageOptimizationEx() {
+function Routing() {
   return (
     <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
       <Folder name="app">
@@ -65,4 +65,4 @@ function File({ children }: { children: ReactNode }) {
   );
 }
 
-export default ImageOptimizationEx;
+export default Routing;

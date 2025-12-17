@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ForkIcon from "@images/git-fork.svg";
 
-function ForkEx() {
+function Fork() {
   return (
     <div className="mb-5 flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 p-10">
       <Image
@@ -15,4 +15,4 @@ function ForkEx() {
   );
 }
 
-export default ForkEx;
+export default Fork;

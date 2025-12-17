@@ -1,7 +1,7 @@
 import Image from "next/image";
 import HeartIcon from "@images/heart.svg";
 import { motion } from "framer-motion";
-function LoopEx() {
+function Loop() {
   return (
     <div className="mb-5 flex justify-center space-y-2 overflow-hidden rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-9 text-white">
       <motion.div
@@ -31,4 +31,4 @@ function LoopEx() {
   );
 }
 
-export default LoopEx;
+export default Loop;

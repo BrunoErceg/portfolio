@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 
-function TailwindStateEx() {
+function TailwindState() {
   return (
     <div className="mb-5 flex justify-between rounded-2xl bg-linear-to-br from-blue-400 to-blue-300 p-6">
       <Button variant="secondary">Hover</Button>
@@ -10,4 +10,4 @@ function TailwindStateEx() {
   );
 }
 
-export default TailwindStateEx;
+export default TailwindState;

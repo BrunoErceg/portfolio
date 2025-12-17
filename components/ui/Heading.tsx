@@ -24,7 +24,7 @@ const HeadingVariants = cva("text-dark, font-semibold tracking-tight", {
     level: {
       1: " mb-6 mt-2 text-3xl leading-8  md:text-5xl text-center md:leading-13 lg:text-6xl lg:leading-16   ",
       2: " mt-3 mb-5 leading-10 text-4xl md:leading-8 lg:text-4xl ",
-      3: " mt-2 mb-0 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ",
+      3: " mt-2 mb-2 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ",
     },
   },
 });

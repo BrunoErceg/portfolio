@@ -2,7 +2,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { Text } from "@ui/Text";
 
-function ComponentEx() {
+function Component() {
   return (
     <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-br from-blue-400 to-blue-300 p-6">
       <Box>
@@ -53,4 +53,4 @@ function Box({ children, className }: BoxProps) {
   );
 }
 
-export default ComponentEx;
+export default Component;

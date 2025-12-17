@@ -17,9 +17,9 @@ const textVariants = cva("", {
       dark: "text-dark",
     },
     size: {
-      sm: "text-sm",
-      md: "text-[15px] ",
-      lg: "text-lg",
+      small: "text-sm",
+      base: "text-[15px] ",
+      large: "text-lg",
       xl: "text-xl",
       xxl: "text-2xl",
     },

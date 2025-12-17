@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Text } from "@/components/ui/Text";
 
-function ApiEx() {
+function Api() {
   const [data, setData] = useState<any>([]);
   const [isLoading, SetIsLoading] = useState(true);
   const [error, setError] = useState<boolean | string>(false);
@@ -15,7 +15,6 @@ function ApiEx() {
           "https://api.openweathermap.org/data/2.5/weather?id=3190941&&units=metric&appid=85680025b99fdb750394d5b453c2fc8d",
         );
         setData(response.data);
-        console.log(response.data);
         setIsClient(true);
       } catch (error) {
         const errorMessage = error instanceof Error;
@@ -74,4 +73,4 @@ function ApiEx() {
   );
 }
 
-export default ApiEx;
+export default Api;

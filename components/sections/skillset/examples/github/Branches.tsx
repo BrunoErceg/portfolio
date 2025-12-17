@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BranchIcon from "@images/git-branch.svg";
 
-function BranchesEx() {
+function Branches() {
   return (
     <div className="mb-5 flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 p-10">
       <Image
@@ -15,4 +15,4 @@ function BranchesEx() {
   );
 }
 
-export default BranchesEx;
+export default Branches;

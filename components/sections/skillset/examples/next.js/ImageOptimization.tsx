@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function ImageEx() {
+function ImageOptimization() {
   return (
     <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
       <Image
@@ -14,4 +14,4 @@ function ImageEx() {
   );
 }
 
-export default ImageEx;
+export default ImageOptimization;

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-function GestureEx() {
+function Gesture() {
   return (
     <div className="mb-5 flex justify-center space-y-2 overflow-hidden rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-10 text-white">
       <motion.div
@@ -15,4 +15,4 @@ function GestureEx() {
   );
 }
 
-export default GestureEx;
+export default Gesture;
