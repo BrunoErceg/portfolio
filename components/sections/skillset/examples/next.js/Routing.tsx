@@ -12,15 +12,14 @@ function Routing() {
   return (
     <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
       <Folder name="app">
-        <Folder name="about">
-          <File>layout.tsx</File>
-          <File>page.tsx</File>
+        <Folder name="blog">
+          <Folder name="{ slug }">
+            <File>page.tsx</File>
+          </Folder>
         </Folder>
         <Folder name="contact">
-          <File>layout.tsx</File>
           <File>page.tsx</File>
         </Folder>
-        <File>layout.tsx</File>
         <File>page.tsx</File>
       </Folder>
     </div>
@@ -38,29 +37,31 @@ const Folder = forwardRef<HTMLParagraphElement, FolderProps>(
     const handelClick = () => setIsOpen(!isOpen);
 
     return (
-      <>
+      <div className="relative">
         <Text
           color="white"
-          className="mb-0 w-auto cursor-pointer select-none"
+          className="mb-1.5 w-auto cursor-pointer text-lg select-none"
           onClick={handelClick}
           ref={ref}
         >
           <FontAwesomeIcon
             icon={isOpen ? faFolderOpen : faFolder}
-            className="mr-1.5 text-sm"
+            className="mr-2 text-xl text-white"
           />
           {name}
         </Text>
-        <div className={cn("mb-0 ml-4", !isOpen && "hidden")}>{children}</div>
-      </>
+
+        <div className={cn("mb-0 ml-6", !isOpen && "hidden")}>{children}</div>
+        <div className="absolute top-8 left-2.5 h-[calc(100%-35px)] w-0.5 bg-white/40"></div>
+      </div>
     );
   },
 );
 
 function File({ children }: { children: ReactNode }) {
   return (
-    <Text color="white">
-      <FontAwesomeIcon icon={faFile} className="text-sm" /> {children}
+    <Text color="white" className="mb-2 text-lg">
+      <FontAwesomeIcon icon={faFile} className="text-xl" /> {children}
     </Text>
   );
 }

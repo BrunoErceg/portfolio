@@ -12,14 +12,14 @@ function Component() {
           dragTransition={{ bounceStiffness: 900, bounceDamping: 18 }}
           whileHover={{ scale: 1 }}
           whileTap={{ scale: 0.9 }}
-          className="mx-auto h-fit w-fit cursor-grab rounded-full"
+          className="mx-auto h-fit w-fit cursor-grab rounded-full p-2"
         >
           <Image
-            width={150}
-            height={150}
+            width={120}
+            height={120}
             src="/images/default-image.svg"
             alt="Default image icon"
-            className="mx-autofir pointer-events-none"
+            className="pointer-events-none mx-auto"
           />
         </motion.div>
       </div>
