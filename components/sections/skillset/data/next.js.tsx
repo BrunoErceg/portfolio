@@ -1,6 +1,6 @@
 import ImageOptimization from "../examples/next.js/ImageOptimization";
 import Routing from "../examples/next.js/Routing";
-import Api from "../examples/react/Api";
+import Api from "../examples/react/WeatherApi";
 
 type SkillItem = {
   title: string;

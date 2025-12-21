@@ -1,6 +1,7 @@
 import Gesture from "../examples/motion/Guestures";
 import Loop from "../examples/motion/Loop";
-
+import StaggeredAnimation from "../examples/motion/StaggeredAnimation";
+import AnimatePresence from "../examples/motion/AnimatePresence";
 type SkillItem = {
   title: string;
   description: string;
@@ -16,6 +17,13 @@ const MotionSkills: SkillItem[] = [
     type: "title",
   },
   {
+    title: "AnimatePresence",
+    description:
+      "Omogući glatke ulazne i izlazne animacije za elemente koji nestaju.",
+    example: <AnimatePresence />,
+    type: "example",
+  },
+  {
     title: "Variants",
     description:
       "Definiraj sva animacijska stanja u jednom objektu za pregledniju logiku.",
@@ -23,21 +31,23 @@ const MotionSkills: SkillItem[] = [
     type: "example",
   },
   {
+    title: "Stagger Effects",
+    description: "Stvori kaskadne sekvence pokreta među djecom elementa.",
+    example: <StaggeredAnimation />,
+    type: "example",
+  },
+
+  {
     title: "Transitions",
     description:
       "Kontroliraj trajanje, olakšavanje i odgodu za precizan ritam svakog pokreta.",
     type: "example",
   },
   {
-    title: "AnimatePresence",
+    title: "Gesture Props",
     description:
-      "Omogući glatke ulazne i izlazne animacije za elemente koji nestaju.",
-    type: "example",
-  },
-
-  {
-    title: "Stagger Effects",
-    description: "Stvori kaskadne sekvence pokreta među djecom elementa.",
+      "Poveži interakcije poput prelaska i klika s automatskim animacijama.",
+    example: <Gesture />,
     type: "example",
   },
   {
@@ -47,18 +57,12 @@ const MotionSkills: SkillItem[] = [
     example: <Loop />,
     type: "example",
   },
+
   {
     title: "Keyframes",
     description:
       "Definiraj složene, cikličke sekvence pokreta kroz niz vrijednosti koraka.",
 
-    type: "example",
-  },
-  {
-    title: "Gesture Props",
-    description:
-      "Poveži interakcije poput prelaska i klika s automatskim animacijama.",
-    example: <Gesture />,
     type: "example",
   },
 ];

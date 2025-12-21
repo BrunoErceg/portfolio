@@ -1,15 +1,26 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import GradientSurface from "../shared/GradientSurface";
 
+/**
+ * A component that demonstrates image optimization techniques in Next.js.
+ * It displays a gradient surface with a motion-enabled image.
+ * The image is optimized for web and mobile devices.
+ * @returns A React component with a gradient surface and a motion-enabled image.
+ */
 function ImageOptimization() {
   return (
-    <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
+    <GradientSurface centered>
       <motion.div
+        // Enable dragging with springiness
         drag
         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-        dragElastic={0.3} // Controls springiness
+        dragElastic={0.3}
+        // Animation transitions
         dragTransition={{ bounceStiffness: 900, bounceDamping: 18 }}
+        // Hover animation
         whileHover={{ scale: 1 }}
+        // Tap animation
         whileTap={{ scale: 0.9 }}
         className="mx-auto h-fit w-fit cursor-grab rounded-full p-2"
       >
@@ -21,8 +32,7 @@ function ImageOptimization() {
           className="pointer-events-none mx-auto"
         />
       </motion.div>
-    </div>
+    </GradientSurface>
   );
 }
-
 export default ImageOptimization;

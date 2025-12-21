@@ -1,6 +1,6 @@
 import TypeScript from "../examples/react/TypeScript";
-import Hooks from "../examples/react/Hooks";
-import Api from "../examples/react/Api";
+import Counter from "../examples/react/Counter";
+import WeatherApi from "../examples/react/WeatherApi";
 import Component from "../examples/react/Component";
 
 type SkillItem = {
@@ -27,13 +27,13 @@ const reactSkills: SkillItem[] = [
     title: "React Hooks",
     description:
       "Upravljaj stanjem i životnim ciklusom funkcionalnih komponenti.",
-    example: <Hooks />,
+    example: <Counter />,
     type: "example",
   },
   {
     title: "Data Fetching Api",
     description: "Komuniciraj s vanjskim servisima i backend sustavima.",
-    example: <Api />,
+    example: <WeatherApi />,
     type: "example",
   },
   {

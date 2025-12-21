@@ -1,7 +1,6 @@
 import GradiantText from "@/components/ui/GradiantText";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 type CardProps = {

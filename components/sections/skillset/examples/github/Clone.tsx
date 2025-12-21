@@ -1,9 +1,17 @@
 import Lottie from "lottie-react";
 import CloneAnimation from "@lottie/clone.json";
+import GradientSurface from "../shared/GradientSurface";
 
+/**
+ * A component that demonstrates a clone icon.
+ * The icon is displayed inside a gradient surface.
+ *
+ * @returns A React component with a clone icon.
+ */
 function Clone() {
   return (
-    <div className="mb-5 flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 p-0">
+    <GradientSurface centered className="p-0">
+      {/* The clone icon */}
       <Lottie
         animationData={CloneAnimation}
         height={50}
@@ -11,8 +19,7 @@ function Clone() {
         loop={true}
         className="-ml-5 size-60"
       />
-    </div>
+    </GradientSurface>
   );
 }
-
 export default Clone;

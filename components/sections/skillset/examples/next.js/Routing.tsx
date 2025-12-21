@@ -7,25 +7,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { cn } from "@/utils/cn";
 import { HTMLAttributes, ReactNode, useState, forwardRef } from "react";
+import GradientSurface from "../shared/GradientSurface";
 
+/**
+ * A component that demonstrates Next.js file-based routing.
+ * The component shows a basic file system with folders and files.
+ * @returns A GradientSurface component with a folder structure.
+ */
 function Routing() {
   return (
-    <div className="mb-5 space-y-2 rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-6 text-white">
+    <GradientSurface>
       <Folder name="app">
         <Folder name="blog">
           <Folder name="{ slug }">
-            <File>page.tsx</File>
+            <File />
           </Folder>
         </Folder>
         <Folder name="contact">
-          <File>page.tsx</File>
+          <File />
         </Folder>
-        <File>page.tsx</File>
+        <File />
       </Folder>
-    </div>
+    </GradientSurface>
   );
 }
-
 type FolderProps = HTMLAttributes<HTMLParagraphElement> & {
   name: string;
   children: ReactNode;
@@ -58,11 +63,11 @@ const Folder = forwardRef<HTMLParagraphElement, FolderProps>(
   },
 );
 
-function File({ children }: { children: ReactNode }) {
+function File() {
   return (
-    <Text color="white" className="mb-2 text-lg">
-      <FontAwesomeIcon icon={faFile} className="text-xl" /> {children}
-    </Text>
+    <p className="mb-2 text-lg">
+      <FontAwesomeIcon icon={faFile} className="text-xl" /> page.tsx
+    </p>
   );
 }
 

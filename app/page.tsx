@@ -7,7 +7,7 @@ import Skills from "@/components/sections/skillset/SkillSet";
 export default function Home() {
   return (
     <main>
-      <Container>
+      <Container className="w-[1300px]">
         <Header />
         <Hero />
         <Skills />

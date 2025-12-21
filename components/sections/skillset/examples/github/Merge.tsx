@@ -1,9 +1,15 @@
 import Image from "next/image";
-import BranchIcon from "@images/git-branch.svg";
+import GradientSurface from "../shared/GradientSurface";
 
+/**
+ * A component that demonstrates a merge icon.
+ * The icon is displayed inside a gradient surface.
+ * @returns A React component with a merge icon.
+ */
 function Merge() {
   return (
-    <div className="mb-5 flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 p-5">
+    <GradientSurface centered>
+      {/* The Merge icon */}
       <Image
         alt="Merge icon"
         src="/images/git-merge.svg"
@@ -11,7 +17,7 @@ function Merge() {
         height={100}
         className="block size-24"
       />
-    </div>
+    </GradientSurface>
   );
 }
 

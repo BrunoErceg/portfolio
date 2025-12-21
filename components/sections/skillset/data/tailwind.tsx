@@ -1,6 +1,7 @@
-import Responsive from "../examples/tailwind/Responsive";
+import ResponsiveGrid from "../examples/tailwind/ResponsiveGrid";
 import TailwindState from "../examples/tailwind/TailwindState";
 import Typography from "../examples/tailwind/Typography";
+import Grid from "../examples/tailwind/Grid";
 
 type SkillItem = {
   title: string;
@@ -20,7 +21,7 @@ const TailwindSkills: SkillItem[] = [
     title: "Responsive Dizajn",
     description:
       "Jednostavno kreiraš prilagodljive layoute za mobilne i desktop uređaje.",
-    example: <Responsive />,
+    example: <ResponsiveGrid />,
     type: "example",
   },
   {
@@ -33,7 +34,7 @@ const TailwindSkills: SkillItem[] = [
   {
     title: "Flexbox i Grid",
     description: "Moderne i moćne tehnike za kreiranje kompleksnih layouta.",
-
+    example: <Grid />,
     type: "example",
   },
   {

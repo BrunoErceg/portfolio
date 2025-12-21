@@ -1,8 +1,15 @@
 import Image from "next/image";
+import GradientSurface from "../shared/GradientSurface";
 
+/**
+ * A component that demonstrates a pull icon.
+ * The icon is displayed inside a gradient surface.
+ * @returns A React component with a pull icon.
+ */
 function Pull() {
   return (
-    <div className="mb-5 flex items-center justify-center rounded-2xl bg-linear-to-br from-blue-200 to-blue-400 p-5">
+    <GradientSurface centered>
+      {/* The pull icon */}
       <Image
         alt="Pull icon"
         src="/images/git-pull.svg"
@@ -10,7 +17,7 @@ function Pull() {
         height={100}
         className="block size-24"
       />
-    </div>
+    </GradientSurface>
   );
 }
 
