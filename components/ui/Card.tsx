@@ -1,10 +1,8 @@
-import Image from "next/image";
-import Stack from "@layout/Stack";
-import { Text } from "@ui/Text";
-import { useState } from "react";
-import { cn } from "@/utils/cn";
-import Arrow from "@ui/Arrow";
-import Link from "next/link";
+import Image from 'next/image';
+import Stack from '@layout/Stack';
+import Text from '@ui/Text';
+import { useState } from 'react';
+import { cn } from '@/utils/cn';
 
 type CardProps = {
   title: string;
@@ -13,7 +11,7 @@ type CardProps = {
   icon: string; // src
 };
 
-function Card({ title, description, link = "/", icon }: CardProps) {
+function Card({ title, description, link = '/', icon }: CardProps) {
   const [isHoverd, setIsHoverd] = useState(false);
   return (
     <div
@@ -27,8 +25,8 @@ function Card({ title, description, link = "/", icon }: CardProps) {
         height={200}
         alt=""
         className={cn(
-          "absolute -right-10 -bottom-10 scale-70 text-[200px] text-gray-300 grayscale-100 duration-150 ease-out",
-          isHoverd && "scale-100 rotate-5 grayscale-0",
+          'absolute -right-10 -bottom-10 scale-70 text-[200px] text-gray-300 grayscale-100 duration-150 ease-out',
+          isHoverd && 'scale-100 rotate-5 grayscale-0',
         )}
       />
       <Stack direction="col" spacing="xs">

@@ -3,7 +3,7 @@
 @theme {
   --color-primary: #126cfb;
   --color-background: #f7f9fc;
-  --color-dark: #1a1b25;
+  --color-dark: #171717;
   --color-gray: #161d2499;
 }
 
@@ -24,6 +24,8 @@ body {
   background: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 #logo {
@@ -31,4 +33,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
+}
+
+.smooth-poppins {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  perspective: 1000px;
+  backface-visibility: hidden;
 }

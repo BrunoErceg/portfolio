@@ -1,8 +1,8 @@
-import { cn } from "@/utils/cn";
-import { useEffect, useState } from "react";
-import GradientSurface from "../shared/GradientSurface";
+import { cn } from '@/utils/cn';
+import { useEffect, useState } from 'react';
+import GradientSurface from '../shared/GradientSurface';
 
-type Device = "desktop" | "tablet" | "mobile";
+type Device = 'desktop' | 'tablet' | 'mobile';
 
 /**
  * A component that renders a responsive grid based on the current device.
@@ -12,26 +12,26 @@ type Device = "desktop" | "tablet" | "mobile";
  * @returns A responsive grid component.
  */
 function ResponsiveGrid() {
-  const [currentDevice, setCurrentDevice] = useState<Device>("desktop");
+  const [currentDevice, setCurrentDevice] = useState<Device>('desktop');
 
   const ROTATION_INTERVAL_MS = 1500;
 
   const GRID_CONFIG_BY_DEVICE = {
-    desktop: "grid-cols-3",
-    tablet: "grid-cols-2",
-    mobile: "grid-cols-1",
+    desktop: 'grid-cols-3',
+    tablet: 'grid-cols-2',
+    mobile: 'grid-cols-1',
   };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentDevice((prevDevice) => {
         switch (prevDevice) {
-          case "desktop":
-            return "tablet";
-          case "tablet":
-            return "mobile";
+          case 'desktop':
+            return 'tablet';
+          case 'tablet':
+            return 'mobile';
           default:
-            return "desktop";
+            return 'desktop';
         }
       });
     }, ROTATION_INTERVAL_MS);
@@ -41,15 +41,10 @@ function ResponsiveGrid() {
 
   return (
     <GradientSurface className="flex h-58">
-      <div
-        className={cn(
-          "grid w-full gap-3",
-          GRID_CONFIG_BY_DEVICE[currentDevice],
-        )}
-      >
+      <div className={cn('grid w-full gap-3', GRID_CONFIG_BY_DEVICE[currentDevice])}>
         <GridItem />
         <GridItem />
-        <GridItem className={cn(currentDevice === "tablet" && "col-span-2")} />
+        <GridItem className={cn(currentDevice === 'tablet' && 'col-span-2')} />
       </div>
     </GradientSurface>
   );
@@ -63,7 +58,7 @@ function GridItem({ className }: GridItemProps) {
   return (
     <div
       className={cn(
-        "flex w-full items-center justify-center rounded-2xl bg-blue-300 p-3 text-center",
+        'flex w-full items-center justify-center rounded-2xl bg-white/30 p-3 text-center',
         className,
       )}
     >

@@ -1,114 +1,77 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
-import SnowAnimation from "@lottie/snow.json";
-import SunnyAnimation from "@lottie/sunny.json";
-import WindyAnimation from "@lottie/windy.json";
-import StormAnimation from "@lottie/storm.json";
-import PartlyCloudyAnimation from "@lottie/partly-cloudy.json";
-import PartlyShowerAnimation from "@lottie/partly-shower.json";
-import GradientSurface from "../shared/GradientSurface";
+// Animations
+import Lottie from 'lottie-react';
+import SnowAnimation from '@lottie/snow.json';
+import SunnyAnimation from '@lottie/sunny.json';
+import WindyAnimation from '@lottie/windy.json';
+import StormAnimation from '@lottie/storm.json';
+import PartlyCloudyAnimation from '@lottie/partly-cloudy.json';
+import PartlyShowerAnimation from '@lottie/partly-shower.json';
 
-/**
- * A React component that fetches weather data from the OpenWeatherMap API.
- * It displays a weather animation based on the weather condition.
- * @returns A React component that displays the weather data and animation.
- */
+// Hooks
+import { useWeather } from '@/hooks/useWeather';
+
+// UI components
+import GradientSurface from '../shared/GradientSurface';
+
+const WEATHER_ANIMATIONS: Record<string, any> = {
+  '01d': SunnyAnimation,
+  '01n': SunnyAnimation,
+  '02d': PartlyCloudyAnimation,
+  '02n': PartlyCloudyAnimation,
+  '03d': WindyAnimation,
+  '03n': WindyAnimation,
+  '04d': WindyAnimation,
+  '04n': WindyAnimation,
+  '09d': PartlyShowerAnimation,
+  '09n': PartlyShowerAnimation,
+  '10d': PartlyShowerAnimation,
+  '10n': PartlyShowerAnimation,
+  '11d': StormAnimation,
+  '11n': StormAnimation,
+  '13d': SnowAnimation,
+  '13n': SnowAnimation,
+  '50d': WindyAnimation,
+  '50n': WindyAnimation,
+} as const;
 
 function WeatherApi() {
-  const [weatherData, setWeatherData] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { data, isFetching, isError, error } = useWeather();
 
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
-        // Fetch weather data from the OpenWeatherMap API
-        const response = await axios.get(
-          "https://api.openweathermap.org/data/2.5/weather?id=3190941&units=metric&appid=85680025b99fdb750394d5b453c2fc8d",
-        );
-        setWeatherData(response.data);
-      } catch (error) {
-        // Handle any errors that occur during the fetch
-        setError(error instanceof Error ? error.message : "Unknown error");
-      } finally {
-        // Set the loading state to false after the fetch is completed
-        setIsLoading(false);
-      }
-    };
-
-    fetchWeatherData();
-  }, []);
-
-  /**
-   * A function that returns the weather animation data based on the weather condition.
-   * @returns The weather animation data.
-   */
-  const getWeatherAnimation = () => {
-    let animationData: any = PartlyCloudyAnimation;
-    switch (weatherData?.weather[0].description) {
-      case "clear sky":
-        animationData = SunnyAnimation;
-        break;
-      case "few clouds":
-        animationData = PartlyCloudyAnimation;
-        break;
-      case "scattered clouds":
-        animationData = WindyAnimation;
-        break;
-      case "broken clouds":
-        animationData = WindyAnimation;
-        break;
-      case "shower rain":
-        animationData = StormAnimation;
-        break;
-      case "rain":
-        animationData = PartlyShowerAnimation;
-        break;
-      case "thunderstorm":
-        animationData = StormAnimation;
-        break;
-      case "snow":
-        animationData = SnowAnimation;
-        break;
-      case "mist":
-        animationData = WindyAnimation;
-        break;
-    }
-    return animationData;
-  };
-
-  if (isLoading) {
+  if (isFetching) {
     return (
       <GradientSurface centered className="h-32">
-        <p>Loading...</p>
+        <div className="-ml-5 flex w-fit items-center">
+          <div className="mr-2 size-18 animate-pulse rounded-full bg-white/20" />
+          <div>
+            <div className="mb-2 h-8 w-25 animate-pulse rounded-md bg-white/20" />
+            <div className="h-5 w-35 animate-pulse rounded-md bg-white/20" />
+          </div>
+        </div>
       </GradientSurface>
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <GradientSurface centered className="h-32">
-        <p> {error}</p>
+        <p>{error?.message}</p>
       </GradientSurface>
     );
   }
 
   return (
     <GradientSurface centered className="h-32">
-      {weatherData && (
+      {data && (
         <div className="-ml-5 flex w-fit items-center">
           <Lottie
-            animationData={getWeatherAnimation()}
+            animationData={WEATHER_ANIMATIONS[data?.weather?.[0]?.icon] || PartlyCloudyAnimation}
             height={50}
             width={50}
             loop={true}
             className="mr-3 size-20"
           />
           <div>
-            <p className="mt-1 -mb-1 text-4xl font-semibold">
-              {Math.floor(weatherData?.main?.temp)}°C{" "}
-            </p>
+            <p className="mt-1 -mb-1 text-4xl font-semibold">{Math.floor(data?.main?.temp)}°C </p>
             <p>Šibenik, Hrvatska</p>
           </div>
         </div>

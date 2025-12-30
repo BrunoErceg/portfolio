@@ -1,7 +1,8 @@
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import GradientSurface from '../shared/GradientSurface';
 
 /**
  * A component that demonstrates the use of AnimatePresence.
@@ -18,10 +19,7 @@ function PresenceAnimation() {
    * The cards are represented as an array of objects
    * with an id property.
    */
-  const [cards, setCards] = useState([
-    { id: crypto.randomUUID() },
-    { id: crypto.randomUUID() },
-  ]);
+  const [cards, setCards] = useState([{ id: crypto.randomUUID() }, { id: crypto.randomUUID() }]);
 
   /**
    * Adds a new card to the list.
@@ -42,10 +40,7 @@ function PresenceAnimation() {
 
   return (
     <LayoutGroup>
-      <motion.div
-        layout
-        className="mb-5 flex h-70 flex-col space-y-3 rounded-2xl bg-linear-to-br from-blue-300 to-blue-400 px-10 py-5 text-white"
-      >
+      <GradientSurface className="flex h-70 flex-col items-center space-y-3">
         <AnimatePresence mode="popLayout">
           {cards.map((card) => (
             <CardDummy key={card.id} deleteCard={() => deleteCard(card.id)} />
@@ -63,18 +58,14 @@ function PresenceAnimation() {
               : {}
           }
           onClick={addCard}
-          className="mx-auto size-8 cursor-pointer rounded-xl bg-linear-to-br from-blue-400 to-blue-500"
+          className="mx-auto size-8 cursor-pointer rounded-xl bg-white/30 text-white"
         >
           <FontAwesomeIcon icon={faPlus} />
         </motion.button>
-      </motion.div>
+      </GradientSurface>
     </LayoutGroup>
   );
 }
-
-type CardDummyProps = {
-  deleteCard: () => void;
-};
 
 /**
  * A dummy card component that demonstrates the use of React Hooks
@@ -84,19 +75,19 @@ type CardDummyProps = {
  *
  * @returns A React component that displays the card.
  */
-function CardDummy({ deleteCard }: CardDummyProps) {
+function CardDummy({ deleteCard }: { deleteCard: () => void }) {
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}
       animate={{ x: 0, y: 0, opacity: 1 }}
       exit={{ x: 20, opacity: 0 }}
       layout
-      className="flex w-full items-center rounded-xl bg-white/20 p-4"
+      className="flex w-full items-center rounded-xl bg-white/30 p-4"
     >
-      <div className="mr-3 h-5 w-full rounded-full bg-blue-400" />
+      <div className="mr-3 h-5 w-full rounded-full bg-blue-500" />
       <button
         onClick={deleteCard}
-        className="cursor-pointer rounded-md bg-linear-to-br from-blue-400 to-blue-500 px-1 py-0.5 text-sm"
+        className="cursor-pointer rounded-md bg-blue-500 px-1 py-0.5 text-sm"
       >
         <FontAwesomeIcon icon={faTrash} className="text-blue-100" />
       </button>

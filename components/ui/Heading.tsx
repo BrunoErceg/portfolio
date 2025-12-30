@@ -1,33 +1,54 @@
-import { cn } from "@/utils/cn";
-import { cva, VariantProps } from "class-variance-authority";
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { cn } from '@/utils/cn';
+import { cva, VariantProps } from 'class-variance-authority';
+import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
 
 type HeadingProps = VariantProps<typeof HeadingVariants> & {
   level: 1 | 2 | 3;
+  centered?: boolean;
+  color?: 'white' | 'dark' | 'gray';
+  isAnimated?: boolean;
   className?: string;
   children: ReactNode;
 };
 
-function Heading({ level = 1, className, children, ...props }: HeadingProps) {
-  const Tag = `h${level}` as const;
-
-  return (
-    <Tag className={cn(HeadingVariants({ level }), className)} {...props}>
-      {children}
-    </Tag>
-  );
-}
-
-const HeadingVariants = cva("text-dark, font-semibold tracking-tight", {
+const HeadingVariants = cva('smooth-poppins text-dark', {
   variants: {
     level: {
-      1: " mb-6 mt-2 text-3xl leading-8  md:text-5xl text-center md:leading-13 lg:text-6xl lg:leading-16   ",
-      2: " mt-3 mb-5 leading-10 text-4xl md:leading-8 lg:text-4xl ",
-      3: " mt-2 mb-2 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ",
+      1: ' mb-6 mt-2 text-3xl leading-9 font-semibold md:text-5xl text-center md:leading-13 lg:text-6xl lg:leading-16   ',
+      2: ' mb-4 mt-5 text-3xl md:text-4xl leading-10 md:leading-11 lg:text-5xl lg:leading-14  tracking-normal ',
+      3: ' mt-2 mb-2 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ',
+    },
+    color: {
+      white: 'text-white',
+      gray: 'text-gray-600',
+      dark: 'text-dark',
+    },
+    defaultVariants: {
+      color: 'dark',
     },
   },
 });
 
-const MotionHeading = motion(Heading);
-export { Heading, MotionHeading };
+function Heading({
+  level = 1,
+  centered,
+  color,
+  className,
+  isAnimated,
+  children,
+  ...props
+}: HeadingProps) {
+  const Component = (isAnimated ? (motion as any)[`h${level}`] : `h${level}`) as any;
+
+  return (
+    <Component
+      className={cn(HeadingVariants({ level, color }), centered && 'text-center', className)}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+}
+
+export default Heading;

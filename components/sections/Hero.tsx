@@ -1,43 +1,40 @@
-"use client";
-
-// React
-import { useRef } from "react";
-
-// Animation utilities
-import getAnimateInProps from "@utils/animations";
-
-// UI components
-import { MotionHeading } from "@ui/Heading";
-import { MotionText } from "@ui/Text";
-import Highlighted from "@ui/Highlighted";
-import { MotionTag } from "@ui/Tag";
-
+import Heading from '@ui/Heading';
+import Text from '@ui/Text';
+import Highlighted from '@ui/Highlighted';
+import Tag from '@ui/Tag';
+import { AnimateIn } from '@ui/AnimateIn';
+import TypeAnimation from '../ui/TypingAnimation';
+/**
+ * The Hero component is the main section of the webpage.
+ * It contains the availability tag, the heading with animation, and the description with animation.
+ * @returns A React component that represents the Hero section.
+ */
 function Hero() {
-  const TextRef = useRef<HTMLParagraphElement>(null);
   return (
-    <section className="mt-20 flex flex-col items-center justify-center md:mt-35">
-      {/*  Availability tag */}
-      <MotionTag variant="availability" {...getAnimateInProps("bottom", 0.1)}>
-        Tražim Posao
-      </MotionTag>
+    <section className="mt-20 md:mt-35">
+      {/* 1.  Availability tag */}
+      <AnimateIn.Container>
+        <AnimateIn.Item>
+          <Tag variant="availability" text="Tražim Posao" className="mx-auto block" />
+        </AnimateIn.Item>
+        {/* 2. Heading with animation */}
 
-      {/* Heading with animation */}
-      <MotionHeading level={1} {...getAnimateInProps("bottom", 0.3)}>
-        Frontend Developer <br /> specijaliziran za
-        <Highlighted>React</Highlighted>
-      </MotionHeading>
+        <AnimateIn.Item>
+          <Heading level={1}>
+            Frontend Developer <br /> specijaliziran za <br className="md:hidden" />
+            <Highlighted words={['React', 'Next.js', 'Tailwind', 'Motion']} />
+          </Heading>
+        </AnimateIn.Item>
 
-      {/* Description with animation */}
-      <MotionText
-        variant="subheading"
-        ref={TextRef}
-        {...getAnimateInProps("bottom", 0.5)}
-      >
-        Frontend developer iz Šibenika specijaliziran za React, bez
-        komercijalnog iskustva
-        <br className="hidden lg:block" /> ali s <b>jakim projektima</b> i
-        ogromnom voljom za učenje.
-      </MotionText>
+        {/* 3. Description with animation */}
+        <AnimateIn.Item>
+          <Text variant="subheading">
+            Frontend developer iz Šibenika specijaliziran za React, bez{' '}
+            <br className="hidden lg:block" /> komercijalnog iskustva ali s ogromnom voljom za
+            učenje.
+          </Text>
+        </AnimateIn.Item>
+      </AnimateIn.Container>
     </section>
   );
 }

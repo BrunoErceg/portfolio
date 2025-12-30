@@ -1,57 +1,25 @@
-import Stack from "@/components/layout/Stack";
-import { cn } from "@/utils/cn";
-import { ReactNode, useEffect, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
-// bg-color - #ebf3ff
-// Dot color- #0e60fb
-// gradiant-light- #3698fe
-// gradiant-dark- #0a5afb
+import Stack from '@/components/layout/Stack';
+import { cn } from '@/utils/cn';
+import { ReactNode, useEffect, useState } from 'react';
+import TypingAnimation from './TypingAnimation';
 
 type HighlightedProps = {
-  children: ReactNode;
+  words: string[];
 };
 
-function Highlighted({ children }: HighlightedProps) {
+function Highlighted({ words }: HighlightedProps) {
   return (
-    <span className="relative inline-block border-2 border-[#c4dbff] bg-[#e0ecff] px-2 duration-100">
-      <GradiantText className="">
-        <TypeAnimation
-          sequence={[
-            "React", // Types 'One'
-            5000, // Waits 1s
-            "Next.js", // Deletes 'One' and types 'Two'
-            5000, // Waits 2s
-            "Tailwind", // Types 'Three' without deleting 'Two'
-            5000,
-          ]}
-          cursor={false}
-          repeat={Infinity}
-          style={{ fontSize: "1em", display: "inline-block" }}
-        />
-      </GradiantText>
+    <span className="relative px-1 py-0">
+      <span className="relative z-20 inline-block bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text p-0 text-transparent">
+        <TypingAnimation words={words} className="inline-block h-4 p-0" />
+      </span>
 
-      <Dot className="-top-1.5 -left-1.5" />
-      <Dot className="-top-1.5 -right-1.5" />
-      <Dot className="-bottom-1.5 -left-1.5" />
-      <Dot className="-right-1.5 -bottom-1.5" />
-    </span>
-  );
-}
-
-type GradiantTextProps = {
-  className?: string;
-  children: ReactNode;
-};
-
-function GradiantText({ className, children }: GradiantTextProps) {
-  return (
-    <span
-      className={cn(
-        "bg-linear-to-r from-[#3698fe] to-[#0a5afb] bg-clip-text text-transparent",
-        className,
-      )}
-    >
-      {children}
+      <span className="absolute top-1/2 left-0 z-0 inline-block h-[80%] w-full -translate-y-1/2 border-2 border-blue-200 bg-blue-100">
+        <Dot className="-top-1 -left-1 md:-top-1.5 md:-left-1.5" />
+        <Dot className="-top-1 -right-1 md:-top-1.5 md:-right-1.5" />
+        <Dot className="md-bottom-1.5 -bottom-1 -left-1 md:-left-1.5" />
+        <Dot className="-right-1 -bottom-1 md:-right-1.5 md:-bottom-1.5" />
+      </span>
     </span>
   );
 }
@@ -59,10 +27,7 @@ function GradiantText({ className, children }: GradiantTextProps) {
 function Dot({ className }: { className?: string }) {
   return (
     <span
-      className={cn(
-        "absolute h-2.5 w-2.5 rotate-45 rounded-xs bg-[#0e60fb]",
-        className,
-      )}
+      className={cn('absolute size-1.5 rotate-45 rounded-xs bg-[#0e60fb] md:size-2.5', className)}
     ></span>
   );
 }

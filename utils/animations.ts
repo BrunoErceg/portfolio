@@ -1,16 +1,13 @@
-export default function getAnimateInProps(
-  from: "none" | "bottom" | "left" = "bottom",
-  delay = 0,
-) {
+export default function getAnimateInProps(from: 'none' | 'bottom' | 'left' = 'bottom', delay = 0) {
   const initial = { opacity: 0, x: 0, y: 15 };
   const whileInView = { opacity: 1, x: 0, y: 0 };
-  const viewport = { once: true };
-  const transition = { duration: 0.3, ease: "easeOut" as const, delay: delay };
-  if (from == "left") {
+  const viewport = { once: true, amount: 0.5 };
+  const transition = { duration: 0.3, ease: 'easeOut' as const, delay: delay };
+  if (from == 'left') {
     initial.x = -15;
     initial.y = 0;
   }
-  if (from == "none") {
+  if (from == 'none') {
     initial.y = 0;
   }
 

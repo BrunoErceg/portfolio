@@ -1,10 +1,10 @@
 // React
-import { ButtonHTMLAttributes, useState } from "react";
-import Image from "next/image";
+import { ButtonHTMLAttributes, useState } from 'react';
+import Image from 'next/image';
 
 // UI components
-import { AnimatePresence, motion } from "framer-motion";
-import GradientSurface from "../shared/GradientSurface";
+import { AnimatePresence, motion } from 'framer-motion';
+import GradientSurface from '../shared/GradientSurface';
 
 /**
  * A React component that demonstrates the use of React Hooks.
@@ -20,8 +20,7 @@ function Counter() {
    * An array of all the digits from the count.
    * This is used to create an array of rolling digits.
    */
-  const digits = Math.abs(count).toString().split("").map(Number);
-
+  const digits = Math.abs(count).toString().split('').map(Number);
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
 
@@ -39,7 +38,7 @@ function Counter() {
                 initial={{ opacity: 0, x: 0, y: 10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: -10, y: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="inline-block -translate-y-2 text-center text-3xl font-bold text-white"
               >
                 -
@@ -60,7 +59,7 @@ function Counter() {
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant: "increment" | "decrement";
+  variant: 'increment' | 'decrement';
 };
 
 /**
@@ -71,13 +70,25 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 function Button({ variant, ...props }: ButtonProps) {
   return (
     <button
-      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-400 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90"
+      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-500 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90"
       {...props}
     >
-      {variant === "increment" ? (
-        <Image width={20} height={20} alt="Plus icon" src="/images/plus.svg" />
+      {variant === 'increment' ? (
+        <Image
+          width={20}
+          height={20}
+          alt="Plus icon"
+          className="size-5 select-none"
+          src="/images/plus.svg"
+        />
       ) : (
-        <Image width={20} height={20} alt="Plus icon" src="/images/minus.svg" />
+        <Image
+          width={20}
+          height={20}
+          alt="Plus icon"
+          className="size-5 select-none"
+          src="/images/minus.svg"
+        />
       )}
     </button>
   );
@@ -100,29 +111,23 @@ function RollingDigit({ digit }: { digit: number }) {
         initial={{ opacity: 0, x: 0, y: 10 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         exit={{ opacity: 0, x: -10, y: 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
         className="relative inline-block h-9 overflow-hidden"
       >
         {/* Animate the transform of the digit */}
-        <div
+        <motion.div
+          animate={{ y: -digit * 36 }}
           className="transform-gpu transition-transform duration-400 ease-out"
-          style={{
-            // Move the digit up by the height of the digit multiplied by the index
-            transform: `translateY(-${digit * 36}px)`,
-          }}
         >
           {/* Map over all the numbers and render a paragraph for each one */}
           {numbers.map((num) => {
             return (
-              <p
-                key={num}
-                className="text-center text-3xl font-bold text-white"
-              >
+              <p key={num} className="text-center text-3xl font-bold text-white">
                 {num}
               </p>
             );
           })}
-        </div>
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );

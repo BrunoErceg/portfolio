@@ -1,6 +1,7 @@
-import Image from "next/image";
-import HeartIcon from "@images/heart.svg";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import HeartIcon from '@images/heart.svg';
+import { motion } from 'framer-motion';
+import GradientSurface from '../shared/GradientSurface';
 
 /**
  * A component that demonstrates infinite animation loops
@@ -11,7 +12,7 @@ import { motion } from "framer-motion";
 
 function Loop() {
   return (
-    <div className="mb-5 flex justify-center space-y-2 overflow-hidden rounded-2xl bg-linear-to-tl from-blue-300 to-blue-400 p-9 text-white">
+    <GradientSurface className="p-10" centered>
       {/* An animated heart icon that loops indefinitely */}
       <motion.div
         drag
@@ -23,8 +24,8 @@ function Loop() {
         transition={{
           repeat: Infinity, // Repeat the animation indefinitely
           duration: 0.5, // Animation duration in seconds
-          type: "spring", // Animation type
-          repeatType: "reverse", // Animation repeat type
+          type: 'spring', // Animation type
+          repeatType: 'reverse', // Animation repeat type
         }}
         className="h-20 w-20 cursor-grab"
       >
@@ -36,7 +37,7 @@ function Loop() {
           className="pointer-events-none mx-auto opacity-60"
         />
       </motion.div>
-    </div>
+    </GradientSurface>
   );
 }
 
