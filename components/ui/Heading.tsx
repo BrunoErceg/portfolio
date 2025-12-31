@@ -12,17 +12,17 @@ type HeadingProps = VariantProps<typeof HeadingVariants> & {
   children: ReactNode;
 };
 
-const HeadingVariants = cva('smooth-poppins text-dark', {
+const HeadingVariants = cva('text-slate-900', {
   variants: {
     level: {
-      1: ' mb-6 mt-2 text-3xl leading-9 font-semibold md:text-5xl text-center md:leading-13 lg:text-6xl lg:leading-16   ',
-      2: ' mb-4 mt-5 text-3xl md:text-4xl leading-10 md:leading-11 lg:text-5xl lg:leading-14  tracking-normal ',
-      3: ' mt-2 mb-2 leading-4 md:text-xl md:leading-6 font-semibold lg:text-[22px] ',
+      1: 'text-5xl md:text-6xl text-center font-bold text-slate-900 tracking-tight mb-4',
+      2: 'text-4xl md:text-5xl font-[500] text-slate-900 tracking-tight mb-5',
+      3: 'text-2xl font-semibold text-slate-900 tracking-tight mb-1',
     },
     color: {
       white: 'text-white',
       gray: 'text-gray-600',
-      dark: 'text-dark',
+      dark: 'text-slate-900',
     },
     defaultVariants: {
       color: 'dark',

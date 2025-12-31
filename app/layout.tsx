@@ -17,9 +17,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Limelight&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=UnifrakturMaguntia&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Geist:wght@100..900&display=swap"
           rel="stylesheet"
-        />
+        />{' '}
       </head>
       <body className="relative">
         <div className="fixed bottom-0 left-0 z-50 h-7 w-full to-transparent mask-[linear-gradient(to_top,black_0%,transparent_100%)] backdrop-blur-sm" />

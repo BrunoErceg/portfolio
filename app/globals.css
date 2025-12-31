@@ -1,9 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-primary: #126cfb;
   --color-background: #f7f9fc;
-  --color-dark: #171717;
+  --color-dark: text-slate-900;
   --color-gray: #161d2499;
 }
 
@@ -18,7 +18,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Geist', sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   background: var(--color-background);
@@ -29,7 +30,7 @@ body {
 }
 
 #logo {
-  font-family: "Funnel Display", sans-serif;
+  font-family: 'Funnel Display', sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;

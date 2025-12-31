@@ -29,9 +29,8 @@ function Hero() {
         {/* 3. Description with animation */}
         <AnimateIn.Item>
           <Text variant="subheading">
-            Frontend developer iz Šibenika specijaliziran za React, bez{' '}
-            <br className="hidden lg:block" /> komercijalnog iskustva ali s ogromnom voljom za
-            učenje.
+            Frontend developer iz Šibenika specijaliziran za React, bez komercijalnog iskustva ali s
+            ogromnom voljom za učenje.
           </Text>
         </AnimateIn.Item>
       </AnimateIn.Container>

@@ -21,7 +21,7 @@ const ButtonVariants = cva('group w-fit inline-flex items-center m-2 cursor-poin
   variants: {
     variant: {
       primary:
-        'bg-blue-100 py-2 px-4 rounded-lg font-semibold text-md text-blue-500 border border-blue-200 ',
+        'bg-blue-100 py-2 px-4 rounded-full font-semibold text-md text-blue-500 border border-blue-200 ',
       white:
         'bg-white py-2 px-4 rounded-lg font-semibold text-md text-blue-500 border border-blue-100 ',
     },

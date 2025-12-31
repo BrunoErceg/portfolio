@@ -14,7 +14,7 @@ function GitHubHeader() {
         <AnimateIn.Words>Provjerite sve funkcionalnosti svih projekata na github</AnimateIn.Words>
       </Heading>
 
-      <Text variant="description" color="white" centered className="mb-8">
+      <Text variant="subheading" color="white" centered className="mb-8">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         <br className="hidden md:block" /> Enim beatae quas provident! Iste officiis quos.
       </Text>

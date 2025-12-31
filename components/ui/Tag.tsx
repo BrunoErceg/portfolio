@@ -15,13 +15,13 @@ type TagProps = VariantProps<typeof tagVariants> &
     children?: ReactNode;
   };
 
-const tagVariants = cva('w-fit smooth-poppins', {
+const tagVariants = cva('w-fit', {
   variants: {
     variant: {
-      base: 'cursor-pointer text-sm  md:text-base rounded-full border-2 font-semibold border-blue-500 px-3 py-1 md:px-4 md:py-1.5 text-blue-500 duration-400 ease-out hover:border-transparent hover:bg-linear-to-br hover:from-blue-400 hover:to-blue-500 hover:text-white',
-      availability: 'mb-4 rounded-full border border-gray-600 px-3 py-1 text-sm',
+      base: 'cursor-pointer text-sm md:text-base rounded-full border-2 font-semibold border-blue-500 px-3 py-1 md:px-4 md:py-1.5 text-blue-500 duration-400 ease-out hover:border-transparent hover:bg-linear-to-br hover:from-blue-400 hover:to-blue-500 hover:text-white',
+      availability: 'mb-4 rounded-full border text-slate-700  border-slate-700 px-3 py-1 text-sm',
       heading:
-        'rounded-full mx-auto border border-gray-600 px-3 py-1 text-sm text-blue-500 border-blue-500',
+        'mb-4 rounded-full mx-auto border border-gray-600 px-3 py-1 text-sm text-blue-500 border-blue-500',
     },
     state: {
       default: '',

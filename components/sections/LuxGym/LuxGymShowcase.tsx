@@ -33,7 +33,7 @@ function LuxGymShowcase() {
       </motion.p>
       <motion.p
         style={{ x: xRight, opacity }}
-        className="absolute top-1/2 left-1/2 ml-[20%] bg-linear-to-t from-blue-100 to-blue-50 bg-clip-text text-9xl font-semibold text-blue-200 text-transparent"
+        className="absolute top-1/2 left-1/2 ml-[20%] bg-linear-to-t from-blue-100 to-blue-50 bg-clip-text text-9xl font-semibold text-transparent"
       >
         Gym
       </motion.p>

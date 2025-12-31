@@ -41,7 +41,7 @@ function StaggeredAnimation() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-[80%] space-y-3.5 rounded-2xl bg-white/30 p-6"
+        className="my-5 w-[80%] space-y-3.5 rounded-2xl bg-white/30 p-6"
       >
         {Array.from({ length: 5 }).map((_, index) => (
           <motion.div key={index} variants={itemVariants} className="flex">

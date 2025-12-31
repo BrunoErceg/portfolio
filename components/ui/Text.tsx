@@ -6,13 +6,14 @@ import { cva, VariantProps } from 'class-variance-authority';
 const textVariants = cva('smooth-poppins', {
   variants: {
     variant: {
-      subheading: 'text-lg text-center text-dark mb-4',
-      description: 'text-[15px] leading-5.5 text-gray-600 mb-4',
+      subheading:
+        'text-base md:text-lg text-center mx-auto text-slate-600 leading-relaxed max-w-[65ch]',
+      description: 'text-md text-slate-500 leading-normal',
     },
     color: {
-      white: 'text-white',
-      gray: 'text-gray-600',
-      dark: 'text-dark',
+      white: 'text-white/80',
+      gray: 'text-slate-500',
+      dark: 'text-slate-600 ',
     },
     size: {
       small: 'text-sm',
