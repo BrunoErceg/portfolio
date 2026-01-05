@@ -1,5 +1,4 @@
 // Icons
-
 import { cn } from '@/utils/cn';
 import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -17,8 +16,10 @@ function LuxGymHeader({ className }: { className?: string }) {
         <Tag text="LuxGym" icon={faSquareWebAwesomeStroke} variant="heading" />
       </AnimateIn.Item>
 
-      <Heading level={2} className="mx-auto md:w-[80%] lg:w-[60%]" centered>
-        <AnimateIn.Words>Real life projekt u React-u za teretanu u Šibeniku</AnimateIn.Words>
+      <Heading level={2} centered>
+        <AnimateIn.Words stagger="fast">
+          Real life projekt u React-u za teretanu u Šibeniku
+        </AnimateIn.Words>
       </Heading>
 
       <AnimateIn.Item delay={1.1}>

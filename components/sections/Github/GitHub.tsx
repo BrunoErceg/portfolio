@@ -4,18 +4,8 @@ import Image from 'next/image';
 import { useRef } from 'react';
 
 function GitHub() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end start'],
-  });
-  const scale = useTransform(scrollYProgress, [0, 0.3, 1], [0.95, 1, 1]);
   return (
-    <motion.section
-      ref={targetRef}
-      style={{ scale }}
-      className="relative mb-20 overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 from-0% to-blue-500 px-10 pt-15 pb-25 text-white md:pt-25 md:pb-40 lg:px-[20%]"
-    >
+    <section className="relative mb-30 overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 from-0% to-blue-500 px-10 pt-15 pb-25 text-white md:pt-25 md:pb-40 lg:px-[20%]">
       <GitHubHeader />
 
       <div className="absolute -bottom-8 -left-10 -rotate-10 rounded-3xl bg-white/20 p-10 py-5 md:left-5 lg:left-30">
@@ -39,7 +29,7 @@ function GitHub() {
       </div>
 
       <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-full bg-linear-to-t from-blue-400 to-transparent" />
-    </motion.section>
+    </section>
   );
 }
 

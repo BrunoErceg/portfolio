@@ -7,6 +7,8 @@ import Github from '@/components/sections/Github/GitHub';
 import LuxGym from '@/components/sections/LuxGym/LuxGym';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import NpmPackage from '@/components/sections/NpmPackage/NpmPackage';
+import Contact from '@/components/sections/Contact/Contact';
 
 export default function Home() {
   const queryClient = new QueryClient();
@@ -18,8 +20,10 @@ export default function Home() {
           <Header />
           <Hero />
           <Skills />
+          <NpmPackage />
           <LuxGym />
           <Github />
+          <Contact />
         </Container>
       </main>
     </QueryClientProvider>

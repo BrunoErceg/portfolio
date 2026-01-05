@@ -16,7 +16,7 @@ const HeadingVariants = cva('text-slate-900', {
   variants: {
     level: {
       1: 'text-5xl md:text-6xl text-center font-bold text-slate-900 tracking-tight mb-4',
-      2: 'text-4xl md:text-5xl font-[500] text-slate-900 tracking-tight mb-5',
+      2: 'text-4xl md:text-5xl font-[500] text-slate-900 tracking-tight mb-5 max-w-[25ch]',
       3: 'text-2xl font-semibold text-slate-900 tracking-tight mb-1',
     },
     color: {
@@ -43,7 +43,11 @@ function Heading({
 
   return (
     <Component
-      className={cn(HeadingVariants({ level, color }), centered && 'text-center', className)}
+      className={cn(
+        HeadingVariants({ level, color }),
+        centered && 'mx-auto text-center',
+        className,
+      )}
       {...props}
     >
       {children}

@@ -7,7 +7,7 @@ const textVariants = cva('smooth-poppins', {
   variants: {
     variant: {
       subheading:
-        'text-base md:text-lg text-center mx-auto text-slate-600 leading-relaxed max-w-[65ch]',
+        'text-base md:text-lg text-center mx-auto mb-6 text-slate-600 leading-relaxed max-w-[55ch]',
       description: 'text-md text-slate-500 leading-normal',
     },
     color: {

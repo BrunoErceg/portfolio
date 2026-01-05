@@ -160,13 +160,7 @@ function Words({
   };
   const words = children.split(' ');
   return (
-    <motion.span
-      variants={getContainerVariants(stagger, delay, duration)}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: amount }}
-      className="inline-block"
-    >
+    <motion.span variants={getContainerVariants(stagger, 0, duration)} className="inline-block">
       {words.map((word, index) => (
         <motion.span key={index} variants={wordVariants} className="inline-block">
           {word}&nbsp;
