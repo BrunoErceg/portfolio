@@ -4,6 +4,14 @@ import GradientSurface from '../shared/GradientSurface';
 
 type Device = 'desktop' | 'tablet' | 'mobile';
 
+const ROTATION_INTERVAL_MS = 1500;
+
+const GRID_CONFIG_BY_DEVICE = {
+  desktop: 'grid-cols-3',
+  tablet: 'grid-cols-2',
+  mobile: 'grid-cols-1',
+} as const;
+
 /**
  * A component that renders a responsive grid based on the current device.
  * The component rotates through different devices (desktop, tablet, mobile) every 1500ms.
@@ -13,14 +21,6 @@ type Device = 'desktop' | 'tablet' | 'mobile';
  */
 function ResponsiveGrid() {
   const [currentDevice, setCurrentDevice] = useState<Device>('desktop');
-
-  const ROTATION_INTERVAL_MS = 1500;
-
-  const GRID_CONFIG_BY_DEVICE = {
-    desktop: 'grid-cols-3',
-    tablet: 'grid-cols-2',
-    mobile: 'grid-cols-1',
-  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -54,17 +54,17 @@ type GridItemProps = {
   className?: string;
 };
 
-function GridItem({ className }: GridItemProps) {
+const GridItem = ({ className }: GridItemProps) => {
   return (
     <div
       className={cn(
-        'flex w-full items-center justify-center rounded-2xl bg-white/30 p-3 text-center',
+        'flex w-full items-center justify-center rounded-2xl bg-white/30 p-3 text-center dark:bg-white/10',
         className,
       )}
     >
       <p className="font-semibold text-white">Col</p>
     </div>
   );
-}
+};
 
 export default ResponsiveGrid;

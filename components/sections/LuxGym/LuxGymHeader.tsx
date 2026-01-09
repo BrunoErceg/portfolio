@@ -9,6 +9,13 @@ import Button from '@ui/Button';
 import Heading from '@ui/Heading';
 import Tag from '@ui/Tag';
 
+/**
+ * A component that displays the LuxGym header.
+ * It displays the header text, a subtitle, and two buttons to navigate to the LuxGym website and GitHub repository.
+ * The component uses the AnimateIn component to animate the content.
+ *
+ * @returns A div element with the LuxGym header.
+ */
 function LuxGymHeader({ className }: { className?: string }) {
   return (
     <div className={cn('text-center', className)}>
@@ -24,7 +31,12 @@ function LuxGymHeader({ className }: { className?: string }) {
 
       <AnimateIn.Item delay={1.1}>
         <Button text="Pogledaj sad" icon={faDesktop} href="https://luxgym.vercel.app/" />
-        <Button text="GitHub" icon={faGithub} href="https://github.com/BrunoErceg/luxgym" />
+        <Button
+          text="GitHub"
+          icon={faGithub}
+          iconSize="lg"
+          href="https://github.com/BrunoErceg/luxgym"
+        />
       </AnimateIn.Item>
     </div>
   );

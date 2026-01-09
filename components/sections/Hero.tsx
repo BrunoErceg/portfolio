@@ -1,9 +1,9 @@
 import Heading from '@ui/Heading';
 import Text from '@ui/Text';
-import Highlighted from '@ui/Highlighted';
+import SelectionHighlight from '@/components/ui/SelectionHighlight';
 import Tag from '@ui/Tag';
 import { AnimateIn } from '@ui/AnimateIn';
-import TypeAnimation from '../ui/TypingAnimation';
+
 /**
  * The Hero component is the main section of the webpage.
  * It contains the availability tag, the heading with animation, and the description with animation.
@@ -11,18 +11,18 @@ import TypeAnimation from '../ui/TypingAnimation';
  */
 function Hero() {
   return (
-    <section className="mt-20 md:mt-35">
+    <section className="mt-10 md:mt-15">
       {/* 1.  Availability tag */}
       <AnimateIn.Container>
         <AnimateIn.Item>
-          <Tag variant="availability" text="Tražim Posao" className="mx-auto block" />
+          <Tag variant="availability" text="Tražim Posao" />
         </AnimateIn.Item>
         {/* 2. Heading with animation */}
 
         <AnimateIn.Item>
           <Heading level={1}>
             Frontend Developer <br /> specijaliziran za <br className="md:hidden" />
-            <Highlighted words={['React', 'Next.js', 'Tailwind', 'Motion']} />
+            <SelectionHighlight words={['React', 'Next.js', 'Tailwind', 'Motion']} />
           </Heading>
         </AnimateIn.Item>
 

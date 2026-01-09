@@ -13,7 +13,7 @@ function GradientSurface({ children, centered, className, ...props }: BoxProps) 
   return (
     <div
       className={cn(
-        'mb-5 rounded-2xl bg-linear-to-br from-blue-300 to-blue-600 p-5 text-white',
+        'mb-5 rounded-2xl bg-linear-to-br from-blue-300 to-blue-600 p-5 text-white dark:from-slate-700/80 dark:to-slate-600/80',
         centeredClass,
         className,
       )}

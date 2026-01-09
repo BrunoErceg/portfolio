@@ -1,5 +1,5 @@
-import { cn } from "@/utils/cn";
-import GradientSurface from "../shared/GradientSurface";
+import { cn } from '@/utils/cn';
+import GradientSurface from '../shared/GradientSurface';
 
 /**
  * A Tailwind CSS grid component.
@@ -26,18 +26,18 @@ function Grid() {
 /**
  * A single grid item component.
  * It displays a rounded item with a dashed blue border.
- * @param {string} className - The CSS class name for the item.
+ *
  * @returns A React component that displays the grid item.
  */
 
-function GridItem({ className }: { className?: string }) {
+const GridItem = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "rounded-xl border-4 border-dashed border-blue-200 bg-white/20",
+        'rounded-xl border-4 border-dashed border-blue-200 bg-white/20 dark:border-white/30 dark:bg-white/10',
         className,
       )}
     ></div>
   );
-}
+};
 export default Grid;

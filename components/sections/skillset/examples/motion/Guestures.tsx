@@ -11,11 +11,9 @@ import GradientSurface from '../shared/GradientSurface';
 
 function Gesture() {
   const [buttonContent, setButtonContent] = useState('Drag Me 🤠');
-  const handelDrag = () => {
-    return () => {
-      setButtonContent('Im dizzy 😵‍💫');
-      setTimeout(() => setButtonContent('Again 🤠'), 2000);
-    };
+  const handleDrag = () => {
+    setButtonContent('Im dizzy 😵‍💫');
+    setTimeout(() => setButtonContent('Again 🤠'), 2000);
   };
   return (
     <GradientSurface centered className="h-50">
@@ -27,8 +25,8 @@ function Gesture() {
         dragTransition={{ bounceStiffness: 900, bounceDamping: 18 }}
         whileHover={{ scale: 1 }}
         whileTap={{ scale: 0.9 }}
-        onDragEnd={handelDrag()}
-        className="flex h-13 w-40 cursor-grab items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-blue-600 text-white"
+        onDragEnd={handleDrag}
+        className="flex h-13 w-40 cursor-grab items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-blue-600 text-white dark:from-slate-700 dark:to-slate-900"
       >
         {buttonContent}
       </motion.button>

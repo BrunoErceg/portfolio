@@ -1,57 +1,51 @@
 import { cn } from '@/utils/cn';
 import { cva, VariantProps } from 'class-variance-authority';
-import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-type HeadingProps = VariantProps<typeof HeadingVariants> & {
-  level: 1 | 2 | 3;
-  centered?: boolean;
-  color?: 'white' | 'dark' | 'gray';
-  isAnimated?: boolean;
-  className?: string;
-  children: ReactNode;
-};
+type HeadingProps = VariantProps<typeof HeadingVariants> &
+  HTMLAttributes<HTMLHeadingElement> & {
+    level: 1 | 2 | 3;
+    centered?: boolean;
+    white?: boolean;
+    className?: string;
+    children: ReactNode;
+  };
 
-const HeadingVariants = cva('text-slate-900', {
+const HeadingVariants = cva('tracking-tight text-slate-900 dark:text-white/90', {
   variants: {
     level: {
-      1: 'text-5xl md:text-6xl text-center font-bold text-slate-900 tracking-tight mb-4',
-      2: 'text-4xl md:text-5xl font-[500] text-slate-900 tracking-tight mb-5 max-w-[25ch]',
-      3: 'text-2xl font-semibold text-slate-900 tracking-tight mb-1',
+      1: 'mb-4 text-5xl font-bold md:text-6xl',
+      2: 'mb-5 max-w-[25ch] text-4xl font-[500] md:text-5xl',
+      3: 'mb-1 text-2xl font-semibold',
     },
-    color: {
-      white: 'text-white',
-      gray: 'text-gray-600',
-      dark: 'text-slate-900',
+    white: {
+      true: 'text-white/90',
     },
-    defaultVariants: {
-      color: 'dark',
+    centered: {
+      true: 'mx-auto text-center',
     },
   },
 });
 
+/**
+ * A React component that displays a heading with a variant style.
+ *
+ * @returns A React component that displays a heading with a variant style.
+ */
 function Heading({
-  level = 1,
-  centered,
-  color,
+  level,
+  centered = level === 1 || level === 2,
+  white = false,
   className,
-  isAnimated,
   children,
   ...props
 }: HeadingProps) {
-  const Component = (isAnimated ? (motion as any)[`h${level}`] : `h${level}`) as any;
+  const Tag = `h${level}` as const;
 
   return (
-    <Component
-      className={cn(
-        HeadingVariants({ level, color }),
-        centered && 'mx-auto text-center',
-        className,
-      )}
-      {...props}
-    >
+    <Tag className={cn(HeadingVariants({ level, white, centered }), className)} {...props}>
       {children}
-    </Component>
+    </Tag>
   );
 }
 

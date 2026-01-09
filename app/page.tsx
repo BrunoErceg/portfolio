@@ -1,5 +1,5 @@
 'use client';
-import Header from '@layout/Header';
+
 import Container from '@layout/Container';
 import Hero from '@sections/Hero';
 import Skills from '@sections/skillset/SkillSet';
@@ -15,17 +15,12 @@ export default function Home() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main>
-        <Container className="lg:w-[1300px]">
-          <Header />
-          <Hero />
-          <Skills />
-          <NpmPackage />
-          <LuxGym />
-          <Github />
-          <Contact />
-        </Container>
-      </main>
+      <Hero />
+      <Skills />
+      <NpmPackage />
+      <LuxGym />
+      <Github />
+      <Contact />
     </QueryClientProvider>
   );
 }

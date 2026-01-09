@@ -9,7 +9,8 @@ import RollingText from './RollingText';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   AnchorHTMLAttributes<HTMLAnchorElement> &
-  VariantProps<typeof ButtonVariants> & {
+  VariantProps<typeof ButtonVariants> &
+  VariantProps<typeof iconVariants> & {
     className?: string;
     href?: string;
     centered?: boolean;
@@ -18,43 +19,72 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     icon?: IconDefinition;
   };
 
-const ButtonVariants = cva('group w-fit inline-block items-center m-2 cursor-pointer', {
+const ButtonVariants = cva(
+  'group m-2 inline-flex w-fit cursor-pointer items-center rounded-full font-semibold',
+  {
+    variants: {
+      variant: {
+        primary:
+          'border border-blue-200 bg-blue-100 text-blue-500 dark:border-blue-800 dark:bg-blue-900 dark:text-white/80',
+        secondary:
+          'bg-blue-500 text-white/90 dark:border-blue-800 dark:bg-blue-900 dark:bg-linear-to-br',
+        white: 'bg-white text-blue-500 dark:text-slate-600',
+      },
+      centered: {
+        true: 'mx-auto flex',
+      },
+      size: {
+        sm: 'px-4 py-2 text-sm',
+        md: 'text-md px-4 py-2',
+        lg: 'px-5 py-3 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  },
+);
+
+const iconVariants = cva('mr-1.5 transition-transform', {
   variants: {
-    variant: {
-      primary: 'bg-blue-100 rounded-full font-semibold  text-blue-500 border border-blue-200 ',
-      secondary: 'bg-blue-500  rounded-full font-semibold text-white  ',
-      white: 'bg-white  rounded-lg font-semibold  text-blue-500 border border-blue-100 ',
-    },
-    centered: {
-      true: 'block mx-auto',
-    },
-    size: {
-      sm: 'text-sm py-2 px-4',
-      md: 'text-md py-2 px-4',
-      lg: 'text-lg py-3 px-5',
+    iconSize: {
+      sm: 'scale-90',
+      md: 'scale-100',
+      lg: 'scale-110',
     },
   },
-  defaultVariants: {
-    variant: 'primary',
-    size: 'md',
-  },
+  defaultVariants: { iconSize: 'md' },
 });
 
+/*
+ * This is the animation for the button.
+ * It is used to add a rolling text effect to the button.
+ */
 const BUTTON_ANIMATION = {
   initial: 'rest',
   whileHover: 'hover',
   animate: 'rest',
+  whileTap: 'tap',
   variants: {
     rest: { scale: 1 },
-    hover: { scale: 1.05, transition: { staggerChildren: 0.01 } },
+    hover: { scale: 1.05, transition: { staggerChildren: 0.01 } }, // Necessary for the rolling text
+    tap: { scale: 0.95 },
   },
 };
 
+/**
+ * A React component that displays a button with the given variant style.
+ * The component is used to display buttons with the given variant style.
+ *
+ * @returns A React component that displays the button with the given variant style.
+ */
 function Button({
   variant,
   href,
   centered,
   icon,
+  iconSize,
   className,
   text,
   size,
@@ -67,14 +97,14 @@ function Button({
   const buttonType = submit || type === 'submit' ? 'submit' : 'button';
   return (
     <Component
-      {...BUTTON_ANIMATION}
+      {...BUTTON_ANIMATION} // Necessary for the rolling text
       {...linkProps}
       {...(props as any)}
       className={cn(ButtonVariants({ variant, centered, size }), className)}
       aria-label={text}
       type={href ? undefined : buttonType}
     >
-      {icon && <FontAwesomeIcon icon={icon} className="mr-1.5 scale-110" />}
+      {icon && <FontAwesomeIcon icon={icon} className={cn(iconVariants({ iconSize }))} />}
       {text && <RollingText text={text} />}
     </Component>
   );

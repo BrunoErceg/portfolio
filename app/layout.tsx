@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Providers from '@/components/Providers';
+import { Toaster } from 'sonner';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Container from '@/components/layout/Container';
 
 export const metadata: Metadata = {
   title: 'Bruno Erceg - React Developer',
@@ -12,18 +17,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Geist:wght@100..900&display=swap"
           rel="stylesheet"
-        />{' '}
+        />
       </head>
-      <body className="relative">
-        <div className="fixed bottom-0 left-0 z-50 h-7 w-full to-transparent mask-[linear-gradient(to_top,black_0%,transparent_100%)] backdrop-blur-sm" />
-        {children}
+      <body className="bg-background relative flex min-h-screen dark:bg-slate-900">
+        <Providers>
+          <Toaster position="top-center" richColors />
+          <Container className="flex flex-col justify-between lg:w-[1300px]">
+            <Header />
+            <main className="grow">{children}</main>
+            <Footer />
+            <div className="fixed bottom-0 left-0 z-50 h-7 w-full to-transparent mask-[linear-gradient(to_top,black_0%,transparent_100%)] backdrop-blur-sm" />
+          </Container>
+        </Providers>
       </body>
     </html>
   );

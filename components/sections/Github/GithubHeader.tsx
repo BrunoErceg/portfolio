@@ -9,18 +9,27 @@ import Text from '@ui/Text';
 
 function GitHubHeader() {
   return (
-    <AnimateIn.Container>
-      <Heading level={2} centered color="white">
-        <AnimateIn.Words>Provjerite sve funkcionalnosti svih projekata na github</AnimateIn.Words>
+    <>
+      <Heading level={2} white>
+        <AnimateIn.TextContainer>
+          <AnimateIn.Words>Provjerite sve funkcionalnosti svih projekata na github</AnimateIn.Words>
+        </AnimateIn.TextContainer>
       </Heading>
 
-      <Text variant="subheading" color="white" centered className="mb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        <br className="hidden md:block" /> Enim beatae quas provident! Iste officiis quos.
+      <Text variant="subheading" white className="mb-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Enim beatae quas provident! Iste
+        officiis quos.
       </Text>
 
-      <Button href="https://github.com/BrunoErceg" centered icon={faGithub} text="Github" />
-    </AnimateIn.Container>
+      <Button
+        href="https://github.com/BrunoErceg"
+        centered
+        iconSize="lg"
+        icon={faGithub}
+        variant="white"
+        text="Github"
+      />
+    </>
   );
 }
 

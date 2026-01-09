@@ -1,26 +1,24 @@
-import { forwardRef, HTMLAttributes, ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { HTMLAttributes, ReactNode } from 'react';
 import { cn } from '@utils/cn';
 import { cva, VariantProps } from 'class-variance-authority';
 
-const textVariants = cva('smooth-poppins', {
+const textVariants = cva('smooth-poppins max-w-[55ch]', {
   variants: {
     variant: {
-      subheading:
-        'text-base md:text-lg text-center mx-auto mb-6 text-slate-600 leading-relaxed max-w-[55ch]',
-      description: 'text-md text-slate-500 leading-normal',
+      subheading: 'mb-6 text-base leading-relaxed text-slate-600 md:text-lg dark:text-slate-400',
+      description: 'text-md leading-normal text-slate-500 dark:text-slate-400',
     },
-    color: {
-      white: 'text-white/80',
-      gray: 'text-slate-500',
-      dark: 'text-slate-600 ',
+    white: {
+      true: 'text-white/80',
+    },
+    centered: {
+      true: 'mx-auto text-center',
     },
     size: {
       small: 'text-sm',
-      base: 'text-[15px] ',
+      base: 'text-[15px]',
       large: 'text-lg',
       xl: 'text-xl',
-      xxl: 'text-2xl',
     },
   },
   defaultVariants: {
@@ -28,28 +26,33 @@ const textVariants = cva('smooth-poppins', {
   },
 });
 
-// Define the props for the Text component
 type TextProps = VariantProps<typeof textVariants> &
   HTMLAttributes<HTMLParagraphElement> & {
     centered?: boolean;
     className?: string;
-    isAnimated?: boolean;
     children: ReactNode;
   };
 
-const Text = forwardRef<HTMLParagraphElement, TextProps>(
-  ({ variant, color, size, centered, className, isAnimated, children, ...props }, ref) => {
-    const Component = isAnimated ? motion.p : ('p' as any);
-    return (
-      <Component
-        className={cn(textVariants({ variant, color, size }), centered && 'text-center', className)}
-        {...props}
-        ref={ref}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
+/**
+ * A React component that displays a paragraph of text with the given variant style.
+ * The component is used to display descriptions of skills or projects.
+ *
+ * @returns A React component that displays a paragraph of text with the given variant style.
+ */
+function Text({
+  variant = 'description',
+  white,
+  size,
+  centered = variant === 'subheading',
+  className,
+  children,
+  ...props
+}: TextProps) {
+  return (
+    <p className={cn(textVariants({ variant, white, size, centered }), className)} {...props}>
+      {children}
+    </p>
+  );
+}
 
 export default Text;

@@ -7,6 +7,13 @@
   --color-gray: #161d2499;
 }
 
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-background: #0f172a;
+  --color-foreground: #f7f9fc;
+}
+
 ::selection {
   color: white;
   background: var(--color-primary);
@@ -22,14 +29,13 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
-#logo {
+.funnel-display {
   font-family: 'Funnel Display', sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;

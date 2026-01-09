@@ -15,6 +15,9 @@ const TECH_STACK = [
   { name: 'GitHub', data: GitHubSkills },
 ] as const;
 
+type TechNames = (typeof TECH_STACK)[number]['name'];
+type TechData = (typeof TECH_STACK)[number]['data'];
+
 /**
  * A component that displays a list of tech stacks and their respective skills.
  * It renders a navigation bar with tabs for each tech stack and a grid of skills for the active tech stack.
@@ -25,13 +28,13 @@ function SkillSet() {
    * The state of the currently selected tech stack.
    * It is used to determine which data to display in the skills grid.
    */
-  const [currentTech, setCurrentTech] = useState<string>(TECH_STACK[0].name);
+  const [currentTech, setCurrentTech] = useState<TechNames>(TECH_STACK[0].name);
 
   /**
    * The data of the currently selected tech stack.
    * It is used to render the skills grid.
    */
-  const activeData = TECH_STACK.find(({ name }) => name === currentTech)?.data || [];
+  const activeData: TechData = TECH_STACK.find(({ name }) => name === currentTech)?.data || [];
 
   return (
     <section className="mb-30">

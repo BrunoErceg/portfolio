@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn';
 import { cubicBezier, motion } from 'framer-motion';
 
 const ROLLING_ANIMATION = {
@@ -22,7 +23,20 @@ const ROLLING_ANIMATION = {
   },
 };
 
-function RollingText({ text }: { text: string }) {
+type RollingTextProps = {
+  text: string;
+  className?: string;
+};
+
+/**
+ * A component that renders a rolling text effect.
+ * The text is split into individual characters and wrapped in a
+ * motion.span element. On hover, the characters will
+ * animate vertically and change their transform.
+ *
+ * @returns {ReactNode} - The rendered component.
+ */
+function RollingText({ text, className }: RollingTextProps) {
   const splitText = text?.split('');
 
   return (
@@ -31,10 +45,12 @@ function RollingText({ text }: { text: string }) {
         <motion.span
           variants={ROLLING_ANIMATION.item}
           key={index}
-          className="relative inline-block will-change-transform select-none"
+          className={cn('relative inline-block will-change-transform select-none')}
         >
           <span className="select-none">{char === ' ' ? '\u00A0' : char}</span>
-          <span className="absolute -bottom-full left-0 select-none">{char === ' ' ? '\u00A0' : char}</span>
+          <span className="absolute -bottom-full left-0 select-none">
+            {char === ' ' ? '\u00A0' : char}
+          </span>
         </motion.span>
       ))}
     </motion.span>

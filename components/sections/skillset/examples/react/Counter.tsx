@@ -67,32 +67,22 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
  * @returns A React component that displays the button.
  */
 
-function Button({ variant, ...props }: ButtonProps) {
+const Button = ({ variant, ...props }: ButtonProps) => {
   return (
     <button
-      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-500 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90"
+      className="flex h-10 w-10 transform-gpu cursor-pointer items-center justify-center rounded-full bg-blue-500 transition-transform duration-200 ease-in-out will-change-transform hover:scale-115 active:scale-90 dark:bg-slate-800 dark:bg-linear-to-br dark:from-slate-600 dark:to-slate-800"
       {...props}
     >
-      {variant === 'increment' ? (
-        <Image
-          width={20}
-          height={20}
-          alt="Plus icon"
-          className="size-5 select-none"
-          src="/images/plus.svg"
-        />
-      ) : (
-        <Image
-          width={20}
-          height={20}
-          alt="Plus icon"
-          className="size-5 select-none"
-          src="/images/minus.svg"
-        />
-      )}
+      <Image
+        width={20}
+        height={20}
+        alt="Plus icon"
+        className="size-5 select-none"
+        src={variant === 'increment' ? '/images/plus.svg' : '/images/minus.svg'}
+      />
     </button>
   );
-}
+};
 /**
  * A React component that displays a single digit of a counter.
  * The component will animate each time the digit changes.
@@ -100,7 +90,7 @@ function Button({ variant, ...props }: ButtonProps) {
  * @param {number} props.digit - The digit to display.
  * @returns A React component that displays the digit.
  */
-function RollingDigit({ digit }: { digit: number }) {
+const RollingDigit = ({ digit }: { digit: number }) => {
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
@@ -131,5 +121,5 @@ function RollingDigit({ digit }: { digit: number }) {
       </motion.div>
     </AnimatePresence>
   );
-}
+};
 export default Counter;

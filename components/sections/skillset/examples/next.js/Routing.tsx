@@ -8,6 +8,7 @@ import GradientSurface from '../shared/GradientSurface';
 /**
  * A component that demonstrates Next.js file-based routing.
  * The component shows a basic file system with folders and files.
+ *
  * @returns A GradientSurface component with a folder structure.
  */
 function Routing() {
@@ -32,17 +33,25 @@ type FolderProps = HTMLAttributes<HTMLParagraphElement> & {
   children: ReactNode;
 };
 
-const Folder = forwardRef<HTMLParagraphElement, FolderProps>(({ name, children }, ref) => {
+/**
+ * A component that represents a folder in the file system.
+ * It displays a folder name and a icon indicating whether the folder is open or not.
+ * When clicked, it toggles the open state of the folder.
+ * The component also renders its children if the folder is open.
+ *
+ * @returns A component representing a folder.
+ */
+const Folder = ({ name, children }: FolderProps) => {
   const [isOpen, setIsOpen] = useState(true);
-  const handelClick = () => setIsOpen(!isOpen);
+  const handleClick = () => setIsOpen(!isOpen);
 
   return (
     <div className="relative">
       <Text
-        color="white"
-        className="mb-1.5 w-auto cursor-pointer text-lg select-none"
-        onClick={handelClick}
-        ref={ref}
+        white
+        size="large"
+        className="mb-1.5 w-auto cursor-pointer select-none"
+        onClick={handleClick}
       >
         <FontAwesomeIcon
           icon={isOpen ? faFolderOpen : faFolder}
@@ -55,14 +64,19 @@ const Folder = forwardRef<HTMLParagraphElement, FolderProps>(({ name, children }
       <div className="absolute top-8 left-2.5 h-[calc(100%-35px)] w-0.5 bg-white/40"></div>
     </div>
   );
-});
+};
 
-function File() {
+/**
+ * A component that displays a single file in the file system.
+ * It displays a file icon and the name of the file.
+ * @returns A Text component with the file icon and name.
+ */
+const File = () => {
   return (
-    <p className="mb-2 text-lg">
-      <FontAwesomeIcon icon={faFile} className="text-xl" /> page.tsx
-    </p>
+    <Text className="mb-2" size="large" white>
+      <FontAwesomeIcon icon={faFile} className="text-xl text-white" /> page.tsx
+    </Text>
   );
-}
+};
 
 export default Routing;

@@ -1,7 +1,14 @@
 import Button from '@/components/ui/Button';
 import { cn } from '@/utils/cn';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { RegisterOptions, useForm, UseFormRegister, FieldError } from 'react-hook-form';
+import {
+  RegisterOptions,
+  useForm,
+  UseFormRegister,
+  FieldError,
+  SubmitHandler,
+} from 'react-hook-form';
+import { toast } from 'sonner';
 
 type ContactFormData = {
   name: string;
@@ -22,18 +29,32 @@ function ContactForm() {
       message: '',
     },
   });
-  const onSubmit = () => {
-    // Simulacija slanja (npr. API poziv)
-    console.log('Podaci s forme:');
-    reset();
-    alert('Poruka uspješno poslana!');
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success('Poruka je uspješno poslana!');
+        reset();
+      } else {
+        toast.error('Slanje nije uspjelo. Pokušajte ponovno.');
+      }
+    } catch (error) {
+      console.error('Greška:', error);
+      toast.error('Došlo je do mrežne greške.');
+    }
   };
+
   return (
     <form
-      className="flex w-full max-w-3xl flex-col gap-8 bg-blue-100 p-5 lg:p-10"
+      className="flex w-full max-w-3xl flex-col gap-8 bg-blue-100 p-5 lg:p-10 dark:bg-slate-800"
       onSubmit={handleSubmit(onSubmit)}
     >
-      {/* Red s Imenom i Emailom */}
+      {/* Red s Imenom i E-mailom */}
       <div className="flex w-full flex-col gap-10 md:flex-row">
         <FormField
           label="Ime i prezime*"
@@ -79,6 +100,7 @@ function ContactForm() {
         text={isSubmitting ? 'Slanje...' : 'Pošalji'}
         variant="secondary"
         size="lg"
+        iconSize="sm"
         centered={true}
         icon={faPaperPlane}
       />
@@ -88,7 +110,7 @@ function ContactForm() {
 
 type FormFieldProps = {
   label: string;
-  name: keyof ContactFormData; // Osigurava da 'name' mora biti jedno od polja iz ContactFormData
+  name: keyof ContactFormData;
   register: UseFormRegister<ContactFormData>;
   validation?: RegisterOptions<ContactFormData, any>;
   error?: FieldError;
@@ -111,7 +133,7 @@ const FormField = ({
     <label className="group block w-full">
       <span
         className={cn(
-          'mb-3 block text-lg font-semibold text-slate-800 duration-200 group-focus-within:text-blue-500',
+          'mb-3 block text-lg font-semibold text-slate-800 duration-200 group-focus-within:text-blue-500 dark:text-slate-100 dark:group-focus-within:text-slate-400',
           error && 'group-focus-within:text-red-500',
         )}
       >
@@ -119,17 +141,16 @@ const FormField = ({
       </span>
       <InputTag
         type={type}
-        // Spajamo bazne stilove s error stilovima
         className={cn(
           'w-full border-b-2 bg-transparent pb-2 text-lg transition-all duration-200 focus:outline-none',
-          'border-blue-300 group-focus-within:border-blue-500', // Default
-          error && 'border-red-500 group-focus-within:border-red-500', // Ako postoji greška
-          isTextArea && 'min-h-[100px]', // Specifično za poruku
+          'border-blue-300 group-focus-within:border-blue-500 dark:border-slate-100 dark:group-focus-within:border-slate-400', // Default
+          error &&
+            'border-red-500 group-focus-within:border-red-500 dark:border-red-500 dark:group-focus-within:border-red-500', // Ako postoji greška
+          isTextArea && 'min-h-[100px]',
         )}
-        // Ovdje ispravno povezujemo react-hook-form
         {...register(name, validation)}
       />
-      {/* Prikaz poruke o grešci */}
+
       {error ? (
         <p className="text-sm font-medium text-red-500">{error.message}</p>
       ) : (

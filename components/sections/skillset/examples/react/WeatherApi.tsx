@@ -13,7 +13,7 @@ import { useWeather } from '@/hooks/useWeather';
 // UI components
 import GradientSurface from '../shared/GradientSurface';
 
-const WEATHER_ANIMATIONS: Record<string, any> = {
+const WEATHER_ANIMATIONS = {
   '01d': SunnyAnimation,
   '01n': SunnyAnimation,
   '02d': PartlyCloudyAnimation,
@@ -33,10 +33,25 @@ const WEATHER_ANIMATIONS: Record<string, any> = {
   '50d': WindyAnimation,
   '50n': WindyAnimation,
 } as const;
+type WeatherIconCode = keyof typeof WEATHER_ANIMATIONS;
+
+/**
+ * WeatherApi component.
+ *
+ * This component fetches weather data from the API and displays
+ * an animation based on the weather icon code.
+ *
+ * If the data is being fetched, it displays a loading animation.
+ * If there is an error, it displays an error message.
+ *
+ * @returns {JSX.Element} WeatherApi component.
+ */
 
 function WeatherApi() {
   const { data, isFetching, isError, error } = useWeather();
+  const iconCode = data?.weather?.[0]?.icon as WeatherIconCode;
 
+  const temperature = Math.round(data?.main?.temp || 0);
   if (isFetching) {
     return (
       <GradientSurface centered className="h-32">
@@ -64,14 +79,14 @@ function WeatherApi() {
       {data && (
         <div className="-ml-5 flex w-fit items-center">
           <Lottie
-            animationData={WEATHER_ANIMATIONS[data?.weather?.[0]?.icon] || PartlyCloudyAnimation}
+            animationData={WEATHER_ANIMATIONS[iconCode] || PartlyCloudyAnimation}
             height={50}
             width={50}
             loop={true}
             className="mr-3 size-20"
           />
           <div>
-            <p className="mt-1 -mb-1 text-4xl font-semibold">{Math.floor(data?.main?.temp)}°C </p>
+            <p className="mt-1 -mb-1 text-4xl font-semibold">{temperature}°C </p>
             <p>Šibenik, Hrvatska</p>
           </div>
         </div>

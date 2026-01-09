@@ -1,5 +1,4 @@
 import { cn } from '@/utils/cn';
-import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 type StackProps = {
@@ -23,5 +22,4 @@ function Stack({ direction = 'row', spacing = 'md', children, className }: Stack
   return <div className={cn(`flex`, directionClass, spacingClass, className)}>{children}</div>;
 }
 
-const MotionStack = motion.create(Stack);
 export default Stack;

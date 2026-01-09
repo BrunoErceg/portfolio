@@ -58,7 +58,7 @@ function PresenceAnimation() {
               : {}
           }
           onClick={addCard}
-          className="mx-auto size-8 cursor-pointer rounded-xl bg-white/30 text-white"
+          className="mx-auto size-8 cursor-pointer rounded-xl bg-white/30 text-white dark:bg-linear-to-br dark:from-blue-800 dark:to-blue-900"
         >
           <FontAwesomeIcon icon={faPlus} />
         </motion.button>
@@ -75,23 +75,23 @@ function PresenceAnimation() {
  *
  * @returns A React component that displays the card.
  */
-function CardDummy({ deleteCard }: { deleteCard: () => void }) {
+const CardDummy = ({ deleteCard }: { deleteCard: () => void }) => {
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}
       animate={{ x: 0, y: 0, opacity: 1 }}
       exit={{ x: 20, opacity: 0 }}
       layout
-      className="flex w-full items-center rounded-xl bg-white/30 p-4"
+      className="flex w-full items-center rounded-xl bg-white/30 p-4 dark:bg-slate-800"
     >
-      <div className="mr-3 h-5 w-full rounded-full bg-blue-500" />
+      <div className="mr-3 h-5 w-full rounded-full bg-blue-500 dark:bg-slate-700" />
       <button
         onClick={deleteCard}
-        className="cursor-pointer rounded-md bg-blue-500 px-1 py-0.5 text-sm"
+        className="cursor-pointer rounded-md bg-blue-500 px-1.5 py-1 text-sm dark:bg-slate-700"
       >
         <FontAwesomeIcon icon={faTrash} className="text-blue-100" />
       </button>
     </motion.div>
   );
-}
+};
 export default PresenceAnimation;

@@ -1,6 +1,5 @@
-import GradientText from '@/components/ui/GradientText';
-import Heading from '@/components/ui/Heading';
-import Text from '@/components/ui/Text';
+import Heading from '@ui/Heading';
+import Text from '@ui/Text';
 import { ReactNode } from 'react';
 
 type CardProps = {
@@ -15,14 +14,18 @@ type CardProps = {
  * The component is used to display a skill or a project example.
  * @returns A React component that displays the card.
  */
-function Card({ variant, title, description, example }: CardProps) {
+function SkillCard({ variant, title, description, example }: CardProps) {
   return (
-    <div className="break-inside-avoid-column rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-5 lg:p-5">
+    <div className="break-inside-avoid-column rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-5 lg:p-5 dark:from-slate-800 dark:to-slate-800">
       {example && example}
 
       {variant === 'title' ? (
-        <Heading level={2} className="mt-0 mb-2 font-semibold">
-          <GradientText>{title}</GradientText>
+        <Heading
+          level={2}
+          centered={false}
+          className="mt-0 mb-2 bg-linear-to-r from-blue-400 to-blue-500 bg-clip-text font-semibold text-transparent dark:from-blue-600 dark:to-blue-700"
+        >
+          {title}
         </Heading>
       ) : (
         <Heading level={3}>{title}</Heading>
@@ -32,4 +35,4 @@ function Card({ variant, title, description, example }: CardProps) {
     </div>
   );
 }
-export default Card;
+export default SkillCard;
