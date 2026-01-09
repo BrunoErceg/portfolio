@@ -1,4 +1,4 @@
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 import LuxGymHeader from './LuxGymHeader';
 import LuxGymShowcase from './LuxGymShowcase';
 

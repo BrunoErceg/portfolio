@@ -5,7 +5,7 @@ import { faMessage } from '@fortawesome/free-solid-svg-icons';
 import Tag from '@ui/Tag';
 import Heading from '@ui/Heading';
 import Text from '@ui/Text';
-import { AnimateIn } from '@ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 
 /**
  * A React component that displays the Contact header.

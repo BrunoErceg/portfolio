@@ -1,5 +1,5 @@
 // UI Components
-import { AnimateIn } from '@ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 
 // Components
 import NpmCodeBlock from './NpmCodeBlock';

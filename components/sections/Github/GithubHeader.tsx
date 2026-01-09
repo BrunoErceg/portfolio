@@ -1,5 +1,5 @@
 // Icons
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 // UI

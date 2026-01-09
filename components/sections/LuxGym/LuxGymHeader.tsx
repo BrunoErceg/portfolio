@@ -4,7 +4,7 @@ import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 
 // UI components
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
 import Tag from '@ui/Tag';

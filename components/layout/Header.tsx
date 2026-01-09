@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import Stack from '@layout/Stack';
 import NavLink from '../ui/NavLink';
 import ThemeToggle from '../ui/ThemeToggle';
 import { usePathname } from 'next/navigation';

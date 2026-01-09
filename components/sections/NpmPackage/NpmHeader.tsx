@@ -6,7 +6,7 @@ import { faDesktop, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import { cn } from '@/utils/cn';
 
 // UI
-import { AnimateIn } from '@ui/AnimateIn';
+import { AnimateIn } from '@brunoerceg/animate-in';
 import Heading from '@ui/Heading';
 import Tag from '@ui/Tag';
 import Text from '@ui/Text';
