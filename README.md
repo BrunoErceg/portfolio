@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bruno Erceg Portfolio
 
-## Getting Started
+This repository contains the source code for my professional portfolio. The goal of this project is to demonstrate my ability to build clean, maintainable, and responsive web applications using modern frontend standards.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 🎯 Project Purpose
+
+As a **Junior Developer**, I built this site to solve three main challenges:
+
+- **Performance:** Ensuring fast load times and optimized asset delivery.
+- **Clean Architecture:** Using centralized constant files and modular components for scalability.
+- **UX/UI Excellence:** Implementing advanced CSS states and accessibility features.
+
+### 🛠️ Tech Stack & Tools
+
+- **Core:** React.js / Vite
+- **Styling:** Tailwind CSS
+- **State Management:** React Hooks & Context API
+- **Logic:** TypeScript / JavaScript (Clean Code principles)
+
+### 🌟 Key Technical Features
+
+- **Weather API Integration:** Implementing real-time data fetching and asynchronous state management to display live weather updates.
+- **Complex Reusable Components:** Developed a modular component architecture, allowing for high scalability and code reusability across the project.
+- **Advanced Logic Systems:** Built a complex counter system and interactive elements that demonstrate deep understanding of React state and logic.
+- **Dynamic Animations:** Integration of complex, high-performance animations for a modern and engaging user experience.
+- **Modern Contact System:** A fully functional contact form with client-side validation and clear user feedback.
+
+### 📁 Project Structure
+
+```plaintext
+src/
+├── components/   # Reusable UI elements
+├── constants/    # Centralized data (Links, API endpoints)
+├── assets/       # Images, icons, and global styles
+└── App.js        # Main application logic
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
