@@ -2,6 +2,9 @@
 import { AnimateIn } from '@brunoerceg/animate-in';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+// Links
+import { LINKS } from '@/constants/links';
+
 // UI
 import Button from '@ui/Button';
 import Heading from '@ui/Heading';
@@ -22,7 +25,7 @@ function GitHubHeader() {
       </Text>
 
       <Button
-        href="https://github.com/BrunoErceg"
+        href={LINKS.github}
         centered
         iconSize="lg"
         icon={faGithub}

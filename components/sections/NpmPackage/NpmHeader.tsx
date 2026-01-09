@@ -1,6 +1,9 @@
 // Icons
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faDesktop, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+
+// Links
+import { LINKS } from '@/constants/links';
 
 // Utils
 import { cn } from '@/utils/cn';
@@ -26,7 +29,7 @@ function NpmHeader({ className }: { className?: string }) {
       </AnimateIn.Item>
 
       <Heading level={2} centered>
-        <AnimateIn.Words stagger="fast"> NPM Packet Projekt - AnimateIn</AnimateIn.Words>
+        <AnimateIn.Words stagger="fast"> NPM package projekt - AnimateIn</AnimateIn.Words>
       </Heading>
 
       <AnimateIn.Item delay={1}>
@@ -36,8 +39,8 @@ function NpmHeader({ className }: { className?: string }) {
         </Text>
       </AnimateIn.Item>
       <AnimateIn.Item>
-        <Button text="Pogledaj sad" icon={faDesktop} href="https://luxgym.vercel.app/" />
-        <Button text="GitHub" icon={faGithub} href="https://github.com/BrunoErceg/luxgym" />
+        <Button text="NPM" icon={faBoxOpen} href={LINKS.animateInNpm} />
+        <Button text="GitHub" icon={faGithub} href={LINKS.animateInGitHub} />
       </AnimateIn.Item>
     </div>
   );

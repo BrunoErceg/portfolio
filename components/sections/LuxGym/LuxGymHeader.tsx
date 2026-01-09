@@ -3,6 +3,9 @@ import { cn } from '@/utils/cn';
 import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 
+// Links
+import { LINKS } from '@/constants/links';
+
 // UI components
 import { AnimateIn } from '@brunoerceg/animate-in';
 import Button from '@ui/Button';
@@ -30,13 +33,8 @@ function LuxGymHeader({ className }: { className?: string }) {
       </Heading>
 
       <AnimateIn.Item delay={1.1}>
-        <Button text="Pogledaj sad" icon={faDesktop} href="https://luxgym.vercel.app/" />
-        <Button
-          text="GitHub"
-          icon={faGithub}
-          iconSize="lg"
-          href="https://github.com/BrunoErceg/luxgym"
-        />
+        <Button text="Pogledaj sad" icon={faDesktop} href={LINKS.luxgym} />
+        <Button text="GitHub" icon={faGithub} iconSize="lg" href={LINKS.luxgymGitHub} />
       </AnimateIn.Item>
     </div>
   );
