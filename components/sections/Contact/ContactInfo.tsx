@@ -12,7 +12,7 @@ import Heading from '@/components/ui/Heading';
 import Text from '@/components/ui/Text';
 
 const CONTACT_INFO = [
-  { text: 'Kontakt informacije', icon: faEnvelope },
+  { text: 'brunoerceg95@gmail.com', icon: faEnvelope },
   { text: '+385 95 360 1028', icon: faPhone },
   { text: 'Danilska 5, Šibenik', icon: faLocationDot },
 ];
@@ -31,7 +31,7 @@ function ContactInfo({ className }: { className?: string }) {
         Kontakt informacije
       </Heading>
       <Text variant="description" white>
-        Slobodno posaljite poruku ili Email
+        Slobodno pošaljite poruku ili email
       </Text>
       <ul className="mt-15 space-y-5 text-lg">
         {CONTACT_INFO.map(({ text, icon }) => (

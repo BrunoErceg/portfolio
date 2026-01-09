@@ -18,11 +18,11 @@ function ContactHeader({ className }: { className?: string }) {
       <Tag text="Kontakt" icon={faMessage} variant="heading" className="block" />
       <Heading level={2} centered>
         <AnimateIn.TextContainer>
-          <AnimateIn.Words stagger="fast"> Zainteresirani? Kontaktirajte me </AnimateIn.Words>
+          <AnimateIn.Words stagger="fast">Zainteresirani? Javite se! 👋</AnimateIn.Words>
         </AnimateIn.TextContainer>
       </Heading>
       <Text variant="subheading">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. officiis quos.
+        Javite se putem broja telefona ili kontakt obrasca za dogovor.
       </Text>
     </div>
   );

@@ -12,13 +12,13 @@ function GitHubHeader() {
     <>
       <Heading level={2} white>
         <AnimateIn.TextContainer>
-          <AnimateIn.Words>Provjerite sve funkcionalnosti svih projekata na github</AnimateIn.Words>
+          <AnimateIn.Words>Funkcionalnosti ove stranice provjerite na GitHub-u</AnimateIn.Words>
         </AnimateIn.TextContainer>
       </Heading>
 
       <Text variant="subheading" white className="mb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.Enim beatae quas provident! Iste
-        officiis quos.
+        Pogledajte README za pojašnjenje API integracija, typing animacija i kompleksnih komponenti
+        ovog projekta.
       </Text>
 
       <Button
