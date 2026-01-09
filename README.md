@@ -14,25 +14,30 @@ As a **Junior Developer**, I built this site to solve three main challenges:
 
 ### 🛠️ Tech Stack & Tools
 
-- **Core:** React.js / Vite
+- **Framework:** Next.js (App Router)
 - **Styling:** Tailwind CSS
 - **State Management:** React Hooks & Context API
 - **Logic:** TypeScript / JavaScript (Clean Code principles)
 
 ### 🌟 Key Technical Features
 
-- **Weather API Integration:** Implementing real-time data fetching and asynchronous state management to display live weather updates.
-- **Complex Reusable Components:** Developed a modular component architecture, allowing for high scalability and code reusability across the project.
-- **Advanced Logic Systems:** Built a complex counter system and interactive elements that demonstrate deep understanding of React state and logic.
-- **Dynamic Animations:** Integration of complex, high-performance animations for a modern and engaging user experience.
-- **Modern Contact System:** A fully functional contact form with client-side validation and clear user feedback.
+- **Weather Logic:** Real-time data fetching with asynchronous state management.
+- **Smart Components:** Modular, reusable architecture built for scalability and performance.
+- **Visual Identity:** Custom-built typing effect with dynamic gradient highlights and animated borders.
+- **Advanced UI:** Interactive systems (counters & states) showcasing deep React logic.
+- **UX Animations:** High-performance, fluid transitions for an engaging user experience.
+- **Contact System:** Functional form with integrated client-side validation.
 
 ### 📁 Project Structure
 
 ```plaintext
-src/
-├── components/   # Reusable UI elements
-├── constants/    # Centralized data (Links, API endpoints)
-├── assets/       # Images, icons, and global styles
-└── App.js        # Main application logic
+├── components/       # Main component directory
+│   ├── ui/          # Atomic UI elements (buttons, inputs, etc.)
+│   ├── sections/    # Large page sections (Hero, About, Contact)
+│   └── layout/      # Wrapper components (Navbar, Footer, Shell)
+├── constants/       # Centralized data (Links, API endpoints, theme)
+├── hooks/           # Custom React hooks for logic reuse
+├── utils/           # Helper functions and utility logic
+├── public/          # Static assets (images, fonts, icons)
+└── (root files)     # App logic and configuration files
 ```
