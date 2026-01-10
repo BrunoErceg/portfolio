@@ -25,9 +25,9 @@ function NpmCodeBlock() {
       theme={resolvedTheme === 'dark' ? themes.jettwaveDark : MIST_THEME}
       language="jsx"
     >
-      <CodeBlock.Code className="text-md rounded-4xl bg-blue-100 p-8 font-medium lg:mx-[10%] dark:bg-slate-800">
+      <CodeBlock.Code className="rounded-4xl bg-blue-100 p-8 text-xs font-medium md:text-base lg:mx-[10%] dark:bg-slate-800">
         <div className="table-row">
-          <CodeBlock.LineNumber className="table-cell pr-4 text-right text-gray-500 select-none" />
+          <CodeBlock.LineNumber className="hidden pr-4 text-right text-gray-500 select-none md:table-cell" />
           <CodeBlock.LineContent className="table-cell wrap-break-word whitespace-pre-wrap">
             <CodeBlock.Token />
           </CodeBlock.LineContent>

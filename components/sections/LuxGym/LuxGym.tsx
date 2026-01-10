@@ -10,7 +10,10 @@ import LuxGymShowcase from './LuxGymShowcase';
  */
 function LuxGym() {
   return (
-    <section className="mb-40 flex w-full scroll-mt-[100px] flex-col justify-center" id="luxgym">
+    <section
+      className="mb-25 flex w-full scroll-mt-[100px] flex-col justify-center md:mb-40"
+      id="luxgym"
+    >
       <AnimateIn.Container amount={0.1} stagger="slow">
         <LuxGymHeader className="mb-15 md:mb-20" />
         <AnimateIn.Item delay={1.3}>

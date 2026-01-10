@@ -6,6 +6,7 @@ import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } f
 import Tag from '@ui/Tag';
 import TechSkills from './TechSkills';
 import { AnimateIn } from '@brunoerceg/animate-in';
+import { cn } from '@/utils/cn';
 
 const TECH_STACK = [
   { name: 'React', data: ReactSkills },
@@ -37,20 +38,22 @@ function SkillSet() {
   const activeData: TechData = TECH_STACK.find(({ name }) => name === currentTech)?.data || [];
 
   return (
-    <section className="mb-30">
+    <section className="mb-15 md:mb-30">
       {/* 1. Navigation bar with tabs for each tech stack */}
       <AnimateIn.Container
+        amount="any"
         stagger="fast"
-        delay={0.5}
-        className="my-10 flex flex-wrap justify-center gap-3"
+        delay={0.4}
+        className="my-5 flex flex-wrap justify-center gap-3"
       >
-        <AnimateIn.Item className="flex flex-wrap justify-center gap-2">
+        <AnimateIn.Item className="grid grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">
           {TECH_STACK.map(({ name }, index) => (
             <Tag
               key={index}
               variant="base"
               onClick={() => setCurrentTech(name)}
               text={name}
+              className={cn('col-span-2', index === 3 && 'col-start-2 md:col-start-auto')}
               state={currentTech === name ? 'selected' : 'default'}
             />
           ))}

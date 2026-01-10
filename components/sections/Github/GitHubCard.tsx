@@ -22,7 +22,7 @@ function GitHubCard({ side, img, alt, className }: GitHubCardProps) {
   return (
     <div
       className={cn(
-        'absolute -bottom-8 rounded-3xl bg-white/20 p-10 py-5 dark:bg-slate-600',
+        'absolute -bottom-8 z-10 rounded-3xl bg-white/20 p-5 md:px-10 md:py-5 dark:bg-slate-600',
         side === 'left'
           ? '-right-10 rotate-10 md:right-5 lg:right-30'
           : '-left-10 -rotate-10 md:left-5 lg:left-30',
@@ -34,7 +34,7 @@ function GitHubCard({ side, img, alt, className }: GitHubCardProps) {
         alt={alt}
         width={300}
         height={300}
-        className="w-30 opacity-80 select-none md:w-45 lg:w-50 dark:brightness-20 dark:grayscale"
+        className="w-25 opacity-80 select-none md:w-45 lg:w-50 dark:brightness-20 dark:grayscale"
       />
     </div>
   );

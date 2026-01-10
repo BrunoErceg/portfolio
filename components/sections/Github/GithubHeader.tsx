@@ -12,7 +12,7 @@ import Text from '@ui/Text';
 
 function GitHubHeader() {
   return (
-    <>
+    <div className="relative z-20">
       <Heading level={2} white>
         <AnimateIn.TextContainer>
           <AnimateIn.Words>Funkcionalnosti ove stranice provjerite na GitHub-u</AnimateIn.Words>
@@ -32,7 +32,7 @@ function GitHubHeader() {
         variant="white"
         text="Github"
       />
-    </>
+    </div>
   );
 }
 

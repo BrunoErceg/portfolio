@@ -26,14 +26,14 @@ const CONTACT_INFO = [
  */
 function ContactInfo({ className }: { className?: string }) {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 to-blue-500 p-10 text-lg text-white lg:w-1/3 dark:from-slate-800 dark:to-slate-900">
+    <div className="relative flex flex-col overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 to-blue-500 p-7 text-lg text-white md:p-10 lg:w-1/3 dark:from-slate-800 dark:to-slate-900">
       <Heading level={3} white>
         Kontakt informacije
       </Heading>
-      <Text variant="description" white>
+      <Text variant="description" size="small" white>
         Slobodno pošaljite poruku ili email
       </Text>
-      <ul className="mt-15 space-y-5 text-lg">
+      <ul className="mt-10 space-y-3 text-sm md:mt-15 md:space-y-5 md:text-lg">
         {CONTACT_INFO.map(({ text, icon }) => (
           <li key={text}>
             <FontAwesomeIcon icon={icon} className="mr-2" />

@@ -8,9 +8,9 @@ import { usePathname } from 'next/navigation';
 function Header() {
   const pathname = usePathname();
   return (
-    <header className="mt-5 mb-10 flex items-center justify-between rounded-full bg-white px-5 py-4 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] dark:bg-slate-800">
+    <header className="mt-3 mb-0 flex items-center justify-between rounded-full bg-white px-3 py-1 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:mt-5 md:mb-10 md:px-5 md:py-4 dark:bg-slate-800">
       <Link href="/">
-        <p id="logo" className="text-dark funnel-display ml-2 text-3xl">
+        <p id="logo" className="text-dark funnel-display ml-2 text-xl md:text-3xl">
           Bruno.
         </p>
       </Link>

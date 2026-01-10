@@ -13,9 +13,9 @@ import NpmHeader from './NpmHeader';
  */
 function NpmPackage() {
   return (
-    <section className="mb-40 scroll-mt-[100px]" id="npm">
+    <section className="mb-20 scroll-mt-[100px] md:mb-40" id="npm">
       <AnimateIn.Container amount={0.2} stagger="slow">
-        <NpmHeader className="mb-20" />
+        <NpmHeader className="mb-10 md:mb-15" />
         <AnimateIn.Item className="relative h-fit rounded-4xl">
           <NpmCodeBlock />
         </AnimateIn.Item>

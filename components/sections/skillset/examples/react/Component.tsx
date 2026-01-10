@@ -11,7 +11,7 @@ function Component() {
     'text-md w-full rounded-xl bg-white/20 p-3 text-center text-white mt-2.5 focus:border-transparent focus:ring-0 focus:outline-none';
 
   return (
-    <GradientSurface>
+    <GradientSurface className="p-4">
       <div className="relative overflow-hidden rounded-xl bg-white/20 p-3 text-center">
         <motion.div
           /**

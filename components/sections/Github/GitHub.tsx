@@ -11,7 +11,7 @@ function GitHub() {
   return (
     <section
       id="github"
-      className="relative mb-30 scroll-mt-[100px] overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 from-0% to-blue-500 px-10 pt-15 pb-25 text-white md:pt-25 md:pb-40 lg:px-[20%] dark:from-slate-800/80 dark:to-slate-800"
+      className="relative mb-15 scroll-mt-[100px] overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 from-0% to-blue-500 px-5 pt-15 pb-25 text-white md:mb-30 md:pt-25 md:pb-40 lg:px-[20%] dark:from-slate-800/80 dark:to-slate-800"
     >
       <GitHubHeader />
       <GitHubCard side="left" img={'/images/github-logo.svg'} alt="github" />

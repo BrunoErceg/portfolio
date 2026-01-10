@@ -13,7 +13,7 @@ function Hero() {
   return (
     <section className="mt-10 md:mt-15">
       {/* 1.  Availability tag */}
-      <AnimateIn.Container>
+      <AnimateIn.Container amount="any" stagger="fast">
         <AnimateIn.Item>
           <Tag variant="availability" text="Tražim Posao" />
         </AnimateIn.Item>
@@ -21,7 +21,7 @@ function Hero() {
 
         <AnimateIn.Item>
           <Heading level={1}>
-            Frontend Developer <br /> specijaliziran za <br className="md:hidden" />
+            Frontend Developer specijaliziran za <br className="md:hidden" />
             <SelectionHighlight words={['React', 'Next.js', 'Tailwind', 'Motion']} />
           </Heading>
         </AnimateIn.Item>

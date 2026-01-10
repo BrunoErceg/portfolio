@@ -34,9 +34,9 @@ const ButtonVariants = cva(
         true: 'mx-auto flex',
       },
       size: {
-        sm: 'px-4 py-2 text-sm',
-        md: 'text-md px-4 py-2',
-        lg: 'px-5 py-3 text-lg',
+        sm: 'px-2.5 py-1.5 text-xs md:px-4 md:py-2 md:text-sm',
+        md: 'md:text-md px-2.5 py-1.5 text-sm md:px-4 md:py-2',
+        lg: 'px-4 py-2 text-base md:px-5 md:py-3 md:text-lg',
       },
     },
     defaultVariants: {

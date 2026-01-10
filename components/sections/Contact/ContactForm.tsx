@@ -51,11 +51,11 @@ function ContactForm() {
 
   return (
     <form
-      className="flex w-full max-w-3xl flex-col gap-8 bg-blue-100 p-5 lg:p-10 dark:bg-slate-800"
+      className="flex w-full max-w-3xl flex-col gap-5 bg-blue-100 p-5 md:gap-10 lg:p-10 dark:bg-slate-800"
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* Red s Imenom i E-mailom */}
-      <div className="flex w-full flex-col gap-10 md:flex-row">
+      <div className="flex w-full flex-col gap-5 md:flex-row md:gap-10">
         <FormField
           label="Ime i prezime*"
           name="name"
@@ -133,7 +133,7 @@ const FormField = ({
     <label className="group block w-full">
       <span
         className={cn(
-          'mb-3 block text-lg font-semibold text-slate-800 duration-200 group-focus-within:text-blue-500 dark:text-slate-100 dark:group-focus-within:text-slate-400',
+          'mb-3 block text-base font-semibold text-slate-800 duration-200 group-focus-within:text-blue-500 md:text-lg dark:text-slate-100 dark:group-focus-within:text-slate-400',
           error && 'group-focus-within:text-red-500',
         )}
       >

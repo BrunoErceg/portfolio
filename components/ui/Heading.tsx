@@ -14,8 +14,8 @@ type HeadingProps = VariantProps<typeof HeadingVariants> &
 const HeadingVariants = cva('tracking-tight text-slate-900 dark:text-white/90', {
   variants: {
     level: {
-      1: 'mb-4 text-5xl font-bold md:text-6xl',
-      2: 'mb-5 max-w-[25ch] text-4xl font-[500] md:text-5xl',
+      1: 'mb-4 max-w-[20ch] text-3xl font-bold md:text-6xl',
+      2: 'mb-5 max-w-[25ch] text-3xl font-[500] md:text-5xl',
       3: 'mb-1 text-2xl font-semibold',
     },
     white: {
