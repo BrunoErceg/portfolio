@@ -43,7 +43,7 @@ function SkillSet() {
       <AnimateIn.Container
         amount="any"
         stagger="fast"
-        delay={0.4}
+        delay={0.5}
         className="my-5 flex flex-wrap justify-center gap-3"
       >
         <AnimateIn.Item className="grid grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">

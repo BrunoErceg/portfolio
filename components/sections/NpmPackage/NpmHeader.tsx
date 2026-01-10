@@ -32,13 +32,13 @@ function NpmHeader({ className }: { className?: string }) {
         <AnimateIn.Words stagger="fast"> NPM package projekt - AnimateIn</AnimateIn.Words>
       </Heading>
 
-      <AnimateIn.Item delay={1}>
+      <AnimateIn.Item delay={0.5}>
         <Text variant="subheading">
           Lagani npm paket za brzu implementaciju modernih efekata pojavljivanja elemenata unutar
           svakog React projekta.
         </Text>
       </AnimateIn.Item>
-      <AnimateIn.Item>
+      <AnimateIn.Item delay={0.6}>
         <Button text="NPM" icon={faBoxOpen} href={LINKS.animateInNpm} />
         <Button text="GitHub" icon={faGithub} href={LINKS.animateInGitHub} />
       </AnimateIn.Item>

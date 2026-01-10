@@ -27,12 +27,12 @@ function LuxGymHeader({ className }: { className?: string }) {
       </AnimateIn.Item>
 
       <Heading level={2} centered>
-        <AnimateIn.Words stagger="fast">
+        <AnimateIn.Words stagger={0.05}>
           Real life projekt u React-u za teretanu u Šibeniku
         </AnimateIn.Words>
       </Heading>
 
-      <AnimateIn.Item delay={1.1}>
+      <AnimateIn.Item delay={0.6}>
         <Button text="Pogledaj sad" icon={faDesktop} href={LINKS.luxgym} />
         <Button text="GitHub" icon={faGithub} iconSize="lg" href={LINKS.luxgymGitHub} />
       </AnimateIn.Item>

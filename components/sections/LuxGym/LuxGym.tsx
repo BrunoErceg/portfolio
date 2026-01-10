@@ -14,9 +14,9 @@ function LuxGym() {
       className="mb-25 flex w-full scroll-mt-[100px] flex-col justify-center md:mb-40"
       id="luxgym"
     >
-      <AnimateIn.Container amount={0.1} stagger="slow">
+      <AnimateIn.Container amount="any">
         <LuxGymHeader className="mb-15 md:mb-20" />
-        <AnimateIn.Item delay={1.3}>
+        <AnimateIn.Item delay={0.8}>
           <LuxGymShowcase />
         </AnimateIn.Item>
       </AnimateIn.Container>
