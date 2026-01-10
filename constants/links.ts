@@ -1,6 +1,6 @@
 export const LINKS = {
   instagram: 'https://www.instagram.com/erceg.95/',
-  github: 'https://github.com/BrunoErceg',
+  github: 'https://github.com/BrunoErceg/portfolio',
   luxgym: 'https://lux-gym.hr/',
   luxgymGitHub: 'https://github.com/BrunoErceg/LuxGym',
   animateInNpm: 'https://www.npmjs.com/package/@brunoerceg/animate-in',
