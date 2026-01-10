@@ -55,7 +55,7 @@ const FloatingText = forwardRef<HTMLParagraphElement, FloatingTextProps>(
         style={style}
         ref={ref}
         className={cn(
-          'absolute top-1/2 bg-linear-to-t from-blue-100 to-blue-50 bg-clip-text text-9xl font-semibold text-transparent dark:from-slate-800 dark:to-slate-900',
+          'absolute top-1/2 hidden bg-linear-to-t from-blue-100 to-blue-50 bg-clip-text text-9xl font-semibold text-transparent md:block dark:from-slate-800 dark:to-slate-900',
           side === 'left' ? 'left-1/2 ml-[20%]' : 'right-1/2 mr-[20%]',
         )}
       >
