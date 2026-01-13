@@ -1,4 +1,4 @@
-import SectionHeader from '@/components/ui/SectionHeader';
+import { SectionHeader } from '@/components/ui';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';

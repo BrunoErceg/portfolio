@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import RollingText from './RollingText';
+import { RollingText } from '@ui';
 
 type NavLinkProps = {
   name: string;
@@ -21,7 +21,7 @@ const containerVariants = {
  *
  * @returns A motion button element with a rolling text effect.
  */
-function NavLink({ name, section }: NavLinkProps) {
+export function NavLink({ name, section }: NavLinkProps) {
   const handleScroll = () => {
     const targetSection = document.getElementById(section);
 
@@ -46,5 +46,3 @@ function NavLink({ name, section }: NavLinkProps) {
     </motion.button>
   );
 }
-
-export default NavLink;

@@ -1,14 +1,14 @@
 import React, { ComponentProps, createContext, ReactNode, useContext } from 'react';
 import { AnimateIn } from '@brunoerceg/animate-in';
 import { cn } from '@/utils/cn';
-import Tag from '@ui/Tag';
-import Heading from '@ui/Heading';
-import Text from '@ui/Text';
-import Button from './Button';
-
+import { Button, Heading, Tag, Text } from '@ui';
 const SectionHeaderContext = createContext({ isWhite: false });
 
-function SectionHeader({
+/**
+ * A flexible header component for page sections using the compound pattern.
+ * Supports an optional 'white' theme via context.
+ */
+export function SectionHeader({
   children,
   white = false,
   className,
@@ -61,5 +61,3 @@ SectionHeader.Button = ({ ...props }: ComponentProps<typeof Button>) => {
   const { isWhite } = useContext(SectionHeaderContext);
   return <Button variant={isWhite ? 'white' : 'primary'} {...props} />;
 };
-
-export default SectionHeader;

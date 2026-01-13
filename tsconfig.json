@@ -25,7 +25,7 @@
       "@sections/*": ["./components/sections/*"],
       "@Skills/*": ["./components/sections/skillset/*"],
       "@layout/*": ["./components/layout/*"],
-      "@ui/*": ["./components/ui/*"],
+      "@ui": ["./components/ui/index.ts"],
       "@utils/*": ["./utils/*"]
     }
   },

@@ -4,11 +4,8 @@ import Image from 'next/image';
 import { forwardRef, useRef } from 'react';
 
 /**
- * A component that displays a showcase image of LuxGym with a floating text effect.
- * The floating text is animated based on the scroll position of the page.
- * The text is displayed on the left and right sides of the showcase image and
- * is animated to move towards the center of the image as the user scrolls towards it.
- * The opacity of the text is also animated to fade in and out based on the scroll position.
+ * Parallax showcase for LuxGym.
+ * Animates "LUX" and "GYM" text based on scroll progress to create a floating depth effect.
  */
 function LuxGymShowcase() {
   const targetRef = useRef(null);

@@ -11,7 +11,7 @@ type TypeAnimationProps = {
  *
  * @returns A span element with the typing animation effect.
  */
-function TypingAnimation({ words, className }: TypeAnimationProps) {
+export function TypingAnimation({ words, className }: TypeAnimationProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState(words[0]);
   const [isDeleting, setIsDeleting] = useState(true);
@@ -42,5 +42,3 @@ function TypingAnimation({ words, className }: TypeAnimationProps) {
 
   return <span className={className}>{displayedText}</span>;
 }
-
-export default TypingAnimation;

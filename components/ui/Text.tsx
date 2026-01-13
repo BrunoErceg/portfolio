@@ -39,7 +39,7 @@ type TextProps = VariantProps<typeof textVariants> &
  *
  * @returns A React component that displays a paragraph of text with the given variant style.
  */
-function Text({
+export function Text({
   variant = 'description',
   white,
   size,
@@ -54,5 +54,3 @@ function Text({
     </p>
   );
 }
-
-export default Text;

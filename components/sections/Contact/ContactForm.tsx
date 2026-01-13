@@ -1,4 +1,4 @@
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui';
 import { cn } from '@/utils/cn';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -101,7 +101,6 @@ function ContactForm() {
         variant="secondary"
         size="lg"
         iconSize="sm"
-        centered={true}
         icon={faPaperPlane}
       />
     </form>

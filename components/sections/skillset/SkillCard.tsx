@@ -1,5 +1,4 @@
-import Heading from '@ui/Heading';
-import Text from '@ui/Text';
+import { Heading, Text } from '@ui';
 import { ReactNode } from 'react';
 
 type CardProps = {

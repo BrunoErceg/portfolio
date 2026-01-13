@@ -6,10 +6,9 @@ import {
   faLocationDot,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
+import { Heading, Text } from '@/components/ui';
 
 // UI
-import Heading from '@/components/ui/Heading';
-import Text from '@/components/ui/Text';
 
 const CONTACT_INFO = [
   { text: 'brunoerceg95@gmail.com', icon: faEnvelope },

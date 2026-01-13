@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { cva, VariantProps } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import RollingText from './RollingText';
+import { RollingText } from './RollingText';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   AnchorHTMLAttributes<HTMLAnchorElement> &
@@ -75,7 +75,7 @@ const BUTTON_ANIMATION = {
  *
  * @returns A React component that displays the button with the given variant style.
  */
-function Button({
+export function Button({
   variant,
   href,
   icon,
@@ -104,5 +104,3 @@ function Button({
     </Component>
   );
 }
-
-export default Button;

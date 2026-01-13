@@ -49,7 +49,7 @@ const tagVariants = cva('mx-auto block w-fit rounded-full px-3 py-1 text-sm', {
  * A React component that displays a tag with a variant style.
  * @returns A React component that displays a tag with a variant style.
  */
-function Tag({ text, icon, variant, white, state, className, ...props }: TagProps) {
+export function Tag({ text, icon, variant, white, state, className, ...props }: TagProps) {
   return (
     <button className={cn(tagVariants({ variant, white, state }), className)} {...props}>
       {variant === 'availability' && <GreenLight />}
@@ -72,5 +72,3 @@ function GreenLight() {
     />
   );
 }
-
-export default Tag;

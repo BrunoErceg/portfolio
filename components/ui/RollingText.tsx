@@ -36,7 +36,7 @@ type RollingTextProps = {
  *
  * @returns {ReactNode} - The rendered component.
  */
-function RollingText({ text, className }: RollingTextProps) {
+export function RollingText({ text }: RollingTextProps) {
   const splitText = text?.split('');
 
   return (
@@ -56,5 +56,3 @@ function RollingText({ text, className }: RollingTextProps) {
     </motion.span>
   );
 }
-
-export default RollingText;

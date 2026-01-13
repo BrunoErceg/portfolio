@@ -32,7 +32,7 @@ const HeadingVariants = cva('tracking-tight text-slate-900 dark:text-white/90', 
  *
  * @returns A React component that displays a heading with a variant style.
  */
-function Heading({
+export function Heading({
   level,
   centered = level === 1 || level === 2,
   white = false,
@@ -48,5 +48,3 @@ function Heading({
     </Tag>
   );
 }
-
-export default Heading;

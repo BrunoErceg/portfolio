@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } from './data/index';
 
 // Components
-import Tag from '@ui/Tag';
-import TechSkills from './TechSkills';
-import { AnimateIn } from '@brunoerceg/animate-in';
+import { Tag } from '@ui';
 import { cn } from '@/utils/cn';
+import { AnimateIn } from '@brunoerceg/animate-in';
+import TechSkills from './TechSkills';
 
 const TECH_STACK = [
   { name: 'React', data: ReactSkills },

@@ -1,5 +1,6 @@
+import { SectionHeader } from '@/components/ui';
 import GitHubCard from './GitHubCard';
-import SectionHeader from '@/components/ui/SectionHeader';
+
 import { LINKS } from '@/constants/links';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 

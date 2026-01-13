@@ -1,6 +1,6 @@
 'use client';
 
-import Hero from '@sections/Hero';
+import { Hero } from '@sections/Hero';
 import Skills from '@sections/skillset/SkillSet';
 import Github from '@/components/sections/Github/GitHub';
 import LuxGym from '@/components/sections/LuxGym/LuxGym';

@@ -1,5 +1,5 @@
 import { cn } from '@/utils/cn';
-import TypingAnimation from './TypingAnimation';
+import { TypingAnimation } from '@ui';
 
 type SelectionHighlightProps = {
   words: string[];
@@ -22,7 +22,7 @@ const POSITIONS = [
  *
  * @returns {ReactNode} - The highlighted selection of words.
  */
-function SelectionHighlight({ words }: SelectionHighlightProps) {
+export function SelectionHighlight({ words }: SelectionHighlightProps) {
   return (
     <span className="relative px-1 py-0">
       <span className="relative z-20 inline-block bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text p-0 text-transparent dark:from-blue-500 dark:to-blue-700">
@@ -54,5 +54,3 @@ function Dot({ className }: { className?: string }) {
     />
   );
 }
-
-export default SelectionHighlight;

@@ -1,16 +1,11 @@
 import { AnimateIn } from '@brunoerceg/animate-in';
 import LuxGymShowcase from './LuxGymShowcase';
-import SectionHeader from '@/components/ui/SectionHeader';
+
 import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import { LINKS } from '@/constants/links';
+import { SectionHeader } from '@/components/ui';
 
-/**
- * A component that displays the LuxGym section.
- * It displays the header, a showcase image, and animates the content
- * using the AnimateIn component.
- * @returns A section element with a header and showcase image.
- */
 function LuxGym() {
   return (
     <section
@@ -19,7 +14,7 @@ function LuxGym() {
     >
       <SectionHeader className="mb-15 md:mb-20">
         <SectionHeader.Tag text="Lux Gym" icon={faSquareWebAwesomeStroke} />
-        <SectionHeader.Title text="Real life projekt u React-u za teretanu u Šibeniku" />
+        <SectionHeader.Title text="Produkcijski Next.js projekt za fitness centar u Šibeniku" />
         <SectionHeader.Buttons>
           <SectionHeader.Button text="Pogledaj sad" icon={faDesktop} href={LINKS.luxgym} />
           <SectionHeader.Button text="GitHub" icon={faGithub} href={LINKS.luxgymGitHub} />

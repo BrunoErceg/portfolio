@@ -3,11 +3,10 @@ import { AnimateIn } from '@brunoerceg/animate-in';
 
 // Components
 import NpmCodeBlock from './NpmCodeBlock';
-import SectionHeader from '@/components/ui/SectionHeader';
 import { faBoxOpen, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { LINKS } from '@/constants/links';
-import Button from '@/components/ui/Button';
+import { SectionHeader } from '@/components/ui';
 
 /**
  * A component that displays the Npm Package section.

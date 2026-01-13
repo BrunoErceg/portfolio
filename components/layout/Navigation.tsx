@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
-import NavLink from '@ui/NavLink';
-import ThemeToggle from '@ui/ThemeToggle';
+import { NavLink, ThemeToggle } from '@ui';
 import { usePathname } from 'next/navigation';
 
 // Main navigation header with logo and social links

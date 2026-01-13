@@ -1,4 +1,4 @@
-import Text from '@/components/ui/Text';
+import { Text } from '@ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faFolderOpen, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { cn } from '@/utils/cn';

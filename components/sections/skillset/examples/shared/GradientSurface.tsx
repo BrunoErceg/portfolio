@@ -1,5 +1,4 @@
 import { cn } from '@/utils/cn';
-import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 
 type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
