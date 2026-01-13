@@ -18,7 +18,7 @@ type GitHubCardProps = {
  *
  * @returns {JSX.Element} - The JSX element of the component.
  */
-function GitHubCard({ side, img, alt, className }: GitHubCardProps) {
+export function GitHubCard({ side, img, alt, className }: GitHubCardProps) {
   return (
     <div
       className={cn(
@@ -39,5 +39,3 @@ function GitHubCard({ side, img, alt, className }: GitHubCardProps) {
     </div>
   );
 }
-
-export default GitHubCard;

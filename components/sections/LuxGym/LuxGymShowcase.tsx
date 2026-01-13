@@ -7,7 +7,7 @@ import { forwardRef, useRef } from 'react';
  * Parallax showcase for LuxGym.
  * Animates "LUX" and "GYM" text based on scroll progress to create a floating depth effect.
  */
-function LuxGymShowcase() {
+export function LuxGymShowcase() {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -61,5 +61,3 @@ const FloatingText = forwardRef<HTMLParagraphElement, FloatingTextProps>(
     );
   },
 );
-
-export default LuxGymShowcase;

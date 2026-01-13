@@ -1,4 +1,4 @@
-import SkillCard from './SkillCard';
+import { SkillCard } from './SkillCard';
 import { SkillItem } from './types';
 
 type SkillDataProps = {
@@ -11,7 +11,7 @@ type SkillDataProps = {
  * @param {{ techSkills: SkillItem[] }} props - The props object containing the list of tech skills.
  * @returns A React component that renders the tech skills grid.
  */
-function TechSkills({ techSkills }: SkillDataProps) {
+export function TechSkills({ techSkills }: SkillDataProps) {
   return (
     <div className="mt-5 w-full space-y-3 md:mt-10 lg:mt-15 lg:columns-3 lg:gap-3 lg:space-y-4 [@media(max-width:1300px)]:columns-2 [@media(max-width:770px)]:columns-1">
       {/* Render each skill item as a Card */}
@@ -31,4 +31,3 @@ function TechSkills({ techSkills }: SkillDataProps) {
     </div>
   );
 }
-export default TechSkills;

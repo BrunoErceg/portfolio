@@ -1,12 +1,12 @@
 import { AnimateIn } from '@brunoerceg/animate-in';
-import LuxGymShowcase from './LuxGymShowcase';
+import { LuxGymShowcase } from './LuxGymShowcase';
 
 import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import { LINKS } from '@/constants/links';
 import { SectionHeader } from '@/components/ui';
 
-function LuxGym() {
+export function LuxGym() {
   return (
     <section
       className="mb-25 flex w-full scroll-mt-[100px] flex-col justify-center md:mb-40"
@@ -27,5 +27,3 @@ function LuxGym() {
     </section>
   );
 }
-
-export default LuxGym;

@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
  * The code block is wrapped in a div with a class of "h-[664px] w-full animate-pulse lg:mx-[10%]" when it is not mounted.
  * @returns A JSX element that renders a code block.
  */
-function NpmCodeBlock() {
+export function NpmCodeBlock() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -36,5 +36,3 @@ function NpmCodeBlock() {
     </CodeBlock>
   );
 }
-
-export default NpmCodeBlock;

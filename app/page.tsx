@@ -1,13 +1,6 @@
 'use client';
-
-import { Hero } from '@sections/Hero';
-import Skills from '@sections/skillset/SkillSet';
-import Github from '@/components/sections/Github/GitHub';
-import LuxGym from '@/components/sections/LuxGym/LuxGym';
-
+import { Contact, GitHub, Hero, LuxGym, NpmPackage, SkillSet } from '@sections/index';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import NpmPackage from '@/components/sections/NpmPackage/NpmPackage';
-import Contact from '@/components/sections/Contact/Contact';
 
 export default function Home() {
   const queryClient = new QueryClient();
@@ -15,10 +8,10 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <Hero />
-      <Skills />
+      <SkillSet />
       <NpmPackage />
       <LuxGym />
-      <Github />
+      <GitHub />
       <Contact />
     </QueryClientProvider>
   );

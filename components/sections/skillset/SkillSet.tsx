@@ -6,7 +6,7 @@ import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } f
 import { Tag } from '@ui';
 import { cn } from '@/utils/cn';
 import { AnimateIn } from '@brunoerceg/animate-in';
-import TechSkills from './TechSkills';
+import { TechSkills } from './TechSkills';
 
 const TECH_STACK = [
   { name: 'React', data: ReactSkills },
@@ -24,7 +24,7 @@ type TechData = (typeof TECH_STACK)[number]['data'];
  * It renders a navigation bar with tabs for each tech stack and a grid of skills for the active tech stack.
  * @returns A React component that displays the tech stack navigation and skills grid.
  */
-function SkillSet() {
+export function SkillSet() {
   /**
    * The state of the currently selected tech stack.
    * It is used to determine which data to display in the skills grid.
@@ -74,4 +74,3 @@ function SkillSet() {
     </section>
   );
 }
-export default SkillSet;

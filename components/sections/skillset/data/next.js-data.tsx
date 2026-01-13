@@ -1,5 +1,5 @@
-import { ImageOptimization, Routing, WeatherApi } from '../examples/next.js';
-import { SkillItem } from '../types';
+import { ImageOptimization, Routing, WeatherApi } from '../examples/next.js/index';
+import { SkillItem } from '../types.js';
 
 const NextSkills: SkillItem[] = [
   {

@@ -23,7 +23,7 @@
       "@images/*": ["./public/images/*"],
       "@lottie/*": ["./public/lottie/*"],
       "@sections/*": ["./components/sections/*"],
-      "@Skills/*": ["./components/sections/skillset/*"],
+      "@Skills/*": ["./components/sections/SkillSet/*"],
       "@layout/*": ["./components/layout/*"],
       "@ui": ["./components/ui/index.ts"],
       "@utils/*": ["./utils/*"]

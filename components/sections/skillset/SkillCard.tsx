@@ -13,7 +13,7 @@ type CardProps = {
  * The component is used to display a skill or a project example.
  * @returns A React component that displays the card.
  */
-function SkillCard({ variant, title, description, example }: CardProps) {
+export function SkillCard({ variant, title, description, example }: CardProps) {
   return (
     <div className="break-inside-avoid-column rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-5 lg:p-5 dark:from-slate-800 dark:to-slate-800">
       {example && example}
@@ -34,4 +34,3 @@ function SkillCard({ variant, title, description, example }: CardProps) {
     </div>
   );
 }
-export default SkillCard;

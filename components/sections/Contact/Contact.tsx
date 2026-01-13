@@ -3,13 +3,7 @@ import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
-/**
- * A React component that displays the Contact section.
- * It contains the ContactHeader, ContactInfo, and ContactForm components.
- * The component is styled to have a blue background and white text, with a rounded shape and padding.
- * The component is also responsive and changes its layout to a row on large screens.
- */
-function Contact() {
+export function Contact() {
   return (
     <section className="scroll-mt-[100px]" id="contact">
       <SectionHeader className="mb-7 md:mb-15">
@@ -24,5 +18,3 @@ function Contact() {
     </section>
   );
 }
-
-export default Contact;

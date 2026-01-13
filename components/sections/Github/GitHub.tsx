@@ -1,8 +1,7 @@
-import { SectionHeader } from '@/components/ui';
-import GitHubCard from './GitHubCard';
-
+import { SectionHeader } from '@ui';
 import { LINKS } from '@/constants/links';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { GitHubCard } from './GitHubCard';
 
 /**
  * A section component that displays the GitHub section.
@@ -10,7 +9,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
  * The component is responsive and has a dark mode.
  * @returns A section element with a header and two cards.
  */
-function GitHub() {
+export function GitHub() {
   return (
     <section
       id="github"
@@ -30,5 +29,3 @@ function GitHub() {
     </section>
   );
 }
-
-export default GitHub;

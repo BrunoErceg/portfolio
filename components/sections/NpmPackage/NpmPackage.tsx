@@ -2,7 +2,7 @@
 import { AnimateIn } from '@brunoerceg/animate-in';
 
 // Components
-import NpmCodeBlock from './NpmCodeBlock';
+import { NpmCodeBlock } from './NpmCodeBlock';
 import { faBoxOpen, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { LINKS } from '@/constants/links';
@@ -14,7 +14,7 @@ import { SectionHeader } from '@/components/ui';
  * using the AnimateIn component.
  * @returns A section element with a header and code block.
  */
-function NpmPackage() {
+export function NpmPackage() {
   return (
     <section className="mb-20 scroll-mt-[100px] md:mb-40" id="npm">
       <SectionHeader>
@@ -33,5 +33,3 @@ function NpmPackage() {
     </section>
   );
 }
-
-export default NpmPackage;
