@@ -15,13 +15,7 @@ const containerVariants = {
   },
 };
 
-/**
- * A component that displays a link with a rolling text effect.
- * When clicked, it will smoothly scroll to the target section.
- *
- * @returns A motion button element with a rolling text effect.
- */
-export function NavLink({ name, section }: NavLinkProps) {
+export function ScrollLink({ name, section }: NavLinkProps) {
   const handleScroll = () => {
     const targetSection = document.getElementById(section);
 
@@ -40,7 +34,8 @@ export function NavLink({ name, section }: NavLinkProps) {
       animate="rest"
       variants={containerVariants}
       onClick={handleScroll}
-      className="group flex cursor-pointer items-center transition-colors duration-200 ease-in-out hover:text-blue-500"
+      aria-label={`Scroll to ${name}`}
+      className="group flex cursor-pointer items-center transition-colors duration-200 hover:text-blue-500"
     >
       <RollingText text={name} />
     </motion.button>

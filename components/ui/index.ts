@@ -1,6 +1,6 @@
 export * from './Button';
 export * from './Heading';
-export * from './NavLink';
+export * from './ScrollLink';
 export * from './RollingText';
 export * from './SectionHeader';
 export * from './SelectionHighlight';

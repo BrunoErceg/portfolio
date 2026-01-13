@@ -36,7 +36,7 @@ SectionHeader.Tag = (props: ComponentProps<typeof Tag>) => {
 SectionHeader.Title = ({ text }: { text: string }) => {
   const { isWhite } = useContext(SectionHeaderContext);
   return (
-    <Heading level={2} centered white={isWhite}>
+    <Heading level={2} white={isWhite}>
       <AnimateIn.Words stagger="fast">{text}</AnimateIn.Words>
     </Heading>
   );

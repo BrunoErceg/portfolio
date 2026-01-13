@@ -3,12 +3,11 @@ import { cn } from '@/utils/cn';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { cva, VariantProps } from 'class-variance-authority';
-import { motion } from 'framer-motion';
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import { RollingText } from './RollingText';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  AnchorHTMLAttributes<HTMLAnchorElement> &
+type ButtonProps = HTMLMotionProps<'button'> &
+  HTMLMotionProps<'a'> &
   VariantProps<typeof ButtonVariants> &
   VariantProps<typeof iconVariants> & {
     href?: string;
@@ -18,7 +17,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 const ButtonVariants = cva(
-  'group m-2 flex inline-flex w-fit cursor-pointer items-center justify-center rounded-full font-semibold',
+  'group inline-flex w-fit cursor-pointer items-center justify-center rounded-full font-semibold',
   {
     variants: {
       variant: {
@@ -53,10 +52,6 @@ const iconVariants = cva('mr-1.5 transition-transform', {
   defaultVariants: { iconSize: 'md' },
 });
 
-/*
- * This is the animation for the button.
- * It is used to add a rolling text effect to the button.
- */
 const BUTTON_ANIMATION = {
   initial: 'rest',
   whileHover: 'hover',
@@ -69,12 +64,6 @@ const BUTTON_ANIMATION = {
   },
 };
 
-/**
- * A React component that displays a button with the given variant style.
- * The component is used to display buttons with the given variant style.
- *
- * @returns A React component that displays the button with the given variant style.
- */
 export function Button({
   variant,
   href,

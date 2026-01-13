@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { NavLink, ThemeToggle } from '@ui';
+import { ScrollLink, ThemeToggle } from '@ui';
 import { usePathname } from 'next/navigation';
 
 export function Navigation() {
@@ -16,10 +16,10 @@ export function Navigation() {
         <div className="text-dark flex items-center space-x-8 text-lg font-semibold">
           {pathname === '/' ? (
             <>
-              <NavLink name="AnimateIn" section="npm" />
-              <NavLink name="LuxGym" section="luxgym" />
-              <NavLink name="GitHub" section="github" />
-              <NavLink name="Kontakt" section="contact" />
+              <ScrollLink name="AnimateIn" section="npm" />
+              <ScrollLink name="LuxGym" section="luxgym" />
+              <ScrollLink name="GitHub" section="github" />
+              <ScrollLink name="Kontakt" section="contact" />
             </>
           ) : (
             <>
