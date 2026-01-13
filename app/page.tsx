@@ -11,7 +11,7 @@ export default function Home() {
       <SkillSet className="mb-25 md:mb-35" />
       <NpmPackage className="mb-25 md:mb-35" />
       <LuxGym className="mb-25 md:mb-35" />
-      <GitHub />
+      <GitHub className="mb-25 md:mb-35" />
       <Contact />
     </QueryClientProvider>
   );
