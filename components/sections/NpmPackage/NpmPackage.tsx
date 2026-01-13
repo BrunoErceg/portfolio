@@ -1,22 +1,17 @@
-// UI Components
 import { AnimateIn } from '@brunoerceg/animate-in';
-
-// Components
-import { NpmCodeBlock } from './NpmCodeBlock';
 import { faBoxOpen, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { LINKS } from '@/constants/links';
-import { SectionHeader } from '@/components/ui';
+import { SectionHeader } from '@ui';
+import { NpmCodeBlock } from './NpmCodeBlock';
+import { cn } from '@/utils/cn';
 
-/**
- * A component that displays the Npm Package section.
- * It displays the header, code block, and animates the content
- * using the AnimateIn component.
- * @returns A section element with a header and code block.
- */
-export function NpmPackage() {
+export function NpmPackage({ className }: { className?: string }) {
   return (
-    <section className="mb-20 scroll-mt-[100px] md:mb-40" id="npm">
+    <section
+      className={cn('flex scroll-mt-[100px] flex-col items-center gap-y-15', className)}
+      id="npm"
+    >
       <SectionHeader>
         <SectionHeader.Tag text="Npm Package" icon={faFolderOpen} />
         <SectionHeader.Title text="NPM package projekt AnimateIn" />
@@ -27,7 +22,7 @@ export function NpmPackage() {
         </SectionHeader.Buttons>
       </SectionHeader>
 
-      <AnimateIn.Individual amount="some" className="relative h-fit rounded-4xl">
+      <AnimateIn.Individual amount="some" className="w-full">
         <NpmCodeBlock />
       </AnimateIn.Individual>
     </section>

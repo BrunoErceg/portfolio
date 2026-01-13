@@ -19,7 +19,9 @@ export function SectionHeader({
 }) {
   return (
     <SectionHeaderContext.Provider value={{ isWhite: white }}>
-      <AnimateIn.Container className={cn('flex max-w-2xl flex-col gap-y-6 text-center', className)}>
+      <AnimateIn.Container
+        className={cn('flex max-w-[750px] flex-col gap-y-6 text-center', className)}
+      >
         {children}
       </AnimateIn.Container>
     </SectionHeaderContext.Provider>

@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <Hero className="mb-5" />
-      <SkillSet />
-      <NpmPackage />
+      <SkillSet className="mb-25 md:mb-35" />
+      <NpmPackage className="mb-25 md:mb-35" />
       <LuxGym />
       <GitHub />
       <Contact />
