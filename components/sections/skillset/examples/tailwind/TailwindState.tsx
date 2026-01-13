@@ -1,10 +1,5 @@
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A React component that demonstrates the use of Tailwind CSS.
- * It displays a button with a hover effect and a gradient surface.
- * @returns A React component that displays the button and gradient surface.
- */
 export function TailwindState() {
   return (
     <GradientSurface centered className="p-10">

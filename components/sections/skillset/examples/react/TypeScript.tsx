@@ -1,12 +1,5 @@
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A component that demonstrates the use of TypeScript
- * type annotations for React component props.
- *
- * @returns A div element with a textarea that displays the
- * TypeScript type definition for a React component prop.
- */
 export function TypeScript() {
   return (
     <GradientSurface>

@@ -57,7 +57,7 @@ export type Wind = {
   gust: number;
 };
 
-export const useWeather = () =>
+export const useWeatherSibenik = () =>
   useQuery<WeatherData>({
     queryKey: ['weather'],
     queryFn: async () => {

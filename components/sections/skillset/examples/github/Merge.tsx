@@ -1,15 +1,9 @@
 import Image from 'next/image';
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A component that demonstrates a merge icon.
- * The icon is displayed inside a gradient surface.
- * @returns A React component with a merge icon.
- */
 export function Merge() {
   return (
     <GradientSurface centered>
-      {/* The Merge icon */}
       <Image
         alt="Merge icon"
         src="/images/git-merge.svg"

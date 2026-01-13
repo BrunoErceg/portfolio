@@ -1,4 +1,3 @@
-// Animations
 import Lottie from 'lottie-react';
 import SnowAnimation from '@lottie/snow.json';
 import SunnyAnimation from '@lottie/sunny.json';
@@ -7,12 +6,10 @@ import StormAnimation from '@lottie/storm.json';
 import PartlyCloudyAnimation from '@lottie/partly-cloudy.json';
 import PartlyShowerAnimation from '@lottie/partly-shower.json';
 
-// Hooks
-import { useWeather } from '@/hooks/useWeather';
-
-// UI components
+import { useWeatherSibenik } from '@/hooks/useWeatherSibenik';
 import { GradientSurface } from '../GradientSurface';
 
+// Pair OpenWeatherMap icon codes with Lottie animations
 const WEATHER_ANIMATIONS = {
   '01d': SunnyAnimation,
   '01n': SunnyAnimation,
@@ -35,20 +32,8 @@ const WEATHER_ANIMATIONS = {
 } as const;
 type WeatherIconCode = keyof typeof WEATHER_ANIMATIONS;
 
-/**
- * WeatherApi component.
- *
- * This component fetches weather data from the API and displays
- * an animation based on the weather icon code.
- *
- * If the data is being fetched, it displays a loading animation.
- * If there is an error, it displays an error message.
- *
- * @returns {JSX.Element} WeatherApi component.
- */
-
 export function WeatherApi() {
-  const { data, isFetching, isError, error } = useWeather();
+  const { data, isFetching, isError, error } = useWeatherSibenik();
   const iconCode = data?.weather?.[0]?.icon as WeatherIconCode;
   const temperature = Math.round(data?.main?.temp || 0);
 

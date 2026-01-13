@@ -2,13 +2,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A component that demonstrates image optimization techniques in Next.js.
- * It displays a gradient surface with a motion-enabled image.
- * The image is optimized for web and mobile devices.
- *
- * @returns A React component with a gradient surface and a motion-enabled image.
- */
 export function ImageOptimization() {
   return (
     <GradientSurface centered>

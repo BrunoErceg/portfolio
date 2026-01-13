@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } from './data/index';
-
-// Components
-import { Tag } from '@ui';
-import { cn } from '@/utils/cn';
 import { AnimateIn } from '@brunoerceg/animate-in';
+import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } from './data/index';
+import { cn } from '@/utils/cn';
 import { TechSkills } from './TechSkills';
+import { Tag } from '@ui';
 
 const TECH_STACK = [
   { name: 'React', data: ReactSkills },
@@ -19,37 +17,23 @@ const TECH_STACK = [
 type TechNames = (typeof TECH_STACK)[number]['name'];
 type TechData = (typeof TECH_STACK)[number]['data'];
 
-/**
- * A component that displays a list of tech stacks and their respective skills.
- * It renders a navigation bar with tabs for each tech stack and a grid of skills for the active tech stack.
- * @returns A React component that displays the tech stack navigation and skills grid.
- */
-export function SkillSet() {
-  /**
-   * The state of the currently selected tech stack.
-   * It is used to determine which data to display in the skills grid.
-   */
+export function SkillSet({ className }: { className?: string }) {
   const [currentTech, setCurrentTech] = useState<TechNames>(TECH_STACK[0].name);
-
-  /**
-   * The data of the currently selected tech stack.
-   * It is used to render the skills grid.
-   */
   const activeData: TechData = TECH_STACK.find(({ name }) => name === currentTech)?.data || [];
 
   return (
-    <section className="mb-15 md:mb-30">
+    <section className={className}>
       {/* 1. Navigation bar with tabs for each tech stack */}
       <AnimateIn.Container
         amount="any"
         stagger="fast"
         delay={0.5}
-        className="my-5 flex flex-wrap justify-center gap-3"
+        className="flex flex-col items-center gap-y-8"
       >
-        <AnimateIn.Item className="grid grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">
+        <AnimateIn.Item className="grid w-fit grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">
           {TECH_STACK.map(({ name }, index) => (
             <Tag
-              key={index}
+              key={name}
               variant="base"
               onClick={() => setCurrentTech(name)}
               text={name}

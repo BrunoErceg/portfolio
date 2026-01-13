@@ -1,25 +1,10 @@
-// React
 import { ButtonHTMLAttributes, useState } from 'react';
 import Image from 'next/image';
-
-// UI components
 import { AnimatePresence, motion } from 'framer-motion';
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A React component that demonstrates the use of React Hooks.
- * It displays a counter and allows the user to increment or decrement it.
- * The counter is displayed as a series of rolling digits.
- * @returns A React component that displays the counter and the increment/decrement buttons.
- */
-
 export function Counter() {
   const [count, setCount] = useState(0);
-
-  /**
-   * An array of all the digits from the count.
-   * This is used to create an array of rolling digits.
-   */
   const digits = Math.abs(count).toString().split('').map(Number);
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
@@ -62,11 +47,6 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: 'increment' | 'decrement';
 };
 
-/**
- * A React component that displays a button with a plus or minus icon.
- * @returns A React component that displays the button.
- */
-
 const Button = ({ variant, ...props }: ButtonProps) => {
   return (
     <button
@@ -83,13 +63,7 @@ const Button = ({ variant, ...props }: ButtonProps) => {
     </button>
   );
 };
-/**
- * A React component that displays a single digit of a counter.
- * The component will animate each time the digit changes.
- * @param {Object} props - The props for the component.
- * @param {number} props.digit - The digit to display.
- * @returns A React component that displays the digit.
- */
+
 const RollingDigit = ({ digit }: { digit: number }) => {
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 

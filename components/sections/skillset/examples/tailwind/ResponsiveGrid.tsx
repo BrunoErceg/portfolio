@@ -12,13 +12,6 @@ const GRID_CONFIG_BY_DEVICE = {
   mobile: 'grid-cols-1',
 } as const;
 
-/**
- * A component that renders a responsive grid based on the current device.
- * The component rotates through different devices (desktop, tablet, mobile) every 1500ms.
- * The grid configuration is based on the current device.
- *
- * @returns A responsive grid component.
- */
 export function ResponsiveGrid() {
   const [currentDevice, setCurrentDevice] = useState<Device>('desktop');
 

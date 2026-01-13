@@ -1,4 +1,4 @@
-import { Component, Counter, WeatherApi, TypeScript } from '../examples/react';
+import { CompoundComponent, Counter, WeatherApi, TypeScript } from '../examples/react';
 import { SkillItem } from '../types';
 
 export const ReactSkills: SkillItem[] = [
@@ -37,9 +37,9 @@ export const ReactSkills: SkillItem[] = [
     type: 'example',
   },
   {
-    title: 'Custom Components',
+    title: 'Compound Components',
     description: 'Prilagođene i ponovno upotrebljive UI komponente.',
-    example: <Component />,
+    example: <CompoundComponent />,
     type: 'example',
   },
 ];

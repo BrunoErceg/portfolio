@@ -4,36 +4,14 @@ import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { GradientSurface } from '../GradientSurface';
 
-/**
- * A component that demonstrates the use of AnimatePresence.
- * It displays a list of cards that can be added or removed.
- * The cards are animated in and out of the list.
- * The user can add or remove cards by clicking on the
- * corresponding buttons.
- *
- * @returns A React component that displays the list of cards.
- */
 export function PresenceAnimation() {
-  /**
-   * The state of the cards in the list.
-   * The cards are represented as an array of objects
-   * with an id property.
-   */
   const [cards, setCards] = useState([{ id: crypto.randomUUID() }, { id: crypto.randomUUID() }]);
-
-  /**
-   * Adds a new card to the list.
-   */
   const addCard = () => {
     if (cards.length < 3) {
       setCards((cards) => [...cards, { id: crypto.randomUUID() }]);
     }
   };
 
-  /**
-   * Removes a card from the list with the given id.
-   * @param {string} id The id of the card to remove.
-   */
   const deleteCard = (id: string) => {
     setCards((cards) => cards.filter((card) => card.id !== id));
   };
@@ -67,14 +45,6 @@ export function PresenceAnimation() {
   );
 }
 
-/**
- * A dummy card component that demonstrates the use of React Hooks
- * and Framer Motion together.
- * It displays a card with a delete button that removes the card
- * from the list.
- *
- * @returns A React component that displays the card.
- */
 const CardDummy = ({ deleteCard }: { deleteCard: () => void }) => {
   return (
     <motion.div
