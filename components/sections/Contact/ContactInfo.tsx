@@ -1,4 +1,3 @@
-// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
@@ -7,36 +6,42 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import { Heading, Text } from '@/components/ui';
-
-// UI
+import { cn } from '@/utils/cn';
+import { LINKS, CONTACT } from '@/constants/links';
 
 const CONTACT_INFO = [
-  { text: 'brunoerceg95@gmail.com', icon: faEnvelope },
-  { text: '+385 95 360 1028', icon: faPhone },
-  { text: 'Danilska 5, Šibenik', icon: faLocationDot },
+  { text: CONTACT.email, href: `mailto:${CONTACT.email}`, icon: faEnvelope },
+  { text: CONTACT.phone, href: `tel:${CONTACT.phone}`, icon: faPhone },
+  {
+    text: CONTACT.address,
+    href: LINKS.googleMaps,
+    icon: faLocationDot,
+  },
 ];
 
-/**
- * A React component that displays contact information.
- * The component is styled with a blue background, rounded corners, and white text.
- * It also has a envelope icon at the bottom right corner.
- *
- * @returns A React component that displays the contact information.
- */
 function ContactInfo({ className }: { className?: string }) {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 to-blue-500 p-7 text-lg text-white md:p-10 lg:w-1/3 dark:from-slate-800 dark:to-slate-900">
-      <Heading level={3} white>
-        Kontakt informacije
-      </Heading>
-      <Text variant="description" size="small" white>
-        Slobodno pošaljite poruku ili email
-      </Text>
-      <ul className="mt-10 space-y-3 text-sm md:mt-15 md:space-y-5 md:text-lg">
-        {CONTACT_INFO.map(({ text, icon }) => (
-          <li key={text}>
+    <div
+      className={cn(
+        'relative flex flex-col gap-y-10 overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 to-blue-500 p-7 text-lg md:p-12 dark:from-slate-800 dark:to-slate-900',
+        className,
+      )}
+    >
+      <div className="flex flex-col gap-y-1">
+        <Heading level={3} white>
+          Kontakt informacije
+        </Heading>
+        <Text variant="description" size="small" white>
+          Slobodno pošaljite poruku ili email
+        </Text>
+      </div>
+      <ul className="flex flex-col gap-y-3 text-sm md:text-lg">
+        {CONTACT_INFO.map(({ text, href, icon }) => (
+          <li key={text} className="text-white/80">
             <FontAwesomeIcon icon={icon} className="mr-2" />
-            {text}
+            <a href={href} target="_blank" rel="noopener noreferrer" className="">
+              {text}
+            </a>
           </li>
         ))}
       </ul>

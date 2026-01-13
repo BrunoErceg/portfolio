@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Hero />
+      <Hero className="mb-10" />
       <SkillSet />
       <NpmPackage />
       <LuxGym />

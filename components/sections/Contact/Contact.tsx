@@ -5,14 +5,14 @@ import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
 export function Contact() {
   return (
-    <section className="scroll-mt-[100px]" id="contact">
-      <SectionHeader className="mb-7 md:mb-15">
+    <section className="flex scroll-mt-[100px] flex-col items-center gap-y-10" id="contact">
+      <SectionHeader>
         <SectionHeader.Tag text="Kontakt" icon={faMessage} />
         <SectionHeader.Title text="Zainteresirani? Javite se! 👋" />
         <SectionHeader.Subtitle text="Javite se putem broja telefona ili kontakt obrasca za dogovor." />
       </SectionHeader>
-      <div className="flex flex-col gap-5 rounded-4xl bg-blue-100 p-3 md:p-5 lg:flex-row dark:bg-slate-800">
-        <ContactInfo className="mb-10 lg:mb-0" />
+      <div className="flex w-full flex-col gap-5 rounded-4xl bg-blue-100 p-3 md:p-5 lg:flex-row dark:bg-slate-800">
+        <ContactInfo />
         <ContactForm />
       </div>
     </section>

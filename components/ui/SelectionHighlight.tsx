@@ -12,16 +12,6 @@ const POSITIONS = [
   '-bottom-1 -right-1 md:-bottom-1.5 md:-right-1.5',
 ];
 
-/**
- * A component that highlights a selection of words with a
- * gradient background and a blue border with a typing
- * animation effect.
- *
- * @param {SelectionHighlightProps} props - The words to
- * highlight.
- *
- * @returns {ReactNode} - The highlighted selection of words.
- */
 export function SelectionHighlight({ words }: SelectionHighlightProps) {
   return (
     <span className="relative px-1 py-0">

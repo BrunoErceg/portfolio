@@ -1,10 +1,15 @@
+import { cn } from '@/utils/cn';
 import { AnimateIn } from '@brunoerceg/animate-in';
 import { Text, Heading, SelectionHighlight, Tag } from '@ui';
 
-export function Hero() {
+export function Hero({ className }: { className?: string }) {
   return (
-    <section className="mt-10 md:mt-15">
-      <AnimateIn.Container amount="any" stagger="fast">
+    <section className={cn('flex justify-center', className)}>
+      <AnimateIn.Container
+        amount="any"
+        stagger="fast"
+        className="flex max-w-[750px] flex-col gap-y-5 text-center"
+      >
         <AnimateIn.Item>
           <Tag variant="availability" text="Tražim Posao" />
         </AnimateIn.Item>
@@ -18,8 +23,8 @@ export function Hero() {
 
         <AnimateIn.Item>
           <Text variant="subheading">
-            Frontend developer iz Šibenika fokusiran na izgradnju modernih web aplikacija koristeći
-            React ekosustav.
+            Frontend developer posvećen čistom kodu i performansama. Fokusiran na React, Next.js i
+            tipizirana rješenja spremna za produkciju.
           </Text>
         </AnimateIn.Item>
       </AnimateIn.Container>
