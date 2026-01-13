@@ -10,7 +10,7 @@ export default function Home() {
       <Hero className="mb-5" />
       <SkillSet className="mb-25 md:mb-35" />
       <NpmPackage className="mb-25 md:mb-35" />
-      <LuxGym />
+      <LuxGym className="mb-25 md:mb-35" />
       <GitHub />
       <Contact />
     </QueryClientProvider>

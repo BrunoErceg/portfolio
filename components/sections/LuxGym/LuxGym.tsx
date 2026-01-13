@@ -1,18 +1,17 @@
 import { AnimateIn } from '@brunoerceg/animate-in';
-import { LuxGymShowcase } from './LuxGymShowcase';
-
+import { LINKS } from '@/constants/links';
 import { faGithub, faSquareWebAwesomeStroke } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
-import { LINKS } from '@/constants/links';
+import { cn } from '@/utils/cn';
 import { SectionHeader } from '@/components/ui';
-
-export function LuxGym() {
+import { LuxGymShowcase } from './LuxGymShowcase';
+export function LuxGym({ className }: { className?: string }) {
   return (
     <section
-      className="mb-25 flex w-full scroll-mt-[100px] flex-col justify-center md:mb-40"
+      className={cn('flex scroll-mt-[100px] flex-col items-center gap-y-15 md:mb-40', className)}
       id="luxgym"
     >
-      <SectionHeader className="mb-15 md:mb-20">
+      <SectionHeader>
         <SectionHeader.Tag text="Lux Gym" icon={faSquareWebAwesomeStroke} />
         <SectionHeader.Title text="Produkcijski Next.js projekt za fitness centar u Šibeniku" />
         <SectionHeader.Buttons>
