@@ -14,7 +14,7 @@ export function NpmPackage({ className }: { className?: string }) {
     >
       <SectionHeader>
         <SectionHeader.Tag text="Npm Package" icon={faFolderOpen} />
-        <SectionHeader.Title text="NPM package projekt AnimateIn" />
+        <SectionHeader.Title text="NPM package projekt - AnimateIn" />
         <SectionHeader.Subtitle text="Lagani npm paket za brzu implementaciju modernih efekata pojavljivanja elemenata unutar svakog React projekta." />
         <SectionHeader.Buttons>
           <SectionHeader.Button text="NPM" icon={faBoxOpen} href={LINKS.animateInNpm} />

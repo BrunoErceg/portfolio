@@ -16,7 +16,7 @@ type ContactFormData = {
   message: string;
 };
 
-function ContactForm() {
+function ContactForm({ className }: { className?: string }) {
   const {
     register,
     handleSubmit,
@@ -51,7 +51,10 @@ function ContactForm() {
 
   return (
     <form
-      className="flex w-full max-w-3xl flex-col gap-5 bg-blue-100 p-5 md:gap-10 lg:p-10 dark:bg-slate-800"
+      className={cn(
+        'flex flex-col items-center gap-5 bg-blue-100 p-5 md:gap-10 lg:p-10 dark:bg-slate-800',
+        className,
+      )}
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* Red s Imenom i E-mailom */}

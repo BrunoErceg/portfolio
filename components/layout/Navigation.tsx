@@ -2,15 +2,19 @@
 import Link from 'next/link';
 import { ScrollLink, ThemeToggle } from '@ui';
 import { usePathname } from 'next/navigation';
+import { cn } from '@/utils/cn';
 
-export function Navigation() {
+export function Navigation({ className }: { className?: string }) {
   const pathname = usePathname();
   return (
-    <header className="mt-3 mb-0 flex items-center justify-between rounded-full bg-white px-3 py-1 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:mt-5 md:mb-10 md:px-5 md:py-4 dark:bg-slate-800">
+    <header
+      className={cn(
+        'flex items-center justify-between rounded-full bg-white px-3 py-1 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:px-5 md:py-4 dark:bg-slate-800',
+        className,
+      )}
+    >
       <Link href="/">
-        <p id="logo" className="text-dark funnel-display ml-2 text-xl md:text-3xl">
-          Bruno.
-        </p>
+        <p className="text-dark funnel-display ml-2 text-xl md:text-3xl">Bruno.</p>
       </Link>
       <nav className="mt-1 hidden md:block">
         <div className="text-dark flex items-center space-x-8 text-lg font-semibold">

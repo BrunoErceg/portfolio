@@ -8,7 +8,7 @@ export function Hero({ className }: { className?: string }) {
       <AnimateIn.Container
         amount="any"
         stagger="fast"
-        className="flex max-w-[750px] flex-col gap-y-5 text-center"
+        className="flex max-w-[750px] flex-col items-center gap-y-6 text-center"
       >
         <AnimateIn.Item>
           <Tag variant="availability" text="Tražim Posao" />
@@ -21,10 +21,10 @@ export function Hero({ className }: { className?: string }) {
           </Heading>
         </AnimateIn.Item>
 
-        <AnimateIn.Item>
+        <AnimateIn.Item className="max-w-xl">
           <Text variant="subheading">
-            Frontend developer posvećen čistom kodu i performansama. Fokusiran na React, Next.js i
-            tipizirana rješenja spremna za produkciju.
+            Frontend inženjer posvećen čistom kodu, Next.js arhitekturi i vrhunskim performansama
+            aplikacija.
           </Text>
         </AnimateIn.Item>
       </AnimateIn.Container>

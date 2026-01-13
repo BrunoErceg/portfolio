@@ -1,43 +1,61 @@
-# Bruno Erceg Portfolio
+# Bruno Erceg — Personal Portfolio 2026
 
-This repository contains the source code for my professional portfolio. The goal of this project is to demonstrate my ability to build clean, maintainable, and responsive web applications using modern frontend standards.
+This portfolio is not just a showcase of my work, but a high-performance React application serving as a sandbox for testing cutting-edge web technologies, complex animations, and seamless UX/UI patterns.
 
----
+## 🚀 Tech Stack
 
-### 🎯 Project Purpose
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [@brunoerceg/animate-in](https://www.npmjs.com/package/@brunoerceg/animate-in)
+- **Forms & State:** React Hook Form, Sonner, Prism-react-renderer
+- **Theming:** next-themes (Zero-layout-shift Dark Mode)
 
-As a **Junior Developer**, I built this site to solve three main challenges:
+&nbsp;
 
-- **Performance:** Ensuring fast load times and optimized asset delivery.
-- **Clean Architecture:** Using centralized constant files and modular components for scalability.
-- **UX/UI Excellence:** Implementing advanced CSS states and accessibility features.
+## 💎 Key Features
 
-### 🛠️ Tech Stack & Tools
+- **Custom Interactive Components:** Features a recursive file-tree system, interactive TypeScript playgrounds, and dynamic weather API integration.
+- **Advanced Animation Physics:**Implementation of interruptible animations, scroll-driven parallax depth, and fluid layout transitions via AnimatePresence.
+- **Proprietary NPM Package:** Integrated use of my own library @brunoerceg/animate-in to handle high-performance scroll animations.
 
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS
-- **State Management:** React Hooks & Context API
-- **Logic:** TypeScript / JavaScript (Clean Code principles)
+&nbsp;
 
-### 🌟 Key Technical Features
+## 🔄 Engineering Excellence
 
-- **Weather Logic:** Real-time data fetching with asynchronous state management.
-- **Smart Components:** Modular, reusable architecture built for scalability and performance.
-- **Visual Identity:** Custom-built typing effect with dynamic gradient highlights and animated borders.
-- **Advanced UI:** Interactive systems (counters & states) showcasing deep React logic.
-- **UX Animations:** High-performance, fluid transitions for an engaging user experience.
-- **Contact System:** Functional form with integrated client-side validation.
+- **Compound Component Pattern:** Utilizes scalable UI architecture for modularity and reusability.
+- **Type Safety:** 100% TypeScript coverage ensuring a robust and maintainable codebase.
+- **Responsive Art Direction::** Handcrafted mobile-first experience that maintains visual depth on desktop resolutions.
 
-### 📁 Project Structure
+&nbsp;
 
-```plaintext
-├── components/       # Main component directory
-│   ├── ui/          # Atomic UI elements (buttons, inputs, etc.)
-│   ├── sections/    # Large page sections (Hero, About, Contact)
-│   └── layout/      # Wrapper components (Navbar, Footer, Shell)
-├── constants/       # Centralized data (Links, API endpoints, theme)
-├── hooks/           # Custom React hooks for logic reuse
-├── utils/           # Helper functions and utility logic
-├── public/          # Static assets (images, fonts, icons)
-└── (root files)     # App logic and configuration files
+## 🛠️ Installation & Setup
+
+**1. Clone the repository:**
+
+```bash
+git clone https://github.com/brunoerceg/portfolio.git
+
 ```
+
+**2. Install dependencies:**
+
+```bash
+npm install
+
+```
+
+**3. Install dependencies:**
+Create a .env.local file and add your keys:
+
+```bash
+NEXT_PUBLIC_WEATHER_API_KEY=your_api_key
+
+```
+
+**4. Run the development server:**
+
+```bash
+ npm run dev
+```
+
+Developed by Bruno Erceg

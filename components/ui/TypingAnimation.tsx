@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useState } from 'react';
 
 type TypeAnimationProps = {
@@ -5,12 +6,6 @@ type TypeAnimationProps = {
   words: string[];
 };
 
-/**
- * A React component that demonstrates a typing animation effect.
- * The animation is looped and delayed between each item.
- *
- * @returns A span element with the typing animation effect.
- */
 export function TypingAnimation({ words, className }: TypeAnimationProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState(words[0]);

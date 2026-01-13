@@ -28,7 +28,7 @@ export function SkillSet({ className }: { className?: string }) {
         amount="any"
         stagger="fast"
         delay={0.5}
-        className="flex flex-col items-center gap-y-8"
+        className="flex flex-col items-center gap-y-15"
       >
         <AnimateIn.Item className="grid w-fit grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">
           {TECH_STACK.map(({ name }, index) => (

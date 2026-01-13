@@ -1,11 +1,6 @@
-// Styles
 import './globals.css';
-
-// Libs
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
-
-// Components
 import Providers from '@/components/Providers';
 import { Container, Navigation, Footer } from '@layout';
 
@@ -33,7 +28,7 @@ export default function RootLayout({
         <Providers>
           <Toaster position="top-center" richColors />
           <Container className="flex flex-col justify-between lg:w-[1300px]">
-            <Navigation />
+            <Navigation className="mt-4 mb-15 md:mb-30" />
             <main className="grow">{children}</main>
             <Footer />
             <div className="fixed bottom-0 left-0 z-50 h-7 w-full to-transparent mask-[linear-gradient(to_top,black_0%,transparent_100%)] backdrop-blur-sm" />

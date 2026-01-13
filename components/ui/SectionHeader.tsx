@@ -1,3 +1,4 @@
+'use client';
 import React, { ComponentProps, createContext, ReactNode, useContext } from 'react';
 import { AnimateIn } from '@brunoerceg/animate-in';
 import { cn } from '@/utils/cn';
@@ -20,7 +21,7 @@ export function SectionHeader({
   return (
     <SectionHeaderContext.Provider value={{ isWhite: white }}>
       <AnimateIn.Container
-        className={cn('flex max-w-[750px] flex-col gap-y-6 text-center', className)}
+        className={cn('flex max-w-[750px] flex-col items-center gap-y-6 text-center', className)}
       >
         {children}
       </AnimateIn.Container>
@@ -50,7 +51,7 @@ SectionHeader.Subtitle = ({ text }: { text: string }) => {
   const { isWhite } = useContext(SectionHeaderContext);
   return (
     <AnimateIn.Item>
-      <Text variant="subheading" white={isWhite}>
+      <Text variant="subheading" white={isWhite} className="max-w-xl">
         {text}
       </Text>
     </AnimateIn.Item>
@@ -58,7 +59,7 @@ SectionHeader.Subtitle = ({ text }: { text: string }) => {
 };
 
 SectionHeader.Buttons = ({ children }: { children: ReactNode }) => (
-  <AnimateIn.Item>{children}</AnimateIn.Item>
+  <AnimateIn.Item className="flex flex-row justify-center gap-x-3">{children}</AnimateIn.Item>
 );
 
 SectionHeader.Button = ({ ...props }: ComponentProps<typeof Button>) => {

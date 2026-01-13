@@ -13,7 +13,7 @@ export function Contact() {
       </SectionHeader>
       <div className="flex w-full flex-col gap-5 rounded-4xl bg-blue-100 p-3 md:p-5 lg:flex-row dark:bg-slate-800">
         <ContactInfo />
-        <ContactForm />
+        <ContactForm className="grow" />
       </div>
     </section>
   );
