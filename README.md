@@ -15,7 +15,7 @@ This portfolio is not just a showcase of my work, but a high-performance React a
 ## 💎 Key Features
 
 - **Custom Interactive Components:** Features a recursive file-tree system, interactive TypeScript playgrounds, and dynamic weather API integration.
-- **Advanced Animation Physics:**Implementation of interruptible animations, scroll-driven parallax depth, and fluid layout transitions via AnimatePresence.
+- **Advanced Animation Physics:** Implementation of interruptible animations, scroll-driven parallax depth, and fluid layout transitions via AnimatePresence.
 - **Proprietary NPM Package:** Integrated use of my own library @brunoerceg/animate-in to handle high-performance scroll animations.
 
 &nbsp;
