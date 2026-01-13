@@ -1,10 +1,15 @@
-import type { Metadata } from 'next';
+// Styles
 import './globals.css';
-import Providers from '@/components/Providers';
+
+// Libs
+import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Container from '@/components/layout/Container';
+
+// Components
+import Providers from '@/components/Providers';
+import Navigation from '@layout/Navigation';
+import Footer from '@layout/Footer';
+import Container from '@layout/Container';
 
 export const metadata: Metadata = {
   title: 'Bruno Erceg - React Developer',
@@ -30,7 +35,7 @@ export default function RootLayout({
         <Providers>
           <Toaster position="top-center" richColors />
           <Container className="flex flex-col justify-between lg:w-[1300px]">
-            <Header />
+            <Navigation />
             <main className="grow">{children}</main>
             <Footer />
             <div className="fixed bottom-0 left-0 z-50 h-7 w-full to-transparent mask-[linear-gradient(to_top,black_0%,transparent_100%)] backdrop-blur-sm" />

@@ -57,8 +57,8 @@ export type Wind = {
   gust: number;
 };
 
-export const useWeather = () => {
-  return useQuery<WeatherData>({
+export const useWeather = () =>
+  useQuery<WeatherData>({
     queryKey: ['weather'],
     queryFn: async () => {
       const response = await fetch(
@@ -70,4 +70,3 @@ export const useWeather = () => {
     staleTime: 5 * 60 * 1000,
     refetchOnWindowFocus: false,
   });
-};

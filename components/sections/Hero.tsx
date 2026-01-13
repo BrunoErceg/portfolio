@@ -1,8 +1,11 @@
+// Libs
+import { AnimateIn } from '@brunoerceg/animate-in';
+
+// Components
 import Heading from '@ui/Heading';
 import Text from '@ui/Text';
-import SelectionHighlight from '@/components/ui/SelectionHighlight';
+import SelectionHighlight from '@ui/SelectionHighlight';
 import Tag from '@ui/Tag';
-import { AnimateIn } from '@brunoerceg/animate-in';
 
 /**
  * The Hero component is the main section of the webpage.

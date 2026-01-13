@@ -50,8 +50,8 @@ type WeatherIconCode = keyof typeof WEATHER_ANIMATIONS;
 function WeatherApi() {
   const { data, isFetching, isError, error } = useWeather();
   const iconCode = data?.weather?.[0]?.icon as WeatherIconCode;
-
   const temperature = Math.round(data?.main?.temp || 0);
+
   if (isFetching) {
     return (
       <GradientSurface centered className="h-32">

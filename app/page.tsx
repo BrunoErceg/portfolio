@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@layout/Container';
 import Hero from '@sections/Hero';
 import Skills from '@sections/skillset/SkillSet';
 import Github from '@/components/sections/Github/GitHub';

@@ -1,11 +1,11 @@
 'use client';
 import Link from 'next/link';
-import NavLink from '../ui/NavLink';
-import ThemeToggle from '../ui/ThemeToggle';
+import NavLink from '@ui/NavLink';
+import ThemeToggle from '@ui/ThemeToggle';
 import { usePathname } from 'next/navigation';
 
 // Main navigation header with logo and social links
-function Header() {
+function Navigation() {
   const pathname = usePathname();
   return (
     <header className="mt-3 mb-0 flex items-center justify-between rounded-full bg-white px-3 py-1 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:mt-5 md:mb-10 md:px-5 md:py-4 dark:bg-slate-800">
@@ -48,4 +48,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navigation;

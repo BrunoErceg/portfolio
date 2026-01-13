@@ -3,7 +3,11 @@ import { AnimateIn } from '@brunoerceg/animate-in';
 
 // Components
 import NpmCodeBlock from './NpmCodeBlock';
-import NpmHeader from './NpmHeader';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { faBoxOpen, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { LINKS } from '@/constants/links';
+import Button from '@/components/ui/Button';
 
 /**
  * A component that displays the Npm Package section.
@@ -14,12 +18,19 @@ import NpmHeader from './NpmHeader';
 function NpmPackage() {
   return (
     <section className="mb-20 scroll-mt-[100px] md:mb-40" id="npm">
-      <AnimateIn.Container amount="any">
-        <NpmHeader className="mb-10 md:mb-15" />
-        <AnimateIn.Item delay={0.75} className="relative h-fit rounded-4xl">
-          <NpmCodeBlock />
-        </AnimateIn.Item>
-      </AnimateIn.Container>
+      <SectionHeader>
+        <SectionHeader.Tag text="Npm Package" icon={faFolderOpen} />
+        <SectionHeader.Title text="NPM package projekt AnimateIn" />
+        <SectionHeader.Subtitle text="Lagani npm paket za brzu implementaciju modernih efekata pojavljivanja elemenata unutar svakog React projekta." />
+        <SectionHeader.Buttons>
+          <SectionHeader.Button text="NPM" icon={faBoxOpen} href={LINKS.animateInNpm} />
+          <SectionHeader.Button text="GitHub" icon={faGithub} href={LINKS.animateInGitHub} />
+        </SectionHeader.Buttons>
+      </SectionHeader>
+
+      <AnimateIn.Individual amount="some" className="relative h-fit rounded-4xl">
+        <NpmCodeBlock />
+      </AnimateIn.Individual>
     </section>
   );
 }

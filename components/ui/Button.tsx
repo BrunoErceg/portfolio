@@ -11,16 +11,14 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   AnchorHTMLAttributes<HTMLAnchorElement> &
   VariantProps<typeof ButtonVariants> &
   VariantProps<typeof iconVariants> & {
-    className?: string;
     href?: string;
-    centered?: boolean;
     text?: string;
     submit?: boolean;
     icon?: IconDefinition;
   };
 
 const ButtonVariants = cva(
-  'group m-2 inline-flex w-fit cursor-pointer items-center rounded-full font-semibold',
+  'group m-2 flex inline-flex w-fit cursor-pointer items-center justify-center rounded-full font-semibold',
   {
     variants: {
       variant: {
@@ -30,9 +28,7 @@ const ButtonVariants = cva(
           'bg-blue-500 text-white/90 dark:border-blue-800 dark:bg-blue-900 dark:bg-linear-to-br',
         white: 'bg-white text-blue-500 dark:text-slate-600',
       },
-      centered: {
-        true: 'mx-auto flex',
-      },
+
       size: {
         sm: 'px-2.5 py-1.5 text-xs md:px-4 md:py-2 md:text-sm',
         md: 'md:text-md px-2.5 py-1.5 text-sm md:px-4 md:py-2',
@@ -82,7 +78,6 @@ const BUTTON_ANIMATION = {
 function Button({
   variant,
   href,
-  centered,
   icon,
   iconSize,
   className,
@@ -100,7 +95,7 @@ function Button({
       {...BUTTON_ANIMATION} // Necessary for the rolling text
       {...linkProps}
       {...(props as any)}
-      className={cn(ButtonVariants({ variant, centered, size }), className)}
+      className={cn(ButtonVariants({ variant, size }), className)}
       aria-label={text}
       type={href ? undefined : buttonType}
     >

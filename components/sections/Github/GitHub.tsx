@@ -1,5 +1,7 @@
-import GitHubHeader from './GithubHeader';
 import GitHubCard from './GitHubCard';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { LINKS } from '@/constants/links';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 /**
  * A section component that displays the GitHub section.
@@ -13,7 +15,13 @@ function GitHub() {
       id="github"
       className="relative mb-15 scroll-mt-[100px] overflow-hidden rounded-4xl bg-linear-to-br from-blue-400 from-0% to-blue-500 px-5 pt-15 pb-25 text-white md:mb-30 md:pt-25 md:pb-40 lg:px-[20%] dark:from-slate-800/80 dark:to-slate-800"
     >
-      <GitHubHeader />
+      <SectionHeader white>
+        <SectionHeader.Title text="Funkcionalnosti ove stranice provjerite na GitHub-u " />
+        <SectionHeader.Subtitle text="Pogledajte README za pojašnjenje API integracija, typing animacija i kompleksnih komponenti ovog projekta." />
+        <SectionHeader.Buttons>
+          <SectionHeader.Button text="GitHub" icon={faGithub} href={LINKS.github} />
+        </SectionHeader.Buttons>
+      </SectionHeader>
       <GitHubCard side="left" img={'/images/github-logo.svg'} alt="github" />
       <GitHubCard side="right" img={'/images/git-logo.svg'} alt="git" />
 
