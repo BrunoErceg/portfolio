@@ -2,7 +2,7 @@ import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates the use of AnimatePresence.
@@ -13,7 +13,7 @@ import GradientSurface from '../shared/GradientSurface';
  *
  * @returns A React component that displays the list of cards.
  */
-function PresenceAnimation() {
+export function PresenceAnimation() {
   /**
    * The state of the cards in the list.
    * The cards are represented as an array of objects
@@ -94,4 +94,3 @@ const CardDummy = ({ deleteCard }: { deleteCard: () => void }) => {
     </motion.div>
   );
 };
-export default PresenceAnimation;

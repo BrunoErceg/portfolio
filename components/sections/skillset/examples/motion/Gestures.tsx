@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a gesture recognition animation effect.
@@ -9,7 +9,7 @@ import GradientSurface from '../shared/GradientSurface';
  * @returns A div element with a gesture recognition animation effect.
  */
 
-function Gesture() {
+export function Gestures() {
   const [buttonContent, setButtonContent] = useState('Drag Me 🤠');
   const handleDrag = () => {
     setButtonContent('Im dizzy 😵‍💫');
@@ -33,5 +33,3 @@ function Gesture() {
     </GradientSurface>
   );
 }
-
-export default Gesture;

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 // UI components
 import { AnimatePresence, motion } from 'framer-motion';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A React component that demonstrates the use of React Hooks.
@@ -13,7 +13,7 @@ import GradientSurface from '../shared/GradientSurface';
  * @returns A React component that displays the counter and the increment/decrement buttons.
  */
 
-function Counter() {
+export function Counter() {
   const [count, setCount] = useState(0);
 
   /**
@@ -122,4 +122,3 @@ const RollingDigit = ({ digit }: { digit: number }) => {
     </AnimatePresence>
   );
 };
-export default Counter;

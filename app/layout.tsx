@@ -7,9 +7,7 @@ import { Toaster } from 'sonner';
 
 // Components
 import Providers from '@/components/Providers';
-import Navigation from '@layout/Navigation';
-import Footer from '@layout/Footer';
-import Container from '@layout/Container';
+import { Container, Navigation, Footer } from '@layout';
 
 export const metadata: Metadata = {
   title: 'Bruno Erceg - React Developer',

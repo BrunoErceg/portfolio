@@ -1,12 +1,12 @@
-import Image from "next/image";
-import GradientSurface from "../shared/GradientSurface";
+import Image from 'next/image';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a pull icon.
  * The icon is displayed inside a gradient surface.
  * @returns A React component with a pull icon.
  */
-function Pull() {
+export function Pull() {
   return (
     <GradientSurface centered>
       {/* The pull icon */}
@@ -20,5 +20,3 @@ function Pull() {
     </GradientSurface>
   );
 }
-
-export default Pull;

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import HeartIcon from '@images/heart.svg';
 import { motion } from 'framer-motion';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates infinite animation loops
@@ -10,7 +10,7 @@ import GradientSurface from '../shared/GradientSurface';
  * @returns A div element with an animated heart icon.
  */
 
-function Loop() {
+export function Loop() {
   return (
     <GradientSurface className="p-10" centered>
       {/* An animated heart icon that loops indefinitely */}
@@ -40,5 +40,3 @@ function Loop() {
     </GradientSurface>
   );
 }
-
-export default Loop;

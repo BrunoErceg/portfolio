@@ -1,5 +1,5 @@
-import Image from "next/image";
-import GradientSurface from "../shared/GradientSurface";
+import Image from 'next/image';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a fork icon.
@@ -7,7 +7,7 @@ import GradientSurface from "../shared/GradientSurface";
  *
  * @returns A React component with a fork icon.
  */
-function Fork() {
+export function Fork() {
   return (
     <GradientSurface centered>
       {/* The fork icon */}
@@ -21,5 +21,3 @@ function Fork() {
     </GradientSurface>
   );
 }
-
-export default Fork;

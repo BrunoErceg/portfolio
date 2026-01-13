@@ -1,7 +1,7 @@
 import { Component, Counter, WeatherApi, TypeScript } from '../examples/react';
 import { SkillItem } from '../types';
 
-const reactSkills: SkillItem[] = [
+export const ReactSkills: SkillItem[] = [
   {
     title: 'React',
     description:
@@ -43,5 +43,3 @@ const reactSkills: SkillItem[] = [
     type: 'example',
   },
 ];
-
-export default reactSkills;

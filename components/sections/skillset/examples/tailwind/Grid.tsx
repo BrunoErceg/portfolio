@@ -1,5 +1,5 @@
 import { cn } from '@/utils/cn';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A Tailwind CSS grid component.
@@ -8,7 +8,7 @@ import GradientSurface from '../shared/GradientSurface';
  * The grid background is a blue gradient.
  * @returns A React component that displays the grid.
  */
-function Grid() {
+export function Grid() {
   return (
     <GradientSurface className="flex h-80">
       <div className="grid h-full w-full grid-cols-3 grid-rows-3 gap-2">
@@ -40,4 +40,3 @@ const GridItem = ({ className }: { className?: string }) => {
     ></div>
   );
 };
-export default Grid;

@@ -1,7 +1,5 @@
-import GitHubSkills from './github-data';
-import MotionSkills from './motion-data';
-import NextSkills from './next.js-data';
-import ReactSkills from './react-data';
-import TailwindSkills from './tailwind-data';
-
-export { GitHubSkills, MotionSkills, NextSkills, ReactSkills, TailwindSkills };
+export * from './github-data';
+export * from './motion-data';
+export * from './next.js-data';
+export * from './react-data';
+export * from './tailwind-data';

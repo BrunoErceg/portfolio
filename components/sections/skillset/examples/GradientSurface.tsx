@@ -7,7 +7,7 @@ type BoxProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string;
 };
 
-function GradientSurface({ children, centered, className, ...props }: BoxProps) {
+export function GradientSurface({ children, centered, className, ...props }: BoxProps) {
   const centeredClass = centered ? 'flex justify-center items-center' : '';
   return (
     <div
@@ -22,5 +22,3 @@ function GradientSurface({ children, centered, className, ...props }: BoxProps) 
     </div>
   );
 }
-
-export default GradientSurface;

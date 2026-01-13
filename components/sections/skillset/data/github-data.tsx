@@ -1,7 +1,7 @@
 import { Fork, Merge, Clone, Pull } from '../examples/github';
 import { SkillItem } from '../types';
 
-const GitHubSkills: SkillItem[] = [
+export const GitHubSkills: SkillItem[] = [
   {
     title: 'GitHub',
     description:
@@ -45,5 +45,3 @@ const GitHubSkills: SkillItem[] = [
     type: 'example',
   },
 ];
-
-export default GitHubSkills;

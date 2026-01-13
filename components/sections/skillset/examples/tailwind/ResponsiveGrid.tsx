@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn';
 import { useEffect, useState } from 'react';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 type Device = 'desktop' | 'tablet' | 'mobile';
 
@@ -19,7 +19,7 @@ const GRID_CONFIG_BY_DEVICE = {
  *
  * @returns A responsive grid component.
  */
-function ResponsiveGrid() {
+export function ResponsiveGrid() {
   const [currentDevice, setCurrentDevice] = useState<Device>('desktop');
 
   useEffect(() => {
@@ -66,5 +66,3 @@ const GridItem = ({ className }: GridItemProps) => {
     </div>
   );
 };
-
-export default ResponsiveGrid;

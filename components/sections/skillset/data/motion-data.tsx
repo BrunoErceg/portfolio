@@ -1,7 +1,7 @@
-import { AnimatePresence, Gesture, Loop, StaggeredAnimation } from '../examples/motion';
+import { PresenceAnimation, Gestures, Loop, StaggeredAnimation } from '../examples/motion';
 import { SkillItem } from '../types';
 
-const MotionSkills: SkillItem[] = [
+export const MotionSkills: SkillItem[] = [
   {
     title: 'Motion',
     description:
@@ -11,7 +11,7 @@ const MotionSkills: SkillItem[] = [
   {
     title: 'AnimatePresence',
     description: 'Omogući glatke ulazne i izlazne animacije za elemente koji nestaju.',
-    example: <AnimatePresence />,
+    example: <PresenceAnimation />,
     type: 'example',
   },
   {
@@ -35,7 +35,7 @@ const MotionSkills: SkillItem[] = [
   {
     title: 'Gesture Props',
     description: 'Poveži interakcije poput prelaska i klika s automatskim animacijama.',
-    example: <Gesture />,
+    example: <Gestures />,
     type: 'example',
   },
   {
@@ -52,5 +52,3 @@ const MotionSkills: SkillItem[] = [
     type: 'example',
   },
 ];
-
-export default MotionSkills;

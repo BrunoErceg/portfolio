@@ -1,5 +1,5 @@
 import { motion, Variants } from 'framer-motion';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -34,7 +34,7 @@ const itemVariants: Variants = {
  * @returns A div element with a staggered animation effect.
  */
 
-function StaggeredAnimation() {
+export function StaggeredAnimation() {
   return (
     <GradientSurface centered>
       <motion.div
@@ -53,4 +53,3 @@ function StaggeredAnimation() {
     </GradientSurface>
   );
 }
-export default StaggeredAnimation;

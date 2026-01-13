@@ -1,4 +1,4 @@
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates the use of TypeScript
@@ -7,7 +7,7 @@ import GradientSurface from '../shared/GradientSurface';
  * @returns A div element with a textarea that displays the
  * TypeScript type definition for a React component prop.
  */
-function TypeScript() {
+export function TypeScript() {
   return (
     <GradientSurface>
       <textarea
@@ -17,5 +17,3 @@ function TypeScript() {
     </GradientSurface>
   );
 }
-
-export default TypeScript;

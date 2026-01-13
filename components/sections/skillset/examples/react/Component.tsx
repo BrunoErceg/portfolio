@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a React component with a gradient surface
  * @returns A React component example.
  */
-function Component() {
+export function Component() {
   const inputClasses =
     'text-md w-full rounded-xl bg-white/20 p-3 text-center text-white mt-2.5 focus:border-transparent focus:ring-0 focus:outline-none';
 
@@ -41,5 +41,3 @@ function Component() {
     </GradientSurface>
   );
 }
-
-export default Component;

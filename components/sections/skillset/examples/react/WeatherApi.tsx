@@ -11,7 +11,7 @@ import PartlyShowerAnimation from '@lottie/partly-shower.json';
 import { useWeather } from '@/hooks/useWeather';
 
 // UI components
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 const WEATHER_ANIMATIONS = {
   '01d': SunnyAnimation,
@@ -47,7 +47,7 @@ type WeatherIconCode = keyof typeof WEATHER_ANIMATIONS;
  * @returns {JSX.Element} WeatherApi component.
  */
 
-function WeatherApi() {
+export function WeatherApi() {
   const { data, isFetching, isError, error } = useWeather();
   const iconCode = data?.weather?.[0]?.icon as WeatherIconCode;
   const temperature = Math.round(data?.main?.temp || 0);
@@ -94,4 +94,3 @@ function WeatherApi() {
     </GradientSurface>
   );
 }
-export default WeatherApi;

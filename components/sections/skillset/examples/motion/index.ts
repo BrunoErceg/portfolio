@@ -1,6 +1,4 @@
-import Gesture from './Guestures';
-import Loop from './Loop';
-import StaggeredAnimation from './StaggeredAnimation';
-import AnimatePresence from './AnimatePresence';
-
-export { Gesture, Loop, StaggeredAnimation, AnimatePresence };
+export * from './Gestures';
+export * from './Loop';
+export * from './StaggeredAnimation';
+export * from './PresenceAnimation';

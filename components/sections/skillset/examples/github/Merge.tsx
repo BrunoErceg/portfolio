@@ -1,12 +1,12 @@
-import Image from "next/image";
-import GradientSurface from "../shared/GradientSurface";
+import Image from 'next/image';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a merge icon.
  * The icon is displayed inside a gradient surface.
  * @returns A React component with a merge icon.
  */
-function Merge() {
+export function Merge() {
   return (
     <GradientSurface centered>
       {/* The Merge icon */}
@@ -20,5 +20,3 @@ function Merge() {
     </GradientSurface>
   );
 }
-
-export default Merge;

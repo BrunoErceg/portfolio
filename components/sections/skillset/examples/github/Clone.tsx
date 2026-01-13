@@ -1,6 +1,6 @@
-import Lottie from "lottie-react";
-import CloneAnimation from "@lottie/clone.json";
-import GradientSurface from "../shared/GradientSurface";
+import Lottie from 'lottie-react';
+import CloneAnimation from '@lottie/clone.json';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates a clone icon.
@@ -8,7 +8,7 @@ import GradientSurface from "../shared/GradientSurface";
  *
  * @returns A React component with a clone icon.
  */
-function Clone() {
+export function Clone() {
   return (
     <GradientSurface centered className="p-0">
       {/* The clone icon */}
@@ -22,4 +22,3 @@ function Clone() {
     </GradientSurface>
   );
 }
-export default Clone;

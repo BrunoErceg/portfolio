@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile, faFolderOpen, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { cn } from '@/utils/cn';
 import { HTMLAttributes, ReactNode, useState, forwardRef } from 'react';
-import GradientSurface from '../shared/GradientSurface';
+import { GradientSurface } from '../GradientSurface';
 
 /**
  * A component that demonstrates Next.js file-based routing.
@@ -11,7 +11,7 @@ import GradientSurface from '../shared/GradientSurface';
  *
  * @returns A GradientSurface component with a folder structure.
  */
-function Routing() {
+export function Routing() {
   return (
     <GradientSurface>
       <Folder name="app">
@@ -78,5 +78,3 @@ const File = () => {
     </Text>
   );
 };
-
-export default Routing;

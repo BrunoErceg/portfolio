@@ -1,5 +1,3 @@
-import ImageOptimization from './ImageOptimization';
-import Routing from './Routing';
-import WeatherApi from '../react/WeatherApi';
-
-export { ImageOptimization, Routing, WeatherApi };
+export * from './ImageOptimization';
+export * from './Routing';
+export * from '../react/WeatherApi';

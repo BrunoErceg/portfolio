@@ -1,7 +1,7 @@
 import { ImageOptimization, Routing, WeatherApi } from '../examples/next.js/index';
 import { SkillItem } from '../types.js';
 
-const NextSkills: SkillItem[] = [
+export const NextSkills: SkillItem[] = [
   {
     title: 'Next.js',
     description:
@@ -40,5 +40,3 @@ const NextSkills: SkillItem[] = [
     type: 'example',
   },
 ];
-
-export default NextSkills;

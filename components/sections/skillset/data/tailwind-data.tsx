@@ -1,7 +1,7 @@
 import { Grid, ResponsiveGrid, TailwindState, Typography } from '../examples/tailwind';
 import { SkillItem } from '../types';
 
-const TailwindSkills: SkillItem[] = [
+export const TailwindSkills: SkillItem[] = [
   {
     title: 'Tailwind',
     description:
@@ -38,5 +38,3 @@ const TailwindSkills: SkillItem[] = [
     type: 'example',
   },
 ];
-
-export default TailwindSkills;
