@@ -21,6 +21,7 @@ export function SectionHeader({
   return (
     <SectionHeaderContext.Provider value={{ isWhite: white }}>
       <AnimateIn.Container
+        stagger="slow"
         className={cn('flex max-w-[750px] flex-col items-center gap-y-6 text-center', className)}
       >
         {children}
