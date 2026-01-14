@@ -28,12 +28,6 @@ export function SelectionHighlight({ words }: SelectionHighlightProps) {
   );
 }
 
-/**
- * A small dot used to indicate the position of a selection highlight.
- *
- * @param {{ className?: string }} - The className for the dot element.
- * @returns A span element with the dot.
- */
 function Dot({ className }: { className?: string }) {
   return (
     <span

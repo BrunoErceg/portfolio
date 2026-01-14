@@ -29,12 +29,11 @@ type RollingTextProps = {
 };
 
 /**
- * A component that renders a rolling text effect.
- * The text is split into individual characters and wrapped in a
- * motion.span element. On hover, the characters will
- * animate vertically and change their transform.
- *
- * @returns {ReactNode} - The rendered component.
+ * @important
+ * This component relies on **Variant Propagation**.
+ * It will not animate unless it is wrapped in a parent `motion` component
+ * (e.g., `motion.div`, `motion.button`) that manages the animation states
+ * ('rest', 'hover') defined in `ROLLING_ANIMATION`.
  */
 export function RollingText({ text }: RollingTextProps) {
   const splitText = text?.split('');

@@ -6,7 +6,6 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
 
-  // Čekamo da se komponenta učita da izbjegnemo greške u renderiranju
   useEffect(() => setMounted(true), []);
   if (!mounted) {
     return (
