@@ -23,8 +23,8 @@ export function Hero({ className }: { className?: string }) {
 
         <AnimateIn.Item className="max-w-xl">
           <Text variant="subheading">
-            Frontend inženjer posvećen čistom kodu, Next.js arhitekturi i vrhunskim performansama
-            aplikacija.
+            Web developer sa Šibenskom adresom, posvećen čistom kodu, Next.js arhitekturi i
+            vrhunskim performansama aplikacija.
           </Text>
         </AnimateIn.Item>
       </AnimateIn.Container>
