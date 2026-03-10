@@ -9,15 +9,15 @@ export function Navigation({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        'flex items-center justify-between rounded-full bg-white px-3 py-1 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:px-5 md:py-4 dark:bg-slate-800',
+        'flex items-center justify-between rounded-full bg-white px-3 py-2 shadow-[0px_3px_8px_4px_rgba(0,0,0,0.03)] md:px-5 md:py-3 dark:bg-slate-800',
         className,
       )}
     >
       <Link href="/">
-        <p className="text-dark funnel-display ml-2 text-xl md:text-3xl">Bruno.</p>
+        <p className="text-dark funnel-display ml-2 text-xl md:text-2xl">Bruno.</p>
       </Link>
       <nav className="mt-1 hidden md:block">
-        <div className="text-dark flex items-center space-x-8 text-lg font-semibold">
+        <div className="text-dark flex items-center space-x-8 text-base font-semibold">
           {pathname === '/' ? (
             <>
               <ScrollLink name="AnimateIn" section="npm" />

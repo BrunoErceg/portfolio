@@ -1,3 +1,4 @@
+import { LINKS } from '@/constants/links';
 import { cn } from '@/utils/cn';
 import { useScroll, useTransform, motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
@@ -19,13 +20,15 @@ export function LuxGymShowcase() {
   return (
     <div className="relative">
       <div className="relative z-20 mx-auto h-120 w-fit overflow-hidden">
-        <Image
-          src="/images/luxgym.png"
-          alt="lux gym"
-          width={350}
-          height={350}
-          className="h-auto w-auto dark:opacity-70"
-        />
+        <a href={LINKS.luxgym} target="_blank" rel="noreferrer">
+          <Image
+            src="/images/luxgym.png"
+            alt="lux gym"
+            width={350}
+            height={350}
+            className="h-auto w-auto dark:opacity-70"
+          />
+        </a>
         <div className="from-background via-background/50 absolute bottom-0 left-0 h-30 w-full bg-linear-to-t to-transparent" />
       </div>
 

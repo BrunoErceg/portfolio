@@ -3,6 +3,8 @@ export const LINKS = {
   github: 'https://github.com/BrunoErceg/portfolio',
   luxgym: 'https://lux-gym.hr/',
   luxgymGitHub: 'https://github.com/BrunoErceg/LuxGym',
+  devBaza: 'https://dev-baza.vercel.app/',
+  devBazaGitHub: 'https://github.com/BrunoErceg/dev-baza',
   animateInNpm: 'https://www.npmjs.com/package/@brunoerceg/animate-in',
   animateInGitHub: 'https://github.com/BrunoErceg/AnimateIn',
   googleMaps:
