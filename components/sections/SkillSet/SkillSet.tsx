@@ -8,7 +8,6 @@ import {
   NextSkills,
   TailwindSkills,
 } from './data/index';
-import { cn } from '@/utils/cn';
 import { TechSkills } from './TechSkills';
 import { Tag } from '@ui';
 
@@ -35,17 +34,13 @@ export function SkillSet({ className }: { className?: string }) {
         delay={0.5}
         className="flex flex-col items-center gap-y-15"
       >
-        <AnimateIn.Item className="grid w-fit grid-cols-6 grid-rows-2 gap-2 md:grid-cols-10 md:grid-rows-1">
+        <AnimateIn.Item className="flex flex-wrap justify-center gap-4">
           {TECH_STACK.map(({ name }, index) => (
             <Tag
               key={name}
               variant="base"
               onClick={() => setCurrentTech(name)}
               text={name}
-              className={cn(
-                'col-span-2 place-self-center',
-                index === 3 && 'col-start-2 md:col-start-auto',
-              )}
               state={currentTech === name ? 'selected' : 'default'}
             />
           ))}
