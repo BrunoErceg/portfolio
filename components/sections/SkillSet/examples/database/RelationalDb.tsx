@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import { GradientSurface } from '../GradientSurface';
 
-export function Pull() {
+export function RelationalDb() {
   return (
     <GradientSurface centered>
       <Image
-        alt="Pull icon"
-        src="/images/git-pull.svg"
+        alt="fork icon"
+        src="/images/db-relational.png"
         width={100}
         height={100}
-        className="block size-24"
+        className="my-5 block size-24"
       />
     </GradientSurface>
   );

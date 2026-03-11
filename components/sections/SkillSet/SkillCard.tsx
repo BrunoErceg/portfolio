@@ -13,7 +13,7 @@ export function SkillCard({ variant, title, description, example }: CardProps) {
   const styles = {
     title:
       'mt-0 mb-2 bg-linear-to-r from-blue-400 to-blue-500 bg-clip-text font-semibold text-transparent dark:from-blue-400 dark:to-blue-500', // pazi na navodnik ovdje
-    example: '',
+    example: 'text-lg  md:text-2xl',
   };
   return (
     <div className="break-inside-avoid-column rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-5 lg:p-5 dark:from-slate-800 dark:to-slate-800">

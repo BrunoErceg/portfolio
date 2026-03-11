@@ -15,8 +15,8 @@ export const NextSkills: SkillItem[] = [
     type: 'example',
   },
   {
-    title: 'Server-Side Rendering',
-    description: 'Renderiranje stranica na serveru prije slanja klijentu.',
+    title: 'Server Actions',
+    description: 'Sigurna i brza komunikacija s bazom bez pisanja API ruta.',
     type: 'example',
   },
   {
@@ -34,8 +34,8 @@ export const NextSkills: SkillItem[] = [
     type: 'example',
   },
   {
-    title: 'API Routes',
-    description: 'Kreiranje backend endpointova unutar Next.js aplikacije.',
+    title: 'Error Handling',
+    description: 'Hvatanje DB iznimki i API padova uz sigurne UI povratke.',
 
     type: 'example',
   },

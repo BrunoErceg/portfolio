@@ -1,17 +1,23 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { AnimateIn } from '@brunoerceg/animate-in';
-import { ReactSkills, GitHubSkills, MotionSkills, NextSkills, TailwindSkills } from './data/index';
+import {
+  ReactSkills,
+  DatabaseSkills,
+  MotionSkills,
+  NextSkills,
+  TailwindSkills,
+} from './data/index';
 import { cn } from '@/utils/cn';
 import { TechSkills } from './TechSkills';
 import { Tag } from '@ui';
 
 const TECH_STACK = [
-  { name: 'React', data: ReactSkills },
   { name: 'Next.js', data: NextSkills },
+  { name: 'React', data: ReactSkills },
+  { name: 'Database', data: DatabaseSkills },
   { name: 'Tailwind', data: TailwindSkills },
   { name: 'Motion', data: MotionSkills },
-  { name: 'GitHub', data: GitHubSkills },
 ] as const;
 
 type TechNames = (typeof TECH_STACK)[number]['name'];
@@ -23,7 +29,6 @@ export function SkillSet({ className }: { className?: string }) {
 
   return (
     <section className={className}>
-      {/* 1. Navigation bar with tabs for each tech stack */}
       <AnimateIn.Container
         amount="any"
         stagger="fast"
@@ -37,13 +42,15 @@ export function SkillSet({ className }: { className?: string }) {
               variant="base"
               onClick={() => setCurrentTech(name)}
               text={name}
-              className={cn('col-span-2', index === 3 && 'col-start-2 md:col-start-auto')}
+              className={cn(
+                'col-span-2 place-self-center',
+                index === 3 && 'col-start-2 md:col-start-auto',
+              )}
               state={currentTech === name ? 'selected' : 'default'}
             />
           ))}
         </AnimateIn.Item>
 
-        {/* 2. Skills grid for the active tech stack */}
         <AnimateIn.Item>
           <motion.div
             key={currentTech}
